@@ -329,6 +329,246 @@
                     "toDate": "22/08/2018"
                 }
             ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Mini",
+            "picture": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/fusion/2018/collections/ad_planner1/2018_fsn_tnm_32.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+            "make": "Ford",
+            "model": "Fiesta",
+            "year" : 2009 ,
+            "regno": "BAL 1337",
+            "seats": 5,
+            "doors": 5,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Billund Lufthavn",
+            "priceperday" : 350 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "kght3@mail.com",
+                    "fromDate": "30/04/2018",
+                    "toDate": "13/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Mini",
+            "picture": "https://autocentralen.dk/wp-content/uploads/2018/03/nyjazz-fri.jpg",
+            "make": "Honda",
+            "model": "Jazz",
+            "year" : 2015 ,
+            "regno": "BHJ 1432",
+            "seats": 5,
+            "doors": 5,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Aalborg  Lufthavn",
+            "priceperday": 380 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "knoldesparker@gmail.com",
+                    "fromDate": "03/06/2018",
+                    "toDate": "08/06/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Economy",
+            "picture": "http://www.autohuset-vestergaard.dk/media/3558/seat_ibiza2_690x350.jpg",
+            "make": "Seat",
+            "model": "Ibiza",
+            "year" : 2005 ,
+            "regno": "BQR 2338",
+            "seats": 5,
+            "doors": 5,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Copenhagen City",
+            "priceperday" : 220 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "mrsgreg@email.com",
+                    "fromDate": "22/04/2018",
+                    "toDate": "24/04/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Economy",
+            "picture": "http://media.citroen.dk/image/91/3/new-c3-citroen-white-red.png.231913.png",
+            "make": "Citroen",
+            "model": "C3",
+            "year" : 2013 ,
+            "regno": "BRT 8743",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": false,
+            "location": "Aarhus City",
+            "priceperday" : 180 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "mrfister@hotmail.com",
+                    "fromDate": "30/04/2018",
+                    "toDate": "13/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Standard",
+            "picture": "https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/vhs/Ford-Mondeo.png",
+            "make": "Ford",
+            "model": "Mondeo",
+            "year": 2001 ,
+            "regno": "BBE 2433",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": true,
+            "location": "Odense",
+            "priceperday": 310 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "mrfister@hotmail.com",
+                    "fromDate": "30/05/2018",
+                    "toDate": "13/06/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Standard",
+            "picture": "https://www.volkswagen.dk/content/dam/vw-ngw/vw_pkw/importers/dk/modeller/frilagte/714x400/passat/PassatTrendline_%20712x400.jpg/jcr:content/renditions/original.transform/min/img.jpg",
+            "make": "Volkswagen",
+            "model": "Passat",
+            "year": 2012 ,
+            "regno": "BPT 6661",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": false,
+            "location": "Herning",
+            "priceperday": 180 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "grag45@yahoo.com",
+                    "fromDate": "20/07/2018",
+                    "toDate": "25/07/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Premium",
+            "picture": "http://st.motortrend.com/uploads/sites/10/2016/08/2017-nissan-maxima-sv-sedan-angular-front.png",
+            "make": "Nissan",
+            "model": "Maxima",
+            "year" : 2004 ,
+            "regno": "BFE 3201",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": false,
+            "location": "Roskilde",
+            "priceperday" : 200 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "jna@russmail.com",
+                    "fromDate": "01/01/2019",
+                    "toDate": "02/01/2019"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Premium",
+            "picture": "https://www.classictoyotatyler.com/assets/stock/expanded/white/640/2017toc010001_640/2017toc010001_640_07.jpg",
+            "make": "Toyota",
+            "model": "Avalon",
+            "year" : 2000 ,
+            "regno": "BQQ 7632",
+            "seats": 5,
+            "doors": 5,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Esbjerg",
+            "priceperday": 340 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "mrb@hotmail.com",
+                    "fromDate": "30/07/2018",
+                    "toDate": "13/08/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "http://cdn.pinthiscars.com/images/2014-infiniti-q50-premium--8.jpg",
+            "make": "Cadillac",
+            "model": "ATZ",
+            "year" : 2004 ,
+            "regno": "BBR 1555",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": true,
+            "location": "Esbjerg",
+            "priceperday" : 600 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "start@tony.com",
+                    "fromDate": "22/09/2018",
+                    "toDate": "13/10/2018"
+                }
+            ]
+        },
+        {
+            "logo": "",
+            "Company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "https://crdms.images.consumerreports.org/c_lfill,w_480/prod/cars/cr/car-versions/7987-2017-lincoln-mkz-reserve",
+            "make": "Lincoln",
+            "model": "MKZ",
+            "year" : 2017 ,
+            "regno": "BBB 4344",
+            "seats": 5,
+            "doors": 5,
+            "gear": "auto",
+            "aircondition": true,
+            "location": "Cph (Copenhagen Airport)",
+            "priceperday" : 700 ,
+            "reservations": [
+                {
+                    "CompanyTag": "Biglers Bigler",
+                    "customerMail": "flash@thunder.com",
+                    "fromDate": "30/10/2018",
+                    "toDate": "31/10/2018"
+                }
+            ]
         }
     ]
 }
