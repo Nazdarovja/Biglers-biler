@@ -569,10 +569,9 @@
                     "toDate": "31/10/2018"
                 }
             ]
-        }
-	{
-           
-	   "logo": "",
+        },
+	    {
+	    "logo": "",
            "company": "Biglers Biler",
            "category": "Mini",
            "picture": "https://www.carpixel.net/w/7c33e4436e2329d4a0410f46df1ab300/mini-cooper-s-car-wallpaper-13320.jpg",
@@ -834,6 +833,117 @@
                    "toDate": "18/05/2018"
                }
            ]
-       }
+       },
+       { 
+        "logo": "",
+        "company": "Biglers Bigler",
+        "category": "Luxury",
+        "picture": "https://en.wikipedia.org/wiki/Luxury_vehicle#/media/File:Rolls_Royce_Phantom_IV_1952.JPG",
+        "make": "Rolls-Royce",
+        "model": "Phantom IV",
+        "year": 1950,
+        "regno": "BUF 9420",
+        "seats": 5,
+        "doors": 5,
+        "gear": "Manual",
+        "aircondition": false,
+        "location": "Copenhagen City",
+        "priceperday": 1400,
+        "reservations": [
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "y@RR.dk",
+                "fromDate": "18/05/2018",
+                "toDate": "25/05/2018"
+            }
+        ]
+    },
+    
+    { 
+        "logo": "",
+        "company": "Biglers Bigler",
+        "category": "Mini",
+        "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg?ver=1",
+        "make": "Mini Cooper",
+        "model": "Mini Cooper S",
+        "year": 2017,
+        "regno": "BUF 9330",
+        "seats": 5,
+        "doors": 5,
+        "gear": "Manual",
+        "aircondition": false,
+        "location": "Copenhagen City",
+        "priceperday": 900,
+        "reservations": [
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "y@Cooper.dk",
+                "fromDate": "01/01/2018",
+                "toDate": "14/01/2018"
+            },
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "y@ss.dk",
+                "fromDate": "15/02/2018",
+                "toDate": "15/03/2018"
+            }
+        ]
+    },
+    
+    { 
+        "logo": "",
+        "company": "Biglers Bigler",
+        "category": "Luxury",
+        "picture": "https://postmediadriving.files.wordpress.com/2018/02/tumbler-batmobile-replica.jpg?quality=99&strip=all&w=960&h=480&crop=1",
+        "make": "Batmobile",
+        "model": "Tanky",
+        "year": 2015,
+        "regno": "BAT 7489",
+        "seats": 2,
+        "doors": 1,
+        "gear": "Automatic",
+        "aircondition": false,
+        "location": "Copenhagen City",
+        "priceperday": 2500,
+        "reservations": [
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "bat@man.dk",
+                "fromDate": "03/04/2018",
+                "toDate": "21/04/2018"
+            }
+        ]
+    },
+    
+    { 
+        "logo": "",
+        "company": "Biglers Bigler",
+        "category": "Mini",
+        "picture": "https://da.wikipedia.org/wiki/Jaguar_Cars#/media/File:Jaguar_F_type_-_Mondial_de_l%27Automobile_de_Paris_2012_-_015.jpg",
+        "make": "Jaguar",
+        "model": "F-Type",
+        "year": 2015,
+        "regno": "BUD 7728",
+        "seats": 2,
+        "doors": 2,
+        "gear": "Manual",
+        "aircondition": false,
+        "location": "Copenhagen City",
+        "priceperday": 1500,
+        "reservations": [
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "ads@CFF.dk",
+                "fromDate": "02/01/2018",
+                "toDate": "18/01/2018"
+            },
+            {
+                "companyTag": "Biglers biler",
+                "customerMail": "ysd@jagjag.dk",
+                "fromDate": "19/02/2018",
+                "toDate": "27/02/2018"
+            }
+        ]
+    }
     ]
 }
