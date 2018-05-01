@@ -1,12 +1,6 @@
+before_script: cd Backend
+
 language: java
-
-before_install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-
-script:
-  - cd Backend
-  - mvn test -B
-  - mvn verify
 
 deploy:
   provider: pages
