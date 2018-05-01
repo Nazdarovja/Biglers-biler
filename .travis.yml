@@ -1,0 +1,15 @@
+before_script: cd Backend
+
+before_install:
+  - npm config set spin false
+
+script:
+  - npm run lint:js
+  - npm test
+  - npm run build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  local-dir: dist
