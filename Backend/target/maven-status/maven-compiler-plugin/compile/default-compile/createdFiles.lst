@@ -1,9 +1,8 @@
-backend\api\ApplicationConfig.class
-backend\entities\Reservation.class
-backend\api\test.class
-backend\api\CarRemoteFetchFacade.class
-backend\exceptions\GenericExceptionMapper.class
-backend\entities\Car.class
-backend\api\CarResource.class
-backend\exceptions\NotFoundException.class
-backend\exceptions\ErrorMessage.class
+backend/api/ApplicationConfig.class
+backend/exceptions/ErrorMessage.class
+backend/api/CarRemoteFetchFacade.class
+backend/exceptions/GenericExceptionMapper.class
+backend/api/CarResource.class
+backend/exceptions/NotFoundException.class
+cors/CorsResponseFilter.class
+cors/CorsRequestFilter.class
