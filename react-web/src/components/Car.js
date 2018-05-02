@@ -25,6 +25,11 @@ export default class Car extends Component {
     }
   }
 
+  handleClick = (e, data) => {
+    // console.log(data);
+     <Booking car={data} /> 
+  }
+
   render() {
 
     return (
@@ -38,7 +43,7 @@ export default class Car extends Component {
           <CarInfo car={this.props.car} /> : null
         }
         <p className="Car-price">Price per day: {this.props.car.priceperday}</p>
-        <button className="Car-button">Book Car [NYI]</button>
+        <button className="Car-button" onClick={((e) => this.handleClick(e, this.props.car))} >Book Car [NYI]</button>
 
 
       </div>

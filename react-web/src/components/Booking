@@ -1,0 +1,36 @@
+import React from 'react';
+import Car from './Car';
+
+export default class Booking extends React.Component {
+
+    
+
+    render() {
+
+        const car =  <Car key={index} car={car} />
+
+        return (
+            <div>
+                {car}
+            </div>
+        );
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
