@@ -16,7 +16,8 @@ export default class SideSearch extends Component {
         this.state = {
             category: categories[0],
             location: locations[0],
-            date: year + '-' + month + '-' + day
+            fromdate: year + '-' + month + '-' + day,
+            todate: year + '-' + month + '-' + day,
         }
     }
 
@@ -36,7 +37,8 @@ export default class SideSearch extends Component {
     render() {
         return (
             <div>
-                <input type="date" name="date" id="date" value={this.state.date} onChange={this.handleChange}/>
+                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange}/>
+                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange}/>
                 {this.createSelect('category', categories, this.state.category)}
                 {this.createSelect('location', locations, this.state.location)}
                 <button type="submit">Find Bigler</button>
