@@ -332,22 +332,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Mini",
             "picture": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/fusion/2018/collections/ad_planner1/2018_fsn_tnm_32.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
             "make": "Ford",
             "model": "Fiesta",
-            "year" : 2009 ,
+            "year": 2009,
             "regno": "BAL1337",
             "seats": 5,
             "doors": 5,
             "gear": "manual",
             "aircondition": true,
             "location": "Billund Lufthavn",
-            "priceperday" : 350 ,
+            "priceperday": 350,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "kght3@mail.com",
                     "fromDate": "30/04/2018",
                     "toDate": "13/05/2018"
@@ -356,22 +356,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Mini",
             "picture": "https://autocentralen.dk/wp-content/uploads/2018/03/nyjazz-fri.jpg",
             "make": "Honda",
             "model": "Jazz",
-            "year" : 2015 ,
+            "year": 2015,
             "regno": "BHJ1432",
             "seats": 5,
             "doors": 5,
             "gear": "manual",
             "aircondition": true,
             "location": "Aalborg  Lufthavn",
-            "priceperday": 380 ,
+            "priceperday": 380,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "knoldesparker@gmail.com",
                     "fromDate": "03/06/2018",
                     "toDate": "08/06/2018"
@@ -380,22 +380,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Economy",
             "picture": "http://www.autohuset-vestergaard.dk/media/3558/seat_ibiza2_690x350.jpg",
             "make": "Seat",
             "model": "Ibiza",
-            "year" : 2005 ,
+            "year": 2005,
             "regno": "BQR2338",
             "seats": 5,
             "doors": 5,
             "gear": "manual",
             "aircondition": true,
             "location": "Copenhagen City",
-            "priceperday" : 220 ,
+            "priceperday": 220,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "mrsgreg@email.com",
                     "fromDate": "22/04/2018",
                     "toDate": "24/04/2018"
@@ -404,22 +404,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Economy",
             "picture": "http://media.citroen.dk/image/91/3/new-c3-citroen-white-red.png.231913.png",
             "make": "Citroen",
             "model": "C3",
-            "year" : 2013 ,
+            "year": 2013,
             "regno": "BRT8743",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": false,
             "location": "Aarhus City",
-            "priceperday" : 180 ,
+            "priceperday": 180,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "mrfister@hotmail.com",
                     "fromDate": "30/04/2018",
                     "toDate": "13/05/2018"
@@ -428,22 +428,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Standard",
             "picture": "https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/vhs/Ford-Mondeo.png",
             "make": "Ford",
             "model": "Mondeo",
-            "year": 2001 ,
+            "year": 2001,
             "regno": "BBE2433",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": true,
             "location": "Odense",
-            "priceperday": 310 ,
+            "priceperday": 310,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "mrfister@hotmail.com",
                     "fromDate": "30/05/2018",
                     "toDate": "13/06/2018"
@@ -452,22 +452,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Standard",
             "picture": "https://www.volkswagen.dk/content/dam/vw-ngw/vw_pkw/importers/dk/modeller/frilagte/714x400/passat/PassatTrendline_%20712x400.jpg/jcr:content/renditions/original.transform/min/img.jpg",
             "make": "Volkswagen",
             "model": "Passat",
-            "year": 2012 ,
+            "year": 2012,
             "regno": "BPT6661",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": false,
             "location": "Herning",
-            "priceperday": 180 ,
+            "priceperday": 180,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "grag45@yahoo.com",
                     "fromDate": "20/07/2018",
                     "toDate": "25/07/2018"
@@ -476,22 +476,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Premium",
             "picture": "http://st.motortrend.com/uploads/sites/10/2016/08/2017-nissan-maxima-sv-sedan-angular-front.png",
             "make": "Nissan",
             "model": "Maxima",
-            "year" : 2004 ,
+            "year": 2004,
             "regno": "BFE3201",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": false,
             "location": "Roskilde",
-            "priceperday" : 200 ,
+            "priceperday": 200,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "jna@russmail.com",
                     "fromDate": "01/01/2019",
                     "toDate": "02/01/2019"
@@ -500,22 +500,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Premium",
             "picture": "https://www.classictoyotatyler.com/assets/stock/expanded/white/640/2017toc010001_640/2017toc010001_640_07.jpg",
             "make": "Toyota",
             "model": "Avalon",
-            "year" : 2000 ,
+            "year": 2000,
             "regno": "BQQ7632",
             "seats": 5,
             "doors": 5,
             "gear": "manual",
             "aircondition": true,
             "location": "Esbjerg",
-            "priceperday": 340 ,
+            "priceperday": 340,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "mrb@hotmail.com",
                     "fromDate": "30/07/2018",
                     "toDate": "13/08/2018"
@@ -524,22 +524,22 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Luxury",
             "picture": "http://cdn.pinthiscars.com/images/2014-infiniti-q50-premium--8.jpg",
             "make": "Cadillac",
             "model": "ATZ",
-            "year" : 2004 ,
+            "year": 2004,
             "regno": "BBR1555",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": true,
             "location": "Esbjerg",
-            "priceperday" : 600 ,
+            "priceperday": 600,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "start@tony.com",
                     "fromDate": "22/09/2018",
                     "toDate": "13/10/2018"
@@ -548,402 +548,381 @@
         },
         {
             "logo": "https://imgur.com/t0qqq7l",
-            "Company": "Biglers Bigler",
+            "company": "Biglers Bigler",
             "category": "Luxury",
             "picture": "https://crdms.images.consumerreports.org/c_lfill,w_480/prod/cars/cr/car-versions/7987-2017-lincoln-mkz-reserve",
             "make": "Lincoln",
             "model": "MKZ",
-            "year" : 2017 ,
+            "year": 2017,
             "regno": "BBB4344",
             "seats": 5,
             "doors": 5,
             "gear": "auto",
             "aircondition": true,
             "location": "Cph (Copenhagen Airport)",
-            "priceperday" : 700 ,
+            "priceperday": 700,
             "reservations": [
                 {
-                    "CompanyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Bigler",
                     "customerMail": "flash@thunder.com",
                     "fromDate": "30/10/2018",
                     "toDate": "31/10/2018"
                 }
             ]
         },
-	    {
-	    "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Biler",
-           "category": "Mini",
-           "picture": "https://www.carpixel.net/w/7c33e4436e2329d4a0410f46df1ab300/mini-cooper-s-car-wallpaper-13320.jpg",
-           "make": "Fiat",
-           "model": "Puntu",
-           "year": 2018,
-           "regno": "BVD9999",
-           "seats": 4,
-           "doors": 3,
-           "gear": "manual",
-           "aircondition": true,
-           "location": "Billund Lufthavn",
-           "priceperday": 30,
-           "reservations": [
-               {
-                   "companyTag": "Biglers Biler",
-      	        "customerMail": "a@b.dk",
-                   "fromDate": "04/05/2018",
-                   "toDate": "07/05/2018"
-               },
-               {
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Biler",
+            "category": "Mini",
+            "picture": "https://d3lp4xedbqa8a5.cloudfront.net/imagegen/max/ccr/860/-/s3/digital-cougar-assets/traderspecs/2015/06/12/Misc/Mini-Cooper-3Hatch-S-R3015A-1.1422-(1).jpg",
+            "make": "Fiat",
+            "model": "Puntu",
+            "year": 2018,
+            "regno": "BVD9999",
+            "seats": 4,
+            "doors": 3,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Billund Lufthavn",
+            "priceperday": 30,
+            "reservations": [
+                {
+                    "companyTag": "Biglers Biler",
+                    "customerMail": "a@b.dk",
+                    "fromDate": "04/05/2018",
+                    "toDate": "07/05/2018"
+                },
+                {
                     "companyTag": "Biglers biler",
-      	        "customerMail": "a@bcs.dk",
-                   "fromDate": "08/05/2018",
-                   "toDate": "10/05/2018"
-               }
-           ]
-       },
-
-       {
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Biler",
-           "category": "Mini",
-           "picture": "https://www.carpixel.net/w/7c33e4436e2329d4a0410f46df1ab300/mini-cooper-s-car-wallpaper-13320.jpg",
-           "make": "Peaugeot",
-           "model": "108",
-           "year": 2017,
-           "regno": "BVD1010",
-           "seats": 5,
-           "doors": 5,
-           "gear": "manual",
-           "aircondition": true,
-           "location": "Billund Lufthavn",
-           "priceperday": 30,
-           "reservations": [
-               {
-                   "companyTag": "Biglers Biler",
-      	        "customerMail": "a@baseLike.dk",
-                   "fromDate": "12/05/2018",
-                   "toDate": "19/05/2018"
-               }
-           ]
-       },
-
-	{
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Biler",
-           "category": "Economy",
-           "picture": "http://www.car-booker.com/usr/car-classes/economy-large.jpg",
-           "make": "Peaugeot",
-           "model": "308",
-           "year": 2018,
-           "regno": "BLD0007",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Billund Lufthavn",
-           "priceperday": 45,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@baseLike.dk",
-                   "fromDate": "12/05/2018",
-                   "toDate": "19/05/2018"
-               }
-           ]
-       },
-
-	{
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Economy",
-           "picture": "http://www.car-booker.com/usr/car-classes/economy-large.jpg",
-           "make": "Audi",
-           "model": "A1",
-           "year": 2018,
-           "regno": "BLD7382",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Roskilde",
-           "priceperday": 55,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@ILIKEAUDI.dk",
-                   "fromDate": "14/05/2018",
-                   "toDate": "22/05/2018"
-               }
-           ]
-       },
-
-	{
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Standard",
-           "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
-           "make": "Obel",
-           "model": "Astra",
-           "year": 2018,
-           "regno": "BLD7222",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Naestved",
-           "priceperday": 50,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@Obel.dk",
-                   "fromDate": "04/05/2018",
-                   "toDate": "06/05/2018"
-               }
-           ]
-       },
-
-	{
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Standard",
-           "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
-           "make": "Obel",
-           "model": "Cascada",
-           "year": 2018,
-           "regno": "BOT5000",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Herning",
-           "priceperday": 60,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@Obel.dk",
-                   "fromDate": "06/05/2018",
-                   "toDate": "09/05/2018"
-               }
-           ]
-       },
-
-	{
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Premium",
-           "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
-           "make": "Audi",
-           "model": "A4",
-           "year": 2018,
-           "regno": "BUD1099",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Odense",
-           "priceperday": 100,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@AUDID.dk",
-                   "fromDate": "07/05/2018",
-                   "toDate": "20/05/2018"
-               }
-           ]
-       },
-
-       {
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Premium",
-           "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
-           "make": "BMW",
-           "model": "X3",
-           "year": 2018,
-           "regno": "BUD1201",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Copenhagen City",
-           "priceperday": 140,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@BMWBMW.dk",
-                   "fromDate": "11/05/2018",
-                   "toDate": "14/05/2018"
-               }
-           ]
-       },
-
-       {
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Luxury",
-           "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
-           "make": "Tesla",
-           "model": "P85",
-           "year": 2018,
-           "regno": "BUD9030",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Copenhagen City",
-           "priceperday": 200,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@TESlA.dk",
-                   "fromDate": "13/05/2018",
-                   "toDate": "15/05/2018"
-               }
-           ]
-       },
-
-       {
-           
-	   "logo": "https://imgur.com/t0qqq7l",
-           "company": "Biglers Bigler",
-           "category": "Luxury",
-           "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
-           "make": "Lamborghini",
-           "model": "Aventador",
-           "year": 2018,
-           "regno": "BES1000",
-           "seats": 5,
-           "doors": 5,
-           "gear": "Automatic",
-           "aircondition": true,
-           "location": "Copenhagen City",
-           "priceperday": 600,
-           "reservations": [
-               {
-                   "companyTag": "Biglers biler",
-      	        "customerMail": "a@LAMBO.dk",
-                   "fromDate": "14/05/2018",
-                   "toDate": "18/05/2018"
-               }
-           ]
-       },
-       { 
-        "logo": "https://imgur.com/t0qqq7l",
-        "company": "Biglers Bigler",
-        "category": "Luxury",
-        "picture": "https://en.wikipedia.org/wiki/Luxury_vehicle#/media/File:Rolls_Royce_Phantom_IV_1952.JPG",
-        "make": "Rolls-Royce",
-        "model": "Phantom IV",
-        "year": 1950,
-        "regno": "BUF9420",
-        "seats": 5,
-        "doors": 5,
-        "gear": "Manual",
-        "aircondition": false,
-        "location": "Copenhagen City",
-        "priceperday": 1400,
-        "reservations": [
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "y@RR.dk",
-                "fromDate": "18/05/2018",
-                "toDate": "25/05/2018"
-            }
-        ]
-    },
-    
-    { 
-        "logo": "https://imgur.com/t0qqq7l",
-        "company": "Biglers Bigler",
-        "category": "Mini",
-        "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg?ver=1",
-        "make": "Mini Cooper",
-        "model": "Mini Cooper S",
-        "year": 2017,
-        "regno": "BUF9330",
-        "seats": 5,
-        "doors": 5,
-        "gear": "Manual",
-        "aircondition": false,
-        "location": "Copenhagen City",
-        "priceperday": 900,
-        "reservations": [
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "y@Cooper.dk",
-                "fromDate": "01/01/2018",
-                "toDate": "14/01/2018"
-            },
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "y@ss.dk",
-                "fromDate": "15/02/2018",
-                "toDate": "15/03/2018"
-            }
-        ]
-    },
-    
-    { 
-        "logo": "https://imgur.com/t0qqq7l",
-        "company": "Biglers Bigler",
-        "category": "Luxury",
-        "picture": "https://postmediadriving.files.wordpress.com/2018/02/tumbler-batmobile-replica.jpg?quality=99&strip=all&w=960&h=480&crop=1",
-        "make": "Batmobile",
-        "model": "Tanky",
-        "year": 2015,
-        "regno": "BAT7489",
-        "seats": 2,
-        "doors": 1,
-        "gear": "Automatic",
-        "aircondition": false,
-        "location": "Copenhagen City",
-        "priceperday": 2500,
-        "reservations": [
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "bat@man.dk",
-                "fromDate": "03/04/2018",
-                "toDate": "21/04/2018"
-            }
-        ]
-    },
-    
-    { 
-        "logo": "https://imgur.com/t0qqq7l",
-        "company": "Biglers Bigler",
-        "category": "Mini",
-        "picture": "https://da.wikipedia.org/wiki/Jaguar_Cars#/media/File:Jaguar_F_type_-_Mondial_de_l%27Automobile_de_Paris_2012_-_015.jpg",
-        "make": "Jaguar",
-        "model": "F-Type",
-        "year": 2015,
-        "regno": "BUD7728",
-        "seats": 2,
-        "doors": 2,
-        "gear": "Manual",
-        "aircondition": false,
-        "location": "Copenhagen City",
-        "priceperday": 1500,
-        "reservations": [
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "ads@CFF.dk",
-                "fromDate": "02/01/2018",
-                "toDate": "18/01/2018"
-            },
-            {
-                "companyTag": "Biglers biler",
-                "customerMail": "ysd@jagjag.dk",
-                "fromDate": "19/02/2018",
-                "toDate": "27/02/2018"
-            }
-        ]
-    }
+                    "customerMail": "a@bcs.dk",
+                    "fromDate": "08/05/2018",
+                    "toDate": "10/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Biler",
+            "category": "Mini",
+            "picture": "https://d3lp4xedbqa8a5.cloudfront.net/imagegen/max/ccr/860/-/s3/digital-cougar-assets/traderspecs/2015/06/12/Misc/Mini-Cooper-3Hatch-S-R3015A-1.1422-(1).jpg",
+            "make": "Peaugeot",
+            "model": "108",
+            "year": 2017,
+            "regno": "BVD1010",
+            "seats": 5,
+            "doors": 5,
+            "gear": "manual",
+            "aircondition": true,
+            "location": "Billund Lufthavn",
+            "priceperday": 30,
+            "reservations": [
+                {
+                    "companyTag": "Biglers Biler",
+                    "customerMail": "a@baseLike.dk",
+                    "fromDate": "12/05/2018",
+                    "toDate": "19/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Biler",
+            "category": "Economy",
+            "picture": "http://www.car-booker.com/usr/car-classes/economy-large.jpg",
+            "make": "Peaugeot",
+            "model": "308",
+            "year": 2018,
+            "regno": "BLD0007",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Billund Lufthavn",
+            "priceperday": 45,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@baseLike.dk",
+                    "fromDate": "12/05/2018",
+                    "toDate": "19/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Economy",
+            "picture": "http://www.car-booker.com/usr/car-classes/economy-large.jpg",
+            "make": "Audi",
+            "model": "A1",
+            "year": 2018,
+            "regno": "BLD7382",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Roskilde",
+            "priceperday": 55,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@ILIKEAUDI.dk",
+                    "fromDate": "14/05/2018",
+                    "toDate": "22/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Standard",
+            "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
+            "make": "Obel",
+            "model": "Astra",
+            "year": 2018,
+            "regno": "BLD7222",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Naestved",
+            "priceperday": 50,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@Obel.dk",
+                    "fromDate": "04/05/2018",
+                    "toDate": "06/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Standard",
+            "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
+            "make": "Obel",
+            "model": "Cascada",
+            "year": 2018,
+            "regno": "BOT5000",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Herning",
+            "priceperday": 60,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@Obel.dk",
+                    "fromDate": "06/05/2018",
+                    "toDate": "09/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Premium",
+            "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
+            "make": "Audi",
+            "model": "A4",
+            "year": 2018,
+            "regno": "BUD1099",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Odense",
+            "priceperday": 100,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@AUDID.dk",
+                    "fromDate": "07/05/2018",
+                    "toDate": "20/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Premium",
+            "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
+            "make": "BMW",
+            "model": "X3",
+            "year": 2018,
+            "regno": "BUD1201",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Copenhagen City",
+            "priceperday": 140,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@BMWBMW.dk",
+                    "fromDate": "11/05/2018",
+                    "toDate": "14/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
+            "make": "Tesla",
+            "model": "P85",
+            "year": 2018,
+            "regno": "BUD9030",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Copenhagen City",
+            "priceperday": 200,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@TESlA.dk",
+                    "fromDate": "13/05/2018",
+                    "toDate": "15/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
+            "make": "Lamborghini",
+            "model": "Aventador",
+            "year": 2018,
+            "regno": "BES1000",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Automatic",
+            "aircondition": true,
+            "location": "Copenhagen City",
+            "priceperday": 600,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "a@LAMBO.dk",
+                    "fromDate": "14/05/2018",
+                    "toDate": "18/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "https://auto.ndtvimg.com/car-images/big/rolls-royce/phantom/rolls-royce-phantom.jpg?v=6",
+            "make": "Rolls-Royce",
+            "model": "Phantom IV",
+            "year": 1950,
+            "regno": "BUF9420",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Manual",
+            "aircondition": false,
+            "location": "Copenhagen City",
+            "priceperday": 1400,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "y@RR.dk",
+                    "fromDate": "18/05/2018",
+                    "toDate": "25/05/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Mini",
+            "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg?ver=1",
+            "make": "Mini Cooper",
+            "model": "Mini Cooper S",
+            "year": 2017,
+            "regno": "BUF9330",
+            "seats": 5,
+            "doors": 5,
+            "gear": "Manual",
+            "aircondition": false,
+            "location": "Copenhagen City",
+            "priceperday": 900,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "y@Cooper.dk",
+                    "fromDate": "01/01/2018",
+                    "toDate": "14/01/2018"
+                },
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "y@ss.dk",
+                    "fromDate": "15/02/2018",
+                    "toDate": "15/03/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Luxury",
+            "picture": "https://postmediadriving.files.wordpress.com/2018/02/tumbler-batmobile-replica.jpg?quality=99&strip=all&w=960&h=480&crop=1",
+            "make": "Batmobile",
+            "model": "Tanky",
+            "year": 2015,
+            "regno": "BAT7489",
+            "seats": 2,
+            "doors": 1,
+            "gear": "Automatic",
+            "aircondition": false,
+            "location": "Copenhagen City",
+            "priceperday": 2500,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "bat@man.dk",
+                    "fromDate": "03/04/2018",
+                    "toDate": "21/04/2018"
+                }
+            ]
+        },
+        {
+            "logo": "https://imgur.com/t0qqq7l",
+            "company": "Biglers Bigler",
+            "category": "Mini",
+            "picture": "https://www.cstatic-images.com/car-pictures/xl/usc80jac144d021001_2.png",
+            "make": "Jaguar",
+            "model": "F-Type",
+            "year": 2015,
+            "regno": "BUD7728",
+            "seats": 2,
+            "doors": 2,
+            "gear": "Manual",
+            "aircondition": false,
+            "location": "Copenhagen City",
+            "priceperday": 1500,
+            "reservations": [
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "ads@CFF.dk",
+                    "fromDate": "02/01/2018",
+                    "toDate": "18/01/2018"
+                },
+                {
+                    "companyTag": "Biglers biler",
+                    "customerMail": "ysd@jagjag.dk",
+                    "fromDate": "19/02/2018",
+                    "toDate": "27/02/2018"
+                }
+            ]
+        }
     ]
 }
