@@ -13,7 +13,7 @@ body {
   height: 100%;   
   width: 100%;
   overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
-  margin: 0px;  /*removes default style*/
+  margin: 0px;  
 }
 
 .grid-container-home {
