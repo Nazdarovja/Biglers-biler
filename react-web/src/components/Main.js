@@ -9,23 +9,32 @@ import CarList from './CarList';
 
 
 export default class Main extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            cars: []
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      cars: [],
+      error: undefined
     }
+  }
 
-    componentDidMount(){
-        try{
-        facade.fetchData()
-        .then((res) => {
-            this.setState({cars: res})
-        })
-        } catch (ex) {
-            console.log(ex)
-        }
+  componentDidMount() {
+    facade.fetchData()
+      .then((res) => {
+        this.setState({ cars: res, error: undefined })
+      }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+  }
+
+  error() {
+    if (this.state.error === undefined) {
+      return (
+        <CarList cars={this.state.cars} />
+      )
+    } else {
+      return (
+        <p className="alert alert-warning">{this.state.error}</p>
+      )
     }
+  }
 
   render() {
     return (
@@ -40,7 +49,12 @@ export default class Main extends Component {
         </div>
         <div className="grid-item">
           <div className="flex-container-content">
-            <CarList cars={this.state.cars}/>
+
+
+            {this.error()}
+
+
+            {/* <CarList cars={this.state.cars}/> */}
           </div>
         </div>
       </div>
