@@ -1,5 +1,3 @@
-import React from 'react';
-
 const URL = "http://localhost:8084/Backend/api/car";
 
 function handleHttpErrors(res) {
