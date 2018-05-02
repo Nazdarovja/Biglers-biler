@@ -49,6 +49,7 @@ public class CarResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/regno/{regno}")
     public String getThroughRegNo(@PathParam("regno")String regno) {
+        System.out.println(regno);
         return carRemote.getByRegNo(regno);
     }
 }
