@@ -7,8 +7,8 @@ export default class CarList extends React.Component {
     }
 
     render() {
-        const list = this.props.cars.map((car) => {
-            return <Car car={car} />
+        const list = this.props.cars.map((car, index) => {
+            return <Car key={index} car={car} />
         });
 
         return (
