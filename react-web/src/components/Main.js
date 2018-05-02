@@ -5,6 +5,7 @@ import facade from '../Facade';
 
 import SideSearch from './SideSearch';
 import CarList from './CarList';
+import Filter from './Filter';
 
 
 
@@ -12,7 +13,8 @@ export default class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cars: []
+            cars: [],
+            filteredCars: []
         }
     }
 
@@ -27,6 +29,20 @@ export default class Main extends Component {
         }
     }
 
+    filterCategory = (data) => {
+      const filteredData = this.state.cars.filter((car) => {
+        for(var category in data) {
+          if(data[category]) {
+            if(car.category === category)
+              return true;
+            else 
+              return false;
+          }
+        }
+      });
+      this.setState({filteredCars: filteredData});
+    }
+
   render() {
     return (
       <div className="grid-container-main">
@@ -35,7 +51,7 @@ export default class Main extends Component {
             <SideSearch />
           </div>
           <div className="flex-item-sidenav-filter">
-            Filter
+            <Filter filter={this.filterCategory}/>
           </div>
         </div>
         <div className="grid-item">
