@@ -7,11 +7,10 @@ package backend.api;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -21,13 +20,13 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("car")
 public class CarResource {
-    
+
     @Context
     private UriInfo context;
 
     //TODO: TEST STUFF REMOVE LATER//
     CarRemoteFetchFacade carRemote = new CarRemoteFetchFacade();
-    
+
     /**
      * Creates a new instance of CarResource
      */
@@ -36,6 +35,7 @@ public class CarResource {
 
     /**
      * Retrieves representation of an instance of backend.api.CarResource
+     *
      * @return an instance of java.lang.String
      */
     @GET
@@ -45,12 +45,10 @@ public class CarResource {
         return carRemote.getAll();
     }
 
-    /**
-     * PUT method for updating or creating an instance of CarResource
-     * @param content representation for the resource
-     */
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/regno/{regno}")
+    public String getThroughRegNo(@PathParam("regno")String regno) {
+        return carRemote.getByRegNo(regno);
     }
 }

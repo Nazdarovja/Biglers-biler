@@ -50,9 +50,9 @@ public class CarRemoteFetchFacade {
         } catch (IOException ex) {
             throw new NotFoundException("Unable to connect");
         }
-        String jsonStr = null;
-        if (scan.hasNext()) {
-            jsonStr = scan.nextLine();
+        String jsonStr = "";
+        while (scan.hasNext()) {
+            jsonStr += scan.nextLine();
         }
         scan.close();
         return jsonStr;
@@ -64,7 +64,7 @@ public class CarRemoteFetchFacade {
     }
 
     public String getByRegNo(String regNo) {
-        String URL = baseUrl +"?regno=" + regNo;
+        String URL = baseUrl + "?regno=" + regNo;
         return fetch(URL);
     }
 }

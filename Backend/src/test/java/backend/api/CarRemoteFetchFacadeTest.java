@@ -5,6 +5,8 @@
  */
 package backend.api;
 
+import backend.entities.CarList;
+import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -15,6 +17,7 @@ import static org.junit.Assert.*;
  */
 public class CarRemoteFetchFacadeTest {
     
+    Gson gson = new Gson();
     public CarRemoteFetchFacadeTest() {
     }
     
@@ -27,14 +30,16 @@ public class CarRemoteFetchFacadeTest {
         System.out.println("getAll");
         CarRemoteFetchFacade instance = new CarRemoteFetchFacade();
         String result = instance.getAll();
-        System.out.println(result.toString());
-        assertTrue(result.length() > 0);
+        assertTrue(result.length() > 1);
         
     }
 
-   // @Test
+    @Test
     public void testGetByRegNo() {
         System.out.println("getByRegNo");
+        CarRemoteFetchFacade instance = new CarRemoteFetchFacade();
+        String result = instance.getByRegNo("BAQ%201134");
+        assertTrue(result.length() > 1);
 
     }
     
