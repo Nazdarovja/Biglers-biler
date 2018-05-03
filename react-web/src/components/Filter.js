@@ -21,7 +21,6 @@ export default class Filter extends React.Component {
     }
 
   handleCategoryChange = async (event) => {
-    event.preventDefault();
     const name = event.target.name;
     const value = event.target.checked;
     let categories = Object.assign({}, this.state.categories);
@@ -35,7 +34,6 @@ export default class Filter extends React.Component {
   }
 
   handleCompanyChange = async (event) => {
-    event.preventDefault();
     const name = event.target.name;
     const value = event.target.checked;
     let companies = Object.assign({}, this.state.companies);
@@ -57,39 +55,38 @@ export default class Filter extends React.Component {
       return filters;
   }
 
-
     render() {
         return (
             <div>
             <form>
                 Categories
-                <label>Mini 
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Mini 
                     <input name="Mini" type="checkbox" checked={this.state.categories.Mini} onClick={this.handleCategoryChange} />
                 </label>
-                <label>Economy 
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Economy 
                     <input name="Economy" type="checkbox" checked={this.state.categories.Economy} onClick={this.handleCategoryChange} />
                 </label>
-                <label>Standard
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Standard
                     <input name="Standard" type="checkbox" checked={this.state.categories.Standard} onClick={this.handleCategoryChange} />
-                </label>
-                <label>Premium
+                </label >
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Premium
                     <input name="Premium" type="checkbox" checked={this.state.categories.Premium} onClick={this.handleCategoryChange} />
                 </label>
-                <label>Luxury 
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Luxury 
                     <input name="Luxury" type="checkbox" checked={this.state.categories.Luxury} onClick={this.handleCategoryChange} />
                 </label>
 
                Companies
-               <label>Biglers Biler
+               <label style={{fontSize: 15, display: "flex", padding: 5}}>Biglers Biler
                     <input name="BiglersBigler" type="checkbox" checked={this.state.companies.BiglersBigler} onClick={this.handleCompanyChange} />
                 </label>
-                <label>Gert 
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Gert 
                     <input name="Gert" type="checkbox" checked={this.state.companies.Gert} onClick={this.handleCompanyChange} />
                 </label>
-                <label>Elias
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Elias
                     <input name="Elias" type="checkbox" checked={this.state.companies.Elias} onClick={this.handleCompanyChange} />
                 </label>
-                <label>Devran
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Devran
                     <input name="Devran" type="checkbox" checked={this.state.companies.Devran} onClick={this.handleCompanyChange} />
                 </label>
             </form>
