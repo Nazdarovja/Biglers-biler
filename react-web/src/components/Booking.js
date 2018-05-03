@@ -19,6 +19,7 @@ export default class Booking extends React.Component {
         this.state = {
             car: {},
             date: year + '-' + month + '-' + day,
+            succes: false
         }
     }
 
@@ -36,7 +37,7 @@ export default class Booking extends React.Component {
         if (this.state.email === undefined || this.state.datestart === undefined || this.state.dateend === undefined) {
             alert("please specify an email, startdate and enddate")
         } else
-            this.setState({ car: this.props.car });
+            this.setState({ car: this.props.car, succes: true });
     }
 
     async componentDidMount() {
@@ -51,7 +52,7 @@ export default class Booking extends React.Component {
             <div>
 
                 {/* <p>{JSON.stringify(this.state)}</p> */}
-
+                {this.state.succes ? <p style={{backgroundColor: "green", color: "white"}}>SUCCES</p> : "" }
                 <p><img className="logo-mini" alt="" src={this.state.car.picture}></img></p>
                 {/* <p><img className="logo-mini" alt="" src={this.props.car.logo}></img></p> */}
                 <p>Company: {this.state.car.company}</p>
