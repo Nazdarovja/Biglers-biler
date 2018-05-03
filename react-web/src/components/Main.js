@@ -9,23 +9,32 @@ import CarList from './CarList';
 
 
 export default class Main extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            cars: []
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      cars: []
     }
+  }
 
-    componentDidMount(){
-        try{
-        facade.fetchData()
+  componentDidMount() {
+    try {
+      facade.fetchData()
         .then((res) => {
-            this.setState({cars: res})
+          this.setState({ cars: res })
         })
-        } catch (ex) {
-            console.log(ex)
-        }
+    } catch (ex) {
+      console.log(ex)
     }
+  }
+  sorting = () => {
+    if (this.state.sortAsc) {
+      //sort filterList from biglers component
+      this.setState({ sorting: false })
+    } else {
+      //same as above
+      this.setState({ sorting: true })
+    }
+  }
 
   render() {
     return (
@@ -40,7 +49,7 @@ export default class Main extends Component {
         </div>
         <div className="grid-item">
           <div className="flex-container-content">
-            <CarList cars={this.state.cars}/>
+            <CarList cars={this.state.cars} />
           </div>
         </div>
       </div>
