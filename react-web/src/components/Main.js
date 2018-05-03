@@ -6,6 +6,7 @@ import facade from '../Facade';
 import SideSearch from './SideSearch';
 import CarList from './CarList';
 import Filter from './Filter';
+import Sort from './Sort';
 
 
 
@@ -15,6 +16,7 @@ export default class Main extends Component {
     this.state = {
       cars: [],
       filteredCars: [],
+      sortAsc: true,
       error: undefined
     }
   }
@@ -102,6 +104,21 @@ export default class Main extends Component {
       this.setState({ filteredCars: this.state.cars });
   }
 
+  sortingSwitch = () => {
+    if (this.state.sortAsc) {
+      var list = this.state.filteredCars;
+      list.sort((a, b) => {
+        return a.priceperday - b.priceperday;
+      });
+      this.setState({ sortAsc: false, filteredCars: list });
+    } else {
+      var list = this.state.filteredCars;
+      list.sort((a, b) => {
+        return b.priceperday - a.priceperday;
+      });
+      this.setState({ sortAsc: true, filteredCars: list });
+    }
+  }
   render() {
     return (
       <div className="grid-container-main">
@@ -114,6 +131,9 @@ export default class Main extends Component {
           </div>
         </div>
         <div className="grid-item">
+          <div>
+            <Sort sortingSwitch={this.sortingSwitch} />
+          </div>
           <div className="flex-container-content">
             {this.error()}
           </div>
@@ -122,102 +142,3 @@ export default class Main extends Component {
     );
   }
 }
-
-// const cars = [
-
-//   {
-//   // "logo": "https://imgur.com/t0qqq7l",
-//   "logo":"https://i.imgur.com/t0qqq7l.png",
-//   "company": "Biglers Bigler",
-//   "category": "Mini",
-//   "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg",
-//   "make": "Mini Cooper",
-//   "model": "Mini Cooper S",
-//   "year": 2017,
-//   "regno": "BUF 9330",
-//   "seats": 5,
-//   "doors": 5,
-//   "gear": "Manual",
-//   "aircondition": false,
-//   "location": "Copenhagen City",
-//   "priceperday": 900,
-//   "reservations": [
-//       {
-//           "companyTag": "Biglers biler",
-//           "customerMail": "y@Cooper.dk",
-//           "fromDate": "01/01/2018",
-//           "toDate": "14/01/2018"
-//       },
-//       {
-//           "companyTag": "Biglers biler",
-//           "customerMail": "y@ss.dk",
-//           "fromDate": "15/02/2018",
-//           "toDate": "15/03/2018"
-//       }
-//   ]
-//   },
-
-//   {
-//       // "logo": "https://imgur.com/t0qqq7l",
-//       "logo":"https://i.imgur.com/t0qqq7l.png",
-//       "company": "Biglers Bigler",
-//       "category": "Mini",
-//       "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg",
-//       "make": "Mini Cooper",
-//       "model": "Mini Cooper S",
-//       "year": 2017,
-//       "regno": "BUF 9330",
-//       "seats": 5,
-//       "doors": 5,
-//       "gear": "Manual",
-//       "aircondition": false,
-//       "location": "Copenhagen City",
-//       "priceperday": 900,
-//       "reservations": [
-//           {
-//               "companyTag": "Biglers biler",
-//               "customerMail": "y@Cooper.dk",
-//               "fromDate": "01/01/2018",
-//               "toDate": "14/01/2018"
-//           },
-//           {
-//               "companyTag": "Biglers biler",
-//               "customerMail": "y@ss.dk",
-//               "fromDate": "15/02/2018",
-//               "toDate": "15/03/2018"
-//           }
-//       ]
-//       },
-
-//       {
-//           // "logo": "https://imgur.com/t0qqq7l",
-//           "logo":"https://i.imgur.com/t0qqq7l.png",
-//           "company": "Biglers Bigler",
-//           "category": "Mini",
-//           "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg",
-//           "make": "Mini Cooper",
-//           "model": "Mini Cooper S",
-//           "year": 2017,
-//           "regno": "BUF 9330",
-//           "seats": 5,
-//           "doors": 5,
-//           "gear": "Manual",
-//           "aircondition": false,
-//           "location": "Copenhagen City",
-//           "priceperday": 900,
-//           "reservations": [
-//               {
-//                   "companyTag": "Biglers biler",
-//                   "customerMail": "y@Cooper.dk",
-//                   "fromDate": "01/01/2018",
-//                   "toDate": "14/01/2018"
-//               },
-//               {
-//                   "companyTag": "Biglers biler",
-//                   "customerMail": "y@ss.dk",
-//                   "fromDate": "15/02/2018",
-//                   "toDate": "15/03/2018"
-//               }
-//           ]
-//           }
-// ];
