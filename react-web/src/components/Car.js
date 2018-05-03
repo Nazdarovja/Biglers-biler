@@ -50,7 +50,7 @@ export default class Car extends Component {
         <p className="Car-price">Price per day: {this.props.car.priceperday}</p>
         {/* <button className="Car-button" onClick={((e) => this.selectCar(this.props.car))} >Book Car [NYI]</button> */}
         {/* <button className="Car-button" onClick={((e) => this.test(this.props.car))} >Book Car [NYI]</button> */}
-        <Link to={`/Booking/${JSON.stringify(this.props.car)}`}>Car?</Link>
+        <Link to={`/Booking/${this.props.car.regno}`}>Order Car</Link>
       </div>
     )
   }

@@ -1,80 +1,89 @@
 import React from 'react';
 import '../styles/Car.css';
+import facade from '../Facade';
 
 export default class Booking extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
-        this.car = props.match.params.car;
+        this.regno = props.match.params.car;
 
         this.book = this.book.bind(this);
 
         const now = new Date();
         const day = ('0' + now.getDate());
         const month = ('0' + now.getMonth());
-        const year =  now.getFullYear();
+        const year = now.getFullYear();
 
         this.state = {
+            car: {},
             date: year + '-' + month + '-' + day,
         }
     }
 
     handleChange = (event) => {
-        this.setState({[event.target.id]: event.target.value});
+        this.setState({ [event.target.id]: event.target.value });
     }
 
     handleSubmit(event) {
         alert('submitted: ' + this.state.value);
         event.preventDefault();
-      }
+    }
 
-    book(){
+    book() {
         console.log(this.state)
-        if(this.state.email === undefined || this.state.datestart === undefined||this.state.dateend === undefined){
+        if (this.state.email === undefined || this.state.datestart === undefined || this.state.dateend === undefined) {
             alert("please specify an email, startdate and enddate")
         } else
-        this.setState({car: this.props.car});
+            this.setState({ car: this.props.car });
+    }
+
+    async componentDidMount() {
+        const car = await facade.fetchSpecCar(this.regno);
+        console.log(car);
+        this.setState({ car: car[0] });
     }
 
     render() {
-        console.log(JSON.stringify(this.car));
+        // console.log(JSON.stringify(this.props.match));
         return (
             <div>
-                <p><img className="logo-mini" alt="" src={this.car.picture}></img></p>
+
+                {/* <p>{JSON.stringify(this.state)}</p> */}
+
+                <p><img className="logo-mini" alt="" src={this.state.car.picture}></img></p>
                 {/* <p><img className="logo-mini" alt="" src={this.props.car.logo}></img></p> */}
-                <p>Company: {this.car.company}</p>
-                <p>category: {this.car.category}</p>
-                <p>make: {this.car.make}</p>
-                <p>model: {this.car.model}</p>
-                <p>year: {this.car.year}</p>
-                <p>regno: {this.car.regno}</p>
-                <p>seats: {this.car.seats}</p>
-                <p>doors: {this.car.doors}</p>
-                <p>gear: {this.car.gear}</p>
-                <p>aircondition: {this.car.aircondition}</p>
-                <p>location: {this.car.location}</p>
-                <p>priceperday: {this.car.priceperday}</p>
+                <p>Company: {this.state.car.company}</p>
+                <p>category: {this.state.car.category}</p>
+                <p>make: {this.state.car.make}</p>
+                <p>model: {this.state.car.model}</p>
+                <p>year: {this.state.car.year}</p>
+                <p>regno: {this.state.car.regno}</p>
+                <p>seats: {this.state.car.seats}</p>
+                <p>doors: {this.state.car.doors}</p>
+                <p>gear: {this.state.car.gear}</p>
+                <p>aircondition: {this.state.car.aircondition}</p>
+                <p>location: {this.state.car.location}</p>
+                <p>priceperday: {this.state.car.priceperday}</p>
 
-                        {this.state.car ?
+                {this.state.car ?
+                    <span>
+                        <h2>Book car</h2>
+                        <p>Your email: <input type="text" name="email" id="email" onChange={this.handleChange} /></p>
+                        <p>Start date: <input type="date" name="datestart" id="datestart" value={this.state.date1} onChange={this.handleChange} /></p>
+                        <p>End date: <input type="date" name="dateend" id="dateend" value={this.state.date2} onChange={this.handleChange} /></p>
+                        <button type="button" onClick={this.book} className="confirm-booking" >Accept Booking [not yet implemented]</button>
+                    </span>
+                    :
 
-                        <span>
-                        <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>   
+                    <span>
+                        <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>
                         <p>email: {this.state.email}</p>
                         <p>Start date: {this.state.datestart}</p>
                         <p>End date: {this.state.dateend}</p>
-                        </span>
-                    
-                        : 
-           
-                <span>
-                <h2>Book car</h2>
-                <p>Your email: <input type="text" name="email" id="email" onChange={this.handleChange}/></p>
-                <p>Start date: <input type="date" name="datestart" id="datestart" value={this.state.date1} onChange={this.handleChange}/></p>
-                <p>End date: <input type="date" name="dateend" id="dateend" value={this.state.date2} onChange={this.handleChange}/></p>
-                <button type="button" onClick={this.book} className="confirm-booking" >Accept Booking [not yet implemented]</button>
-                </span>
-            }
+                    </span>
+                }
 
             </div>
 

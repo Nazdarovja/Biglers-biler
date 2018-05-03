@@ -17,6 +17,11 @@ class Facade {
     return fetch(URL, options).then(handleHttpErrors);
   }
 
+  fetchSpecCar = (regno) => {
+    const options = this.makeFetchOptions("GET");
+    return fetch(URL+"/regno/"+regno, options).then(handleHttpErrors);
+  }
+
   makeFetchOptions = (type, b) => {
     let headers = {
       'Origin': '',
@@ -30,6 +35,9 @@ class Facade {
       body: JSON.stringify(b)
     }
   }
+
+
+
 }
 
 const facade = new Facade();
