@@ -12,17 +12,33 @@ export default class Main extends Component {
     this.state = {
       cars: [],
       filteredCars: [],
+      facade: facade,
       sortAsc: true,
       error: undefined
     }
+    this.findCars = this.findCars.bind(this);
   }
 
+  // componentDidMount() {
+  //   facade.fetchData()
+  //     .then((res) => {
+  //       this.setState({})
+  //     })
+  // }
+
   componentDidMount() {
-    facade.fetchData()
+    this.findCars();
+  }
+
+  findCars(cb) {
+    this.state.facade.fetchData()
       .then((res) => {
-        this.setState({ cars: res, error: undefined, filteredCars: res })
+        let cars
+        (cb) ? cars = cb(res) : cars = res;
+        this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
   }
+
 
   error() {
     if (this.state.error === undefined) {
@@ -35,6 +51,10 @@ export default class Main extends Component {
       )
     }
   }
+
+
+
+
 
   filter = (categoryFilters, companyFilters) => {
     if (categoryFilters.length >= 1 && companyFilters.length >= 1) {
@@ -58,12 +78,13 @@ export default class Main extends Component {
       }
       return false;
     });
-
     if (filteredData.length >= 1)
       this.setState({ filteredCars: filteredData });
     else
       this.setState({ filteredCars: this.state.cars });
   }
+
+
 
   filterCategory = (categoryFilters) => {
     const filteredData = this.state.cars.filter((car) => {
@@ -116,12 +137,14 @@ export default class Main extends Component {
     }
   }
 
+
+
   render() {
     return (
       <div className="grid-container-main">
         <div className="grid-item flex-container-sidenav">
           <div className="flex-item-sidenav-search">
-            <SideSearch />
+            <SideSearch fetchAll={this.findCars} />
           </div>
           <div className="flex-item-sidenav-filter">
             Filter
