@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import '../styles/Car.css';
 import CarInfo from './CarInfo';
+import Booking from './Booking';
+import App from './App';
+import Main from './Main';
+import { Link } from 'react-router-dom'
 
 export default class Car extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showComponent: false,
+      showComponent: false, car: undefined
     }
     this._onButtonClick = this._onButtonClick.bind(this);
   }
@@ -25,6 +29,12 @@ export default class Car extends Component {
     }
   }
 
+  test(data) {
+    console.log("te");
+    this.setState({ car: data })
+  }
+
+
   render() {
 
     return (
@@ -38,13 +48,12 @@ export default class Car extends Component {
           <CarInfo car={this.props.car} /> : null
         }
         <p className="Car-price">Price per day: {this.props.car.priceperday}</p>
-        <button className="Car-button">Book Car [NYI]</button>
-
-
+        {/* <button className="Car-button" onClick={((e) => this.selectCar(this.props.car))} >Book Car [NYI]</button> */}
+        {/* <button className="Car-button" onClick={((e) => this.test(this.props.car))} >Book Car [NYI]</button> */}
+        <Link to={`/Booking/${this.props.car.regno}`}>Order Car</Link>
       </div>
-    );
+    )
   }
 }
-
 
 

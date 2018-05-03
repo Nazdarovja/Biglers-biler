@@ -4,10 +4,7 @@ const URL = "http://localhost:8084/Backend/api/car";
 
 
 function handleHttpErrors(res) {
-  console.log(JSON.stringify(res))
-  console.log(res.ok)
   if (!res.ok) {
-    console.log("error");
     throw { message: res.statusText, status: res.status };
   }
   return res.json();
@@ -18,6 +15,11 @@ class Facade {
   fetchData = () => {
     const options = this.makeFetchOptions("GET");
     return fetch(URL, options).then(handleHttpErrors);
+  }
+
+  fetchSpecCar = (regno) => {
+    const options = this.makeFetchOptions("GET");
+    return fetch(URL+"/regno/"+regno, options).then(handleHttpErrors);
   }
 
   makeFetchOptions = (type, b) => {
@@ -33,6 +35,9 @@ class Facade {
       body: JSON.stringify(b)
     }
   }
+
+
+
 }
 
 const facade = new Facade();

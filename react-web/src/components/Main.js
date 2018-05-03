@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-
 import facade from '../Facade';
-
 import SideSearch from './SideSearch';
 import CarList from './CarList';
 import Filter from './Filter';
 import Sort from './Sort';
-
-
 
 export default class Main extends Component {
   constructor(props) {
@@ -119,12 +115,16 @@ export default class Main extends Component {
       this.setState({ sortAsc: true, filteredCars: list });
     }
   }
+
   render() {
     return (
       <div className="grid-container-main">
         <div className="grid-item flex-container-sidenav">
           <div className="flex-item-sidenav-search">
             <SideSearch />
+          </div>
+          <div className="flex-item-sidenav-filter">
+            Filter
           </div>
           <div className="flex-item-sidenav-filter">
             <Filter filter={this.filter} />
