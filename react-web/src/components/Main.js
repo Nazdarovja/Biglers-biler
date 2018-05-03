@@ -22,25 +22,35 @@ export default class Main extends Component {
         try{
         facade.fetchData()
         .then((res) => {
-            this.setState({cars: res})
+            this.setState({cars: res,
+                          filteredCars: res})
         })
         } catch (ex) {
             console.log(ex)
         }
     }
 
-    filterCategory = (data) => {
+    filterCategory = (data, filterCategory, filterCompany) => {
       const filteredData = this.state.cars.filter((car) => {
-        for(var category in data) {
-          if(data[category]) {
+        for(var category in data.categories) {
+          if(data.categories[category] === true) {
             if(car.category === category)
               return true;
-            else 
-              return false;
           }
         }
+        for(var company in data.companies) {
+          if(data.companies[company] === true) {
+            if(car.company.replace(" ", "") === company)
+              return true;
+          }
+        }
+        return false;
       });
-      this.setState({filteredCars: filteredData});
+      console.log(filteredData.length);
+      if(filteredData.length >= 1)
+        this.setState({filteredCars: filteredData});
+      else 
+        this.setState({filteredCars: this.state.cars});
     }
 
   render() {
@@ -56,7 +66,7 @@ export default class Main extends Component {
         </div>
         <div className="grid-item">
           <div className="flex-container-content">
-            <CarList cars={this.state.cars}/>
+            <CarList cars={this.state.filteredCars}/>
           </div>
         </div>
       </div>

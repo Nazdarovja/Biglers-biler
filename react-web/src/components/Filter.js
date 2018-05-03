@@ -4,41 +4,96 @@ export default class Filter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Mini: false,
-            Economy: false,
-            Standard: false,
-            Premium: false,
-            Luxury: false
+            categories: {
+                Mini: false,
+                Economy: false,
+                Standard: false,
+                Premium: false,
+                Luxury: false
+            },
+            companies: {
+                BiglersBigler: false,
+                Gert: false,
+                Elias: false,
+                Devran: false
+            }
         }
     }
 
-  handleChange = (event) => {
+  handleCategoryChange = async (event) => {
+    event.preventDefault();
     const name = event.target.name;
     const value = event.target.checked;
-    this.setState({name: value});
-    this.props.filter(this.state);
+    let categories = Object.assign({}, this.state.categories);
+    categories[name] = value;
+    await this.setState({categories});
+
+    const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
+    const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
+
+    this.props.filter(this.state, filterCategory, filterCompany);
+  }
+
+  handleCompanyChange = async (event) => {
+    event.preventDefault();
+    const name = event.target.name;
+    const value = event.target.checked;
+    let companies = Object.assign({}, this.state.companies);
+    companies[name] = value;
+    await this.setState({companies});
+
+    const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
+    const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
+
+    this.props.filter(this.state, filterCategory, filterCompany);
+  }
+
+  checkIfFilterShouldHappen = (data) => {
+      for(let item in data) {
+          if(item)
+            return true;
+      }
+      return false;
   }
 
 
     render() {
         return (
+            <div>
             <form>
+                Categories
                 <label>Mini 
-                    <input name="mini" type="checkbox" checked={this.state.mini} onChange={this.handleChange} />
+                    <input name="Mini" type="checkbox" checked={this.state.categories.Mini} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Economy 
-                    <input name="economy" type="checkbox" checked={this.state.economy} onChange={this.handleChange} />
+                    <input name="Economy" type="checkbox" checked={this.state.categories.Economy} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Standard
-                    <input name="standard" type="checkbox" checked={this.state.standard} onChange={this.handleChange} />
+                    <input name="Standard" type="checkbox" checked={this.state.categories.Standard} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Premium
-                    <input name="premium" type="checkbox" checked={this.state.premium} onChange={this.handleChange} />
+                    <input name="Premium" type="checkbox" checked={this.state.categories.Premium} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Luxury 
-                    <input name="luxury" type="checkbox" checked={this.state.luxury} onChange={this.handleChange} />
+                    <input name="Luxury" type="checkbox" checked={this.state.categories.Luxury} onClick={this.handleCategoryChange} />
+                </label>
+
+               Companies
+               <label>Biglers Biler
+                    <input name="BiglersBigler" type="checkbox" checked={this.state.companies.BiglersBigler} onClick={this.handleCompanyChange} />
+                </label>
+                <label>Gert 
+                    <input name="Gert" type="checkbox" checked={this.state.companies.Gert} onClick={this.handleCompanyChange} />
+                </label>
+                <label>Elias
+                    <input name="Elias" type="checkbox" checked={this.state.companies.Elias} onClick={this.handleCompanyChange} />
+                </label>
+                <label>Devran
+                    <input name="Devran" type="checkbox" checked={this.state.companies.Devran} onClick={this.handleCompanyChange} />
                 </label>
             </form>
+            <p style={{fontSize: 10}}>{JSON.stringify(this.state)}</p>
+            </div>
 
         );
     }
