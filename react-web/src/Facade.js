@@ -4,10 +4,7 @@ const URL = "http://localhost:8084/Backend/api/car";
 
 
 function handleHttpErrors(res) {
-  console.log(JSON.stringify(res))
-  console.log(res.ok)
   if (!res.ok) {
-    console.log("error");
     throw { message: res.statusText, status: res.status };
   }
   return res.json();

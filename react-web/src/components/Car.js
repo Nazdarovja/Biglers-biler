@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import '../styles/Car.css';
 import CarInfo from './CarInfo';
-
 export default class Car extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showComponent: false,
+      showComponent: false, car: undefined
     }
     this._onButtonClick = this._onButtonClick.bind(this);
   }
@@ -25,9 +24,12 @@ export default class Car extends Component {
     }
   }
 
-  handleClick = (e, data) => {
-    // console.log(data);
-     <Booking car={data} /> 
+  selectCar(data) {
+    console.log(data)
+    console.log(this.state.car)
+    this.setState({
+      car: data
+    })
   }
 
   render() {
@@ -43,13 +45,11 @@ export default class Car extends Component {
           <CarInfo car={this.props.car} /> : null
         }
         <p className="Car-price">Price per day: {this.props.car.priceperday}</p>
-        <button className="Car-button" onClick={((e) => this.handleClick(e, this.props.car))} >Book Car [NYI]</button>
-
+        <button className="Car-button" onClick={((e) => this.selectCar(this.props.car))} >Book Car [NYI]</button>
 
       </div>
     );
   }
 }
-
 
 
