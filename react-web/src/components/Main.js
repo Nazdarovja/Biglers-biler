@@ -30,23 +30,64 @@ export default class Main extends Component {
         }
     }
 
-    filterCategory = (data, filterCategory, filterCompany) => {
+    filter = (categoryFilters, companyFilters) => {
+      if(categoryFilters.length >= 1 && companyFilters.length >= 1) {
+        this.filterBothCategoryAndCompany(categoryFilters, companyFilters);
+      }
+      else if (categoryFilters.length >= 1) {
+        this.filterCategory(categoryFilters);
+      }
+      else {
+        this.filterCompany(companyFilters);
+      }
+
+    }
+
+    filterCompany = (companyFilters) => {
       const filteredData = this.state.cars.filter((car) => {
-        for(var category in data.categories) {
-          if(data.categories[category] === true) {
-            if(car.category === category)
-              return true;
+        for(var i = 0; i < companyFilters.length; i++) {
+          if(car.company.replace(" ", "") === companyFilters[i]) {
+            return true;
           }
-        }
-        for(var company in data.companies) {
-          if(data.companies[company] === true) {
-            if(car.company.replace(" ", "") === company)
+      }
+        return false;
+      }); 
+
+      if(filteredData.length >= 1)
+        this.setState({filteredCars: filteredData});
+      else 
+        this.setState({filteredCars: this.state.cars});
+    }
+
+    filterCategory = (categoryFilters) => {
+      const filteredData = this.state.cars.filter((car) => {
+        for(var i = 0; i < categoryFilters.length; i++) {
+            if(car.category === categoryFilters[i])
               return true;
-          }
         }
         return false;
+      }); 
+
+      if(filteredData.length >= 1)
+        this.setState({filteredCars: filteredData});
+      else 
+        this.setState({filteredCars: this.state.cars});
+    }
+
+    filterBothCategoryAndCompany = (categoryFilters, companyFilters) => {
+      const filteredData = this.state.cars.filter((car) => {
+        var cat = false;
+        var com = false;
+        for(var i = 0; i < categoryFilters.length; i++) {
+          if(car.category === categoryFilters[i])
+            cat = true;
+        }
+      for(var j = 0; j < companyFilters.length; j++) {
+        if(car.company.replace(" ", "") === companyFilters[j])
+          com = true;
+      }
+        return cat && com ? true : false;
       });
-      console.log(filteredData.length);
       if(filteredData.length >= 1)
         this.setState({filteredCars: filteredData});
       else 
@@ -61,7 +102,7 @@ export default class Main extends Component {
             <SideSearch />
           </div>
           <div className="flex-item-sidenav-filter">
-            <Filter filter={this.filterCategory}/>
+            <Filter filter={this.filter}/>
           </div>
         </div>
         <div className="grid-item">

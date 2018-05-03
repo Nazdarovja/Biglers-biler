@@ -31,7 +31,7 @@ export default class Filter extends React.Component {
     const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
     const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
 
-    this.props.filter(this.state, filterCategory, filterCompany);
+    this.props.filter(filterCategory, filterCompany);
   }
 
   handleCompanyChange = async (event) => {
@@ -42,18 +42,19 @@ export default class Filter extends React.Component {
     companies[name] = value;
     await this.setState({companies});
 
-    const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
-    const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
+    const categoryFilters = this.checkIfFilterShouldHappen(this.state.categories);
+    const companyFilters = this.checkIfFilterShouldHappen(this.state.companies);
 
-    this.props.filter(this.state, filterCategory, filterCompany);
+    this.props.filter(categoryFilters, companyFilters);
   }
 
   checkIfFilterShouldHappen = (data) => {
+      let filters = [];
       for(let item in data) {
-          if(item)
-            return true;
+          if(data[item] === true) 
+            filters.push(item);
       }
-      return false;
+      return filters;
   }
 
 
