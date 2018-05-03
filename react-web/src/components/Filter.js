@@ -20,13 +20,12 @@ export default class Filter extends React.Component {
         }
     }
 
-  handleCategoryChange = async (event) => {
-    event.preventDefault();
+  handleCategoryChange = (event) => {
     const name = event.target.name;
     const value = event.target.checked;
     let categories = Object.assign({}, this.state.categories);
     categories[name] = value;
-    await this.setState({categories});
+    this.setState({categories});
 
     const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
     const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
@@ -34,13 +33,12 @@ export default class Filter extends React.Component {
     this.props.filter(filterCategory, filterCompany);
   }
 
-  handleCompanyChange = async (event) => {
-    event.preventDefault();
+  handleCompanyChange = (event) => {
     const name = event.target.name;
     const value = event.target.checked;
     let companies = Object.assign({}, this.state.companies);
     companies[name] = value;
-    await this.setState({companies});
+    this.setState({companies});
 
     const categoryFilters = this.checkIfFilterShouldHappen(this.state.categories);
     const companyFilters = this.checkIfFilterShouldHappen(this.state.companies);
@@ -64,19 +62,19 @@ export default class Filter extends React.Component {
             <form>
                 Categories
                 <label>Mini 
-                    <input name="Mini" type="checkbox" checked={this.state.categories.Mini} onClick={this.handleCategoryChange} />
+                    <input name="Mini" type="checkbox" checked={this.state.companies.Mini} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Economy 
-                    <input name="Economy" type="checkbox" checked={this.state.categories.Economy} onClick={this.handleCategoryChange} />
+                    <input name="Economy" type="checkbox" checked={this.state.companies.Economy} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Standard
-                    <input name="Standard" type="checkbox" checked={this.state.categories.Standard} onClick={this.handleCategoryChange} />
+                    <input name="Standard" type="checkbox" checked={this.state.companies.Standard} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Premium
-                    <input name="Premium" type="checkbox" checked={this.state.categories.Premium} onClick={this.handleCategoryChange} />
+                    <input name="Premium" type="checkbox" checked={this.state.companies.Premium} onClick={this.handleCategoryChange} />
                 </label>
                 <label>Luxury 
-                    <input name="Luxury" type="checkbox" checked={this.state.categories.Luxury} onClick={this.handleCategoryChange} />
+                    <input name="Luxury" type="checkbox" checked={this.state.companies.Luxury} onClick={this.handleCategoryChange} />
                 </label>
 
                Companies
