@@ -6,6 +6,8 @@ export default class Booking extends React.Component {
     constructor(props){
         super(props)
 
+        this.car = props.match.params.car;
+
         this.book = this.book.bind(this);
 
         const now = new Date();
@@ -36,22 +38,23 @@ export default class Booking extends React.Component {
     }
 
     render() {
+        console.log(JSON.stringify(this.car));
         return (
             <div>
-                <p><img className="logo-mini" alt="" src={this.props.car.picture}></img></p>
+                <p><img className="logo-mini" alt="" src={this.car.picture}></img></p>
                 {/* <p><img className="logo-mini" alt="" src={this.props.car.logo}></img></p> */}
-                <p>Company: {this.props.car.company}</p>
-                <p>category: {this.props.car.category}</p>
-                <p>make: {this.props.car.make}</p>
-                <p>model: {this.props.car.model}</p>
-                <p>year: {this.props.car.year}</p>
-                <p>regno: {this.props.car.regno}</p>
-                <p>seats: {this.props.car.seats}</p>
-                <p>doors: {this.props.car.doors}</p>
-                <p>gear: {this.props.car.gear}</p>
-                <p>aircondition: {this.props.car.aircondition.toString()}</p>
-                <p>location: {this.props.car.location}</p>
-                <p>priceperday: {this.props.car.priceperday}</p>
+                <p>Company: {this.car.company}</p>
+                <p>category: {this.car.category}</p>
+                <p>make: {this.car.make}</p>
+                <p>model: {this.car.model}</p>
+                <p>year: {this.car.year}</p>
+                <p>regno: {this.car.regno}</p>
+                <p>seats: {this.car.seats}</p>
+                <p>doors: {this.car.doors}</p>
+                <p>gear: {this.car.gear}</p>
+                <p>aircondition: {this.car.aircondition}</p>
+                <p>location: {this.car.location}</p>
+                <p>priceperday: {this.car.priceperday}</p>
 
                         {this.state.car ?
 

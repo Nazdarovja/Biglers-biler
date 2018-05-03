@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import Main from './Main';
 import Booking from './Booking';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
 
@@ -11,9 +12,13 @@ class App extends Component {
 
     render() {
 
-
         return (
-            <Main />
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Main} />
+                    <Route path="/Booking/:car" component={Booking}/>   
+                </Switch>
+            </Router>
         );
     }
 }
