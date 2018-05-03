@@ -31,16 +31,20 @@ export default class SideSearch extends Component {
         let isMatch = true;
         if (this.state.fromdate.length > 0 && this.state.todate.length > 0) {
             const prevenEvents = car.reservations.filter(reservation => {
+                let clear = true;
+
                 let resFromDate = new Date(reservation.fromDate);
                 let resToDate = new Date(reservation.fromDate);
                 let seaFromDate = new Date(this.state.fromdate);
                 let seaToDate = new Date(this.state.todate);
 
-                if(seaFromDate > resFromDate && seaFromDate < resToDate) return true;
-                if(seaToDate > resFromDate && seaToDate < resToDate) return true;
-                if(seaFromDate < resFromDate && seaToDate > resToDate) return true;
-            })
+                if(seaFromDate > resFromDate && seaFromDate < resToDate) clear = false;
+                if(seaToDate > resFromDate && seaToDate < resToDate) clear = false;
+                if(seaFromDate < resFromDate && seaToDate > resToDate) clear = false;
 
+                return clear;
+            })
+            console.log(prevenEvents.length)
             if(prevenEvents.length > 0) isMatch = false; 
         }
         return isMatch;
