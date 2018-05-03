@@ -62,16 +62,13 @@ body {
 
 .flex-item-sidenav-search {
   width: 100%;
-  height: 250px;
   background-color: green;
-  overflow-y: auto;
 }
 
 .flex-item-sidenav-filter {
   width: 100%;
   height: 300px;
   background-color: gold;
-  overflow-y: auto;
 }
 
 .aligner-item {

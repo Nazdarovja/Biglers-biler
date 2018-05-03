@@ -12,19 +12,27 @@ export default class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cars: []
+            cars: [],
+            facade: facade
         }
+        this.findCars = this.findCars.bind(this);
     }
 
-    componentDidMount(){
-        try{
-        facade.fetchData()
+    findCars(cb){
+      try{
+        this.state.facade.fetchData()
         .then((res) => {
-            this.setState({cars: res})
+            let cars
+            (cb) ? cars = cb(res) : cars = res;
+            this.setState({cars: cars})
         })
         } catch (ex) {
             console.log(ex)
         }
+    }
+
+    componentDidMount(){
+       this.findCars();
     }
 
   render() {
@@ -32,7 +40,7 @@ export default class Main extends Component {
       <div className="grid-container-main">
         <div className="grid-item flex-container-sidenav">
           <div className="flex-item-sidenav-search">
-            <SideSearch />
+            <SideSearch fetchAll={this.findCars}/>
           </div>
           <div className="flex-item-sidenav-filter">
             Filter
