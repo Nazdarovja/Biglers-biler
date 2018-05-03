@@ -5,6 +5,7 @@ import facade from '../Facade';
 
 import SideSearch from './SideSearch';
 import CarList from './CarList';
+import Filter from './Filter';
 
 
 
@@ -13,6 +14,7 @@ export default class Main extends Component {
     super(props);
     this.state = {
       cars: [],
+      filteredCars: [],
       error: undefined
     }
   }
@@ -20,20 +22,84 @@ export default class Main extends Component {
   componentDidMount() {
     facade.fetchData()
       .then((res) => {
-        this.setState({ cars: res, error: undefined })
+        this.setState({ cars: res, error: undefined, filteredCars: res })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
   }
 
   error() {
     if (this.state.error === undefined) {
       return (
-        <CarList cars={this.state.cars} />
+        <CarList cars={this.state.filteredCars} />
       )
     } else {
       return (
         <p className="alert alert-warning">{this.state.error}</p>
       )
     }
+  }
+
+  filter = (categoryFilters, companyFilters) => {
+    if (categoryFilters.length >= 1 && companyFilters.length >= 1) {
+      this.filterBothCategoryAndCompany(categoryFilters, companyFilters);
+    }
+    else if (categoryFilters.length >= 1) {
+      this.filterCategory(categoryFilters);
+    }
+    else {
+      this.filterCompany(companyFilters);
+    }
+
+  }
+
+  filterCompany = (companyFilters) => {
+    const filteredData = this.state.cars.filter((car) => {
+      for (var i = 0; i < companyFilters.length; i++) {
+        if (car.company.replace(" ", "") === companyFilters[i]) {
+          return true;
+        }
+      }
+      return false;
+    });
+
+    if (filteredData.length >= 1)
+      this.setState({ filteredCars: filteredData });
+    else
+      this.setState({ filteredCars: this.state.cars });
+  }
+
+  filterCategory = (categoryFilters) => {
+    const filteredData = this.state.cars.filter((car) => {
+      for (var i = 0; i < categoryFilters.length; i++) {
+        if (car.category === categoryFilters[i])
+          return true;
+      }
+      return false;
+    });
+
+    if (filteredData.length >= 1)
+      this.setState({ filteredCars: filteredData });
+    else
+      this.setState({ filteredCars: this.state.cars });
+  }
+
+  filterBothCategoryAndCompany = (categoryFilters, companyFilters) => {
+    const filteredData = this.state.cars.filter((car) => {
+      var cat = false;
+      var com = false;
+      for (var i = 0; i < categoryFilters.length; i++) {
+        if (car.category === categoryFilters[i])
+          cat = true;
+      }
+      for (var j = 0; j < companyFilters.length; j++) {
+        if (car.company.replace(" ", "") === companyFilters[j])
+          com = true;
+      }
+      return cat && com ? true : false;
+    });
+    if (filteredData.length >= 1)
+      this.setState({ filteredCars: filteredData });
+    else
+      this.setState({ filteredCars: this.state.cars });
   }
 
   render() {
@@ -44,17 +110,12 @@ export default class Main extends Component {
             <SideSearch />
           </div>
           <div className="flex-item-sidenav-filter">
-            Filter
+            <Filter filter={this.filter} />
           </div>
         </div>
         <div className="grid-item">
           <div className="flex-container-content">
-
-
             {this.error()}
-
-
-            {/* <CarList cars={this.state.cars}/> */}
           </div>
         </div>
       </div>
