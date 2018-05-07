@@ -117,4 +117,21 @@
 ### 07/05/18 (mandag, Sprint 2)
 #### Tanker inden Sprint Planning møde
 * Outsorcing har først deadline torsdag. Evt. mulighed for at arbejde med den over weekenden, da der først er Sprint Review mandag, i næste uge. 
-* 
+* Stanislav overtager, Log fører rollen, og Alexander overtager SCRUM Master rollen.
+* Lidt tvivl om hvordan en userstory om reformatering og tilpasning af afsluttet userstory, skal håndteres med how to demo, og who/what/why userstory beskrivelse
+
+
+#### Sprint planning møde
+* Grov estimater, skal indegå i planlægningen, mht. velocity af et SCRUM team (hvor mange af de grovestimerede point kan vi nå på et sprint)
+* Vi får aftalt, at vi får lov til at vælge lidt gruppemæssig om vi vil fortsætte med at afslutte vores web, eller om vi vil igang med at lave app og senere vende tilbage til web.
+* God feedback at få ind i rapporten til processen mht. at nogen af userstories ikke kan klares på givne tidspunkt, da det er outsourcet. (presset ud i fremtiden af SCRUM Master)
+* PO påpeger manglende startside til app delen af projektet, som teamet har forbiset.
+* De userstories som munder ud i allerede afsluttede userstories, kan være lidt "WishyWashy" da der altid dukker nogen ting op i processen, og disse hånderes med nogen acceptence test ud fra det som PO synes der mangler i forrige userstories, som giver lidt mindre sigende userstories, men måske nogen mere konkrete Acceptence tests som beskriver de fejl/ mangler der skal laves om på.
+
+#### Sprint planning reflection
+* Vi burde have lavet grov estimatet, i samme format som det endelige estimat da det havde gjort arbejded nemmere med estimering siden hen.
+* Vi vil anvende poker-planning igen til at estimere vores endelige estimater, som vi følte fungerede godt forrige gang, og ledte til gode diskussioner.
+
+#### Estimering
+* Vi estimerer alle tingene lidt højere denne omgang, da vi sidst ikke helt nåede at få alle design og fejl håndtering på plads
+ 
