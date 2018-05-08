@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, CheckBox} from 'react-native';
+import {View, Text} from 'react-native';
+import CheckBox from 'react-native-checkbox';
 
 export default class Filter extends React.Component {
     constructor(props) {
@@ -21,8 +22,9 @@ export default class Filter extends React.Component {
         }
     }
 
-  handleCategoryChange = async (e) => {
+  handleCategoryChange = async (e, event) => {
     console.log(e);
+    console.log(event);
     const name = e.target.name;
     const value = e.target.checked;
     let categories = Object.assign({}, this.state.categories);
@@ -61,7 +63,7 @@ export default class Filter extends React.Component {
         return (
             <View>
                     <Text>Categories</Text>
-                    <CheckBox style={{width: 20, height: 20}} value={true}/>
+                    <CheckBox style={{width: 20, height: 20}} value={this.state.categories.Mini} onChange={this.handleCategoryChange}/>
                     {/*<input name="Economy" type="checkbox" checked={this.state.categories.Economy} onClick={this.handleCategoryChange} />
                     <input name="Standard" type="checkbox" checked={this.state.categories.Standard} onClick={this.handleCategoryChange} />
                     <input name="Premium" type="checkbox" checked={this.state.categories.Premium} onClick={this.handleCategoryChange} />
