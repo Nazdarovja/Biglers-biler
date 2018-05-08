@@ -1,5 +1,6 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
+  /*border: 1px solid red;*/
 }
 
 html {
@@ -31,6 +32,14 @@ body {
   grid-template-columns: 300px calc(100% - 300px);
   background-color: rgb(255, 255, 255);
   height: 100%;
+}
+
+.grid-container-start {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
   
   .grid-item {
@@ -145,4 +154,35 @@ button:hover {
   margin: 5px 5px 20px 5px;
   padding: 10px;
   font-size: 14px;
+}
+
+
+.start-search-container {
+  display: flex;
+  margin: 30px;
+  padding: 20px;
+  background-color: #001A28;
+}
+
+.search-field-container {
+  padding-top: 40px;
+  margin-left: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-field-container input[type=date] {
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+.search-field-container select {
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+.search-field-container button {
+  width: 75%;
+  margin-bottom: 10px;
 }

@@ -31,7 +31,7 @@ export default class Main extends Component {
 
   componentDidMount() {
     //debug dev stuffs
-    this.findCars();
+    // this.findCars();
     /////
   }
 

@@ -16,7 +16,7 @@ class App extends Component {
         return (
             <div className="grid-container-frame">
                 <div className="frame-grid-item">
-                    topper
+                
                 </div>
                 <div className="frame-grid-item">
                 <Router>

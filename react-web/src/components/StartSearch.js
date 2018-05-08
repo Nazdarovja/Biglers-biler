@@ -51,14 +51,6 @@ export default class StartSearch extends Component {
         return isMatch;
     }
 
-    categoryCheck = (car) => {
-        let isMatch = true;
-        if (this.state.category.length > 0) {
-            isMatch = this.state.category.toLocaleLowerCase() === car.category.toLocaleLowerCase()
-        }
-        return isMatch;
-    }
-
     locationCheck = (car) => {
         let isMatch = true;
         if (this.state.location.length > 0) return (
@@ -71,12 +63,10 @@ export default class StartSearch extends Component {
         this.setState({ [event.target.id]: event.target.value });
     }
 
-
     searchFilter = (list) => {
         const res = list.filter(car => {
             return (
-                this.categoryCheck(car)
-                && this.locationCheck(car)
+                this.locationCheck(car)
                 && this.dateCheck(car)
             );
         });
@@ -86,22 +76,27 @@ export default class StartSearch extends Component {
     createSelect = (title, list, selected) => {
         const options = list.map((item, index) => <option key={index} value={item}>{item}</option>);
         return (
+            <div>
+            <label className='label-search' htmlFor={title}>company to rent car from</label>
             <select value={selected} name={title} id={title} onChange={this.handleChange}>
                 <option value=''>Not chosen</option>
                 {options}
             </select>
+            </div>
         )
     }
 
     render() {
         return (
-            <div>
+            <div className='search-field-container'>
+                <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
                 <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange} />
+                <label className='label-search' htmlFor='todate'>date to rent car to</label>
                 <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange} />
-                {this.createSelect('category', categories, this.state.category)}
                 {this.createSelect('location', locations, this.state.location)}
-                {/* <button type="submit" onClick={this.handleSubmit}>Find Bigler</button> */}
-                <p><Link to={{ pathname: `/Main/`, state: {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate} }} >Find Bigler</Link></p>
+                <button>
+                    <Link to={{ pathname: `/Main/`, state: {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate} }} >Find Bigler</Link>
+                </button>
             </div>
         )
     }
