@@ -69,13 +69,13 @@ export default class Booking extends React.Component {
                 <p>priceperday: {this.state.car.priceperday}</p>
 
                 {this.state.car ?
-                    <span>
+                    <div>
                         <h2>Book car</h2>
                         <p>Your email: <input type="text" name="email" id="email" onChange={this.handleChange} /></p>
                         <p>Start date: <input type="date" name="datestart" id="datestart" value={this.state.date1} onChange={this.handleChange} /></p>
                         <p>End date: <input type="date" name="dateend" id="dateend" value={this.state.date2} onChange={this.handleChange} /></p>
                         <button type="button" onClick={this.book} className="confirm-booking" >Accept Booking [not yet implemented]</button>
-                    </span>
+                    </div>
                     :
 
                     <span>
