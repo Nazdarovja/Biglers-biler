@@ -10,11 +10,14 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      category: this.props.category,
       cars: [],
       filteredCars: [],
       facade: facade,
       sortAsc: true,
-      error: undefined
+      error: undefined,
+
+
     }
     this.findCars = this.findCars.bind(this);
   }
@@ -27,8 +30,11 @@ export default class Main extends Component {
   // }
 
   componentDidMount() {
-    this.findCars();
+    //debug dev stuffs
+    // this.findCars();
+    /////
   }
+
 
   findCars(cb) {
     this.state.facade.fetchData()
@@ -137,27 +143,37 @@ export default class Main extends Component {
     }
   }
 
-
-
   render() {
+
+    let location = undefined;
+    let todate = undefined;
+    let fromdate = undefined; 
+    if(this.props.location.state) {
+      location = this.props.location.state.location;
+      todate = this.props.location.state.todate;
+      fromdate = this.props.location.state.fromdate;
+    }
+
     return (
       <div className="grid-container-main">
+
         <div className="grid-item flex-container-sidenav">
-          <div className="flex-item-sidenav-search">
-            <SideSearch fetchAll={this.findCars} />
+
+          <div className="flex-item-sidenav">
+            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
           </div>
-          <div className="flex-item-sidenav-filter">
-            Filter
-          </div>
-          <div className="flex-item-sidenav-filter">
+          
+          <div className="border"/>
+          
+          <div className="flex-item-sidenav">
             <Filter filter={this.filter} />
           </div>
+
         </div>
+
         <div className="grid-item">
-          <div>
-            <Sort sortingSwitch={this.sortingSwitch} />
-          </div>
           <div className="flex-container-content">
+            <Sort sortingSwitch={this.sortingSwitch} />
             {this.error()}
           </div>
         </div>
@@ -165,3 +181,4 @@ export default class Main extends Component {
     );
   }
 }
+
