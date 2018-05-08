@@ -3,6 +3,7 @@ import '../styles/App.css';
 import Main from './Main';
 import Booking from './Booking';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import Startpage from './Startpage';
 
 class App extends Component {
 
@@ -15,7 +16,8 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" component={Main} />
+                    <Route exact path="/" component={Startpage} />
+                    <Route exact path="/Main" component={Main} />
                     <Route path="/Booking/:car" component={Booking}/>   
                 </Switch>
             </Router>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import '../styles/App.css';
 
 const categories = ['luxury', 'mini elite', 'economy', 'standard', 'Premium'];
 const locations = [
-    'Cph (Copenhagen Airport)', 
-    'Billund Lufthavn', 
-    'Aalborg Lufthavn',,
+    'Cph (Copenhagen Airport)',
+    'Billund Lufthavn',
+    'Aalborg Lufthavn', ,
     'Copenhagen City',
     'Aarhus City',
     'Odense',
@@ -15,8 +16,8 @@ const locations = [
     'Naestved'
 ];
 
-export default class SideSearch extends Component {
-    constructor(props){
+export default class StartSearch extends Component {
+    constructor(props) {
         super(props)
 
         this.state = {
@@ -25,19 +26,6 @@ export default class SideSearch extends Component {
             fromdate: '',
             todate: '',
         }
-    }
-
-    componentDidMount(){
-        let location = ''
-        let fromdate = ''
-        let todate = ''
-
-        if(this.props.location) location = this.props.location
-        if(this.props.fromdate) fromdate = this.props.fromdate
-        if(this.props.todate) todate = this.props.todate
-
-        this.setState({location: location, fromdate: fromdate, todate: todate});
-
     }
 
     dateCheck = (car) => {
@@ -51,14 +39,14 @@ export default class SideSearch extends Component {
                 let seaFromDate = new Date(this.state.fromdate);
                 let seaToDate = new Date(this.state.todate);
 
-                if(seaFromDate > resFromDate && seaFromDate < resToDate) isOK = false;
-                if(seaToDate > resFromDate && seaToDate < resToDate) isOK = false;
-                if(seaFromDate < resFromDate && seaToDate > resToDate) isOK = false;
+                if (seaFromDate > resFromDate && seaFromDate < resToDate) isOK = false;
+                if (seaToDate > resFromDate && seaToDate < resToDate) isOK = false;
+                if (seaFromDate < resFromDate && seaToDate > resToDate) isOK = false;
 
                 return isOK;
             })
 
-            if(prevenEvents.length > 0) isMatch = false; 
+            if (prevenEvents.length > 0) isMatch = false;
         }
         return isMatch;
     }
@@ -80,18 +68,14 @@ export default class SideSearch extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({[event.target.id]: event.target.value});
+        this.setState({ [event.target.id]: event.target.value });
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.props.fetchAll(this.searchFilter);
-    }
 
     searchFilter = (list) => {
-        const res =  list.filter(car => {
+        const res = list.filter(car => {
             return (
-                this.categoryCheck(car) 
+                this.categoryCheck(car)
                 && this.locationCheck(car)
                 && this.dateCheck(car)
             );
@@ -112,11 +96,12 @@ export default class SideSearch extends Component {
     render() {
         return (
             <div>
-                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange}/>
-                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange}/>
+                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange} />
+                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange} />
                 {this.createSelect('category', categories, this.state.category)}
                 {this.createSelect('location', locations, this.state.location)}
-                <button type="submit" onClick={this.handleSubmit}>Find Bigler</button>
+                {/* <button type="submit" onClick={this.handleSubmit}>Find Bigler</button> */}
+                <p><Link to={{ pathname: `/Main/`, state: {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate} }} >Find Bigler</Link></p>
             </div>
         )
     }

@@ -10,6 +10,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      category: this.props.category,
       cars: [],
       filteredCars: [],
       facade: facade,
@@ -137,6 +138,9 @@ export default class Main extends Component {
     }
   }
 
+  // p: {this.props.location.state.location}
+  // p: {this.props.location.state.todate}
+  // p: {this.props.location.state.fromdate}
 
 
   render() {
@@ -144,7 +148,7 @@ export default class Main extends Component {
       <div className="grid-container-main">
         <div className="grid-item flex-container-sidenav">
           <div className="flex-item-sidenav-search">
-            <SideSearch fetchAll={this.findCars} />
+            <SideSearch fetchAll={this.findCars} location={this.props.location.state.location} todate={this.props.location.state.todate} fromdate = {this.props.location.state.fromdate} />
           </div>
           <div className="flex-item-sidenav-filter">
             Filter
