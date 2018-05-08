@@ -10,11 +10,14 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      category: this.props.category,
       cars: [],
       filteredCars: [],
       facade: facade,
       sortAsc: true,
-      error: undefined
+      error: undefined,
+
+
     }
     this.findCars = this.findCars.bind(this);
   }
@@ -27,8 +30,11 @@ export default class Main extends Component {
   // }
 
   componentDidMount() {
+    //debug dev stuffs
     this.findCars();
+    /////
   }
+
 
   findCars(cb) {
     this.state.facade.fetchData()
@@ -137,16 +143,24 @@ export default class Main extends Component {
     }
   }
 
-
-
   render() {
+
+    let location = undefined;
+    let todate = undefined;
+    let fromdate = undefined; 
+    if(this.props.location.state) {
+      location = this.props.location.state.location;
+      todate = this.props.location.state.todate;
+      fromdate = this.props.location.state.fromdate;
+    }
+
     return (
       <div className="grid-container-main">
 
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchAll={this.findCars} />
+            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
           </div>
           
           <div className="border"/>
@@ -167,3 +181,4 @@ export default class Main extends Component {
     );
   }
 }
+

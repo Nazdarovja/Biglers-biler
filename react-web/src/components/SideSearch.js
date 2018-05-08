@@ -26,14 +26,29 @@ export default class SideSearch extends Component {
         }
     }
 
+  async componentDidMount(){
+        let location = ''
+        let fromdate = ''
+        let todate = ''
+
+        if(this.props.location) location = this.props.location
+        if(this.props.fromdate) fromdate = this.props.fromdate
+        if(this.props.todate) todate = this.props.todate
+
+       await this.setState({location: location, fromdate: fromdate, todate: todate});
+        console.log("DEBUG");
+        this.props.fetchAll(this.searchFilter);
+
+    }
+
     dateCheck = (car) => {
         let isMatch = true;
         if (this.state.fromdate.length > 0 && this.state.todate.length > 0) {
             const prevenEvents = car.reservations.filter(reservation => {
                 let isNotOK = true;
 
-                let resFromDate = new Date(reservation.fromDate);
-                let resToDate = new Date(reservation.fromDate);
+                let resFromDate = new Date(reservation.fromdate);
+                let resToDate = new Date(reservation.todate);
                 let seaFromDate = new Date(this.state.fromdate);
                 let seaToDate = new Date(this.state.todate);
 
