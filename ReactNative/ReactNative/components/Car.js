@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {  View, Text, Image} from 'react-native';
+import {  View, Text, Image, TouchableOpacity} from 'react-native';
+import CarInfo from './CarInfo';
 
 export default class componentName extends Component {git
     constructor(props) {
@@ -35,7 +36,7 @@ export default class componentName extends Component {git
         return (
           <View className="Car">
             <Text className="Car-header">{this.props.car.category}</Text>
-            <Image className="Car-picture" alt="" src={this.props.car.picture}/>
+            <Image style={{width: 100, height:100}} source={{ uri: this.props.car.picture}}/>
             <Text className="Car-link">
               <TouchableOpacity onPress={this._onButtonClick} href=""><Text>Details</Text></TouchableOpacity>
             </Text>

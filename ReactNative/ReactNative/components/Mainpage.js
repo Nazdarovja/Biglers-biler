@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
-import '../styles/App.css';
+import {View, Text, ScrollView} from 'react-native';
 import facade from '../Facade';
 //import SideSearch from './SideSearch';
-//import CarList from './CarList';
-//import Filter from './Filter';
+import CarList from './CarList';
+import Filter from './Filter';
 //import Sort from './Sort';
 
 export default class Main extends Component {
@@ -59,7 +58,7 @@ export default class Main extends Component {
 
 
 
-  /*filter = (categoryFilters, companyFilters) => {
+  filter = (categoryFilters, companyFilters) => {
     if (categoryFilters.length >= 1 && companyFilters.length >= 1) {
       this.filterBothCategoryAndCompany(categoryFilters, companyFilters);
     }
@@ -70,9 +69,9 @@ export default class Main extends Component {
       this.filterCompany(companyFilters);
     }
 
-  }*/
+  }
 
-  /*filterCompany = (companyFilters) => {
+  filterCompany = (companyFilters) => {
     const filteredData = this.state.cars.filter((car) => {
       for (var i = 0; i < companyFilters.length; i++) {
         if (car.company.replace(" ", "") === companyFilters[i]) {
@@ -85,11 +84,11 @@ export default class Main extends Component {
       this.setState({ filteredCars: filteredData });
     else
       this.setState({ filteredCars: this.state.cars });
-  }*/
+  }
 
 
 
-  /*filterCategory = (categoryFilters) => {
+  filterCategory = (categoryFilters) => {
     const filteredData = this.state.cars.filter((car) => {
       for (var i = 0; i < categoryFilters.length; i++) {
         if (car.category === categoryFilters[i])
@@ -122,9 +121,9 @@ export default class Main extends Component {
       this.setState({ filteredCars: filteredData });
     else
       this.setState({ filteredCars: this.state.cars });
-  }*/
+  }
 
-  /*sortingSwitch = () => {
+  sortingSwitch = () => {
     if (this.state.sortAsc) {
       var list = this.state.filteredCars;
       list.sort((a, b) => {
@@ -138,19 +137,19 @@ export default class Main extends Component {
       });
       this.setState({ sortAsc: true, filteredCars: list });
     }
-  }*/
+  }
 
 
 
   render() {
     return (
-      <View className="grid-container-main">
+      <ScrollView className="grid-container-main">
         <View className="grid-item flex-container-sidenav">
           <View className="flex-item-sidenav-search">
             {/*<SideSearch fetchAll={this.findCars} />*/}
           </View>
           <View className="flex-item-sidenav-filter">
-            {/*<Filter filter={this.filter} /> */}
+            <Filter filter={this.filter} /> 
           </View>
         </View>
         <View className="grid-item">
@@ -161,7 +160,7 @@ export default class Main extends Component {
             {this.error()}
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
