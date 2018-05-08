@@ -13,12 +13,19 @@ class App extends Component {
     render() {
 
         return (
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Main} />
-                    <Route path="/Booking/:car" component={Booking}/>   
-                </Switch>
-            </Router>
+            <div className="grid-container-frame">
+                <div className="frame-grid-item">
+
+                </div>
+                <div className="frame-grid-item">
+                    <Router>
+                        <Switch>
+                            <Route exact path="/" component={Main} />
+                            <Route path="/Booking/:car" component={Booking}/>   
+                        </Switch>
+                    </Router>
+                </div >
+            </div >
         );
     }
 }

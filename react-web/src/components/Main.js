@@ -142,22 +142,24 @@ export default class Main extends Component {
   render() {
     return (
       <div className="grid-container-main">
+
         <div className="grid-item flex-container-sidenav">
-          <div className="flex-item-sidenav-search">
+
+          <div className="flex-item-sidenav">
             <SideSearch fetchAll={this.findCars} />
           </div>
-          <div className="flex-item-sidenav-filter">
-            Filter
-          </div>
-          <div className="flex-item-sidenav-filter">
+          
+          <div className="border"/>
+          
+          <div className="flex-item-sidenav">
             <Filter filter={this.filter} />
           </div>
+
         </div>
+
         <div className="grid-item">
-          <div>
-            <Sort sortingSwitch={this.sortingSwitch} />
-          </div>
           <div className="flex-container-content">
+            <Sort sortingSwitch={this.sortingSwitch} />
             {this.error()}
           </div>
         </div>
