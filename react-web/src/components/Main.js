@@ -15,7 +15,9 @@ export default class Main extends Component {
       filteredCars: [],
       facade: facade,
       sortAsc: true,
-      error: undefined
+      error: undefined,
+
+
     }
     this.findCars = this.findCars.bind(this);
   }
@@ -28,8 +30,11 @@ export default class Main extends Component {
   // }
 
   componentDidMount() {
+    //debug dev stuffs
     this.findCars();
+    /////
   }
+
 
   findCars(cb) {
     this.state.facade.fetchData()
@@ -138,12 +143,8 @@ export default class Main extends Component {
     }
   }
 
-  // p: {this.props.location.state.location}
-  // p: {this.props.location.state.todate}
-  // p: {this.props.location.state.fromdate}
-
-
   render() {
+
     return (
       <div className="grid-container-main">
         <div className="grid-item flex-container-sidenav">
@@ -169,3 +170,7 @@ export default class Main extends Component {
     );
   }
 }
+
+Main.defaultProps = {
+  location: undefined, todate: undefined, fromdate: undefined
+  };

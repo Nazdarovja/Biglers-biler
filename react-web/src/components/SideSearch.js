@@ -27,7 +27,7 @@ export default class SideSearch extends Component {
         }
     }
 
-    componentDidMount(){
+  async componentDidMount(){
         let location = ''
         let fromdate = ''
         let todate = ''
@@ -36,7 +36,9 @@ export default class SideSearch extends Component {
         if(this.props.fromdate) fromdate = this.props.fromdate
         if(this.props.todate) todate = this.props.todate
 
-        this.setState({location: location, fromdate: fromdate, todate: todate});
+       await this.setState({location: location, fromdate: fromdate, todate: todate});
+        console.log("DEBUG");
+        this.props.fetchAll(this.searchFilter);
 
     }
 
