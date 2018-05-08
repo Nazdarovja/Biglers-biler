@@ -37,22 +37,19 @@ export default class Booking extends React.Component {
         if (this.state.email === undefined || this.state.datestart === undefined || this.state.dateend === undefined) {
             alert("please specify an email, startdate and enddate")
         } else
-            this.setState({ car: this.props.car, succes: true });
+            this.setState({ succes: true });
     }
 
     async componentDidMount() {
         const car = await facade.fetchSpecCar(this.regno);
-        console.log(car);
         this.setState({ car: car[0] });
     }
 
+
     render() {
-        // console.log(JSON.stringify(this.props.match));
         return (
             <div>
 
-                {/* <p>{JSON.stringify(this.state)}</p> */}
-                {this.state.succes ? <p style={{backgroundColor: "green", color: "white"}}>SUCCES</p> : "" }
                 <p><img className="logo-mini" alt="" src={this.state.car.picture}></img></p>
                 {/* <p><img className="logo-mini" alt="" src={this.props.car.logo}></img></p> */}
                 <p>Company: {this.state.car.company}</p>
@@ -68,7 +65,14 @@ export default class Booking extends React.Component {
                 <p>location: {this.state.car.location}</p>
                 <p>priceperday: {this.state.car.priceperday}</p>
 
-                {this.state.car ?
+                {this.state.succes ?
+                    <div>
+                        <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>
+                        <p>email: {this.state.email}</p>
+                        <p>Start date: {this.state.datestart}</p>
+                        <p>End date: {this.state.dateend}</p>
+                    </div>
+                    :
                     <div>
                         <h2>Book car</h2>
                         <p>Your email: <input type="text" name="email" id="email" onChange={this.handleChange} /></p>
@@ -76,14 +80,6 @@ export default class Booking extends React.Component {
                         <p>End date: <input type="date" name="dateend" id="dateend" value={this.state.date2} onChange={this.handleChange} /></p>
                         <button type="button" onClick={this.book} className="confirm-booking" >Accept Booking [not yet implemented]</button>
                     </div>
-                    :
-
-                    <span>
-                        <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>
-                        <p>email: {this.state.email}</p>
-                        <p>Start date: {this.state.datestart}</p>
-                        <p>End date: {this.state.dateend}</p>
-                    </span>
                 }
 
             </div>
