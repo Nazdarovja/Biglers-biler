@@ -24,26 +24,25 @@ export default class Filter extends React.Component {
     }
 
     handleCategoryChange = async (selected) => {
-        let categories = this.state.categories;
+        let categories = Object.assign({}, this.state.categories);
         for (var prop in categories) {
             selected.includes(prop) ? categories[prop] = true : categories[prop] = false;
         }
-        await this.setState({ categories });
-
+        await this.setState({categories});
+        console.log(this.state);
         const filterCompany = this.checkIfFilterShouldHappen(this.state.companies);
         this.props.filter(selected, filterCompany);
     }
 
     handleCompanyChange = async (selected) => {
-        let companies = this.state.companies;
+        let companies = Object.assign({}, this.state.companies);
         for (var prop in companies) {
             selected.includes(prop) ? companies[prop] = true : companies[prop] = false;
         }
-        await this.setState({ companies });
-
-        const categoryFilters = this.checkIfFilterShouldHappen(this.state.categories);
-
-        this.props.filter(categoryFilters, selected);
+        await this.setState({companies});
+        console.log(this.state);
+        const filterCategory = this.checkIfFilterShouldHappen(this.state.categories);
+        this.props.filter(filterCategory, selected);
     }
 
     checkIfFilterShouldHappen = (data) => {
@@ -52,7 +51,6 @@ export default class Filter extends React.Component {
             if (data[item] === true)
                 filters.push(item);
         }
-        console.log(filters);
         return filters;
     }
 
@@ -112,8 +110,8 @@ export default class Filter extends React.Component {
                     uncheckedIcon="ios-square-outline"
                     checkboxes={[
                         {
-                            label: "BiglersBiler", // label for checkbox item
-                            value: "BiglersBiler", // selected value for item, if selected, what value should be sent?
+                            label: "BiglersBigler", // label for checkbox item
+                            value: "BiglersBigler", // selected value for item, if selected, what value should be sent?
                             // if the item is selected by default or not.
                             selected: this.state.companies.BiglersBigler
                         },
