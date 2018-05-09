@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import CheckBox from 'react-native-checkbox';
 import CheckboxGroup from 'react-native-checkbox-group';
+import styles from '../Styles';
 
 export default class Filter extends React.Component {
     constructor(props) {
@@ -19,7 +20,8 @@ export default class Filter extends React.Component {
                 Gert: false,
                 Elias: false,
                 Devran: false
-            }
+            },
+            display: false
         }
     }
 
@@ -54,104 +56,118 @@ export default class Filter extends React.Component {
         return filters;
     }
 
+    displayFilterSection = () => {
+        this.setState({display: !this.state.display});
+    }
+
     render() {
         return (
             <View>
-                <Text>Categories</Text>
-                <CheckboxGroup
-                    callback={this.handleCategoryChange}
-                    iconColor={"#00a2dd"}
-                    iconSize={30}
-                    checkedIcon="ios-checkbox-outline"
-                    uncheckedIcon="ios-square-outline"
-                    checkboxes={[
-                        {
-                            label: "Mini", // label for checkbox item
-                            value: "Mini", // selected value for item, if selected, what value should be sent?
-                            // if the item is selected by default or not.
-                            selected: this.state.categories.Mini
-                        },
-                        {
-                            label: "Economy",
-                            value: "Economy",
-                            selected: this.state.categories.Economy
-                        },
-                        {
-                            label: "Standard",
-                            value: "Standard",
-                            selected: this.state.categories.Standard
-                        },
-                        {
-                            label: "Premium",
-                            value: "Premium",
-                            selected: this.state.categories.Premium
-                        },
-                        {
-                            label: "Luxury",
-                            value: "Luxury",
-                            selected: this.state.categories.Luxury
-                        },
-                    ]}
-                    labelStyle={{
-                        color: '#333'
-                    }}
-                    rowStyle={{
-                        flexDirection: 'row'
-                    }}
-                    rowDirection={"column"}
-                />
-
-                <Text>Companies</Text>
-                <CheckboxGroup
-                    callback={this.handleCompanyChange}
-                    iconColor={"#00a2dd"}
-                    iconSize={30}
-                    checkedIcon="ios-checkbox-outline"
-                    uncheckedIcon="ios-square-outline"
-                    checkboxes={[
-                        {
-                            label: "BiglersBigler", // label for checkbox item
-                            value: "BiglersBigler", // selected value for item, if selected, what value should be sent?
-                            // if the item is selected by default or not.
-                            selected: this.state.companies.BiglersBigler
-                        },
-                        {
-                            label: "Gert",
-                            value: "Gert",
-                            selected: this.state.companies.Gert
-                        },
-                        {
-                            label: "Elias",
-                            value: "Elias",
-                            selected: this.state.companies.Elias
-                        },
-                        {
-                            label: "Devran",
-                            value: "Devran",
-                            selected: this.state.companies.Devran
-                        }
-                    ]}
-                    labelStyle={{
-                        color: '#333'
-                    }}
-                    rowStyle={{
-                        flexDirection: 'row'
-                    }}
-                    rowDirection={"column"}
-                />
-
-                {/*<CheckBox label="Mini" style={{width: 20, height: 20}} value={this.state.categories.Mini} onChange={(checked) => console.log('I am checked', checked)}/>
-                    {/*<input name="Economy" type="checkbox" checked={this.state.categories.Economy} onClick={this.handleCategoryChange} />
-                    <input name="Standard" type="checkbox" checked={this.state.categories.Standard} onClick={this.handleCategoryChange} />
-                    <input name="Premium" type="checkbox" checked={this.state.categories.Premium} onClick={this.handleCategoryChange} />
-                    <input name="Luxury" type="checkbox" checked={this.state.categories.Luxury} onClick={this.handleCategoryChange} />
-
-               Companies
-                    <input name="BiglersBigler" type="checkbox" checked={this.state.companies.BiglersBigler} onClick={this.handleCompanyChange} />
-                    <input name="Gert" type="checkbox" checked={this.state.companies.Gert} onClick={this.handleCompanyChange} />
-                    <input name="Elias" type="checkbox" checked={this.state.companies.Elias} onClick={this.handleCompanyChange} />
-        <input name="Devran" type="checkbox" checked={this.state.companies.Devran} onClick={this.handleCompanyChange} />*/}
-
+                {
+                this.state.display ? 
+                    <View style={styles.filter}>
+                            <TouchableOpacity
+                                style={styles.filterOn}
+                                onPress={this.displayFilterSection}
+                            >
+                                <Text> Filter </Text>
+                            </TouchableOpacity>
+                        <View style={{}}>
+                        <Text>Categories</Text>
+                        <CheckboxGroup
+                            callback={this.handleCategoryChange}
+                            iconColor={"#00a2dd"}
+                            iconSize={30}
+                            checkedIcon="ios-checkbox-outline"
+                            uncheckedIcon="ios-square-outline"
+                            checkboxes={[
+                                {
+                                    label: "Mini", // label for checkbox item
+                                    value: "Mini", // selected value for item, if selected, what value should be sent?
+                                    // if the item is selected by default or not.
+                                    selected: this.state.categories.Mini
+                                },
+                                {
+                                    label: "Economy",
+                                    value: "Economy",
+                                    selected: this.state.categories.Economy
+                                },
+                                {
+                                    label: "Standard",
+                                    value: "Standard",
+                                    selected: this.state.categories.Standard
+                                },
+                                {
+                                    label: "Premium",
+                                    value: "Premium",
+                                    selected: this.state.categories.Premium
+                                },
+                                {
+                                    label: "Luxury",
+                                    value: "Luxury",
+                                    selected: this.state.categories.Luxury
+                                },
+                            ]}
+                            labelStyle={{
+                                color: '#333',
+                                margin: 5
+                            }}
+                            rowStyle={{
+                                flexDirection: 'row'
+                            }}
+                            rowDirection={"column"}
+                        />
+                        </View>
+                        <View style={{}}>
+                        <Text>Companies</Text>
+                        <CheckboxGroup
+                            callback={this.handleCompanyChange}
+                            iconColor={"#00a2dd"}
+                            iconSize={30}
+                            checkedIcon="ios-checkbox-outline"
+                            uncheckedIcon="ios-square-outline"
+                            checkboxes={[
+                                {
+                                    label: "BiglersBigler", // label for checkbox item
+                                    value: "BiglersBigler", // selected value for item, if selected, what value should be sent?
+                                    // if the item is selected by default or not.
+                                    selected: this.state.companies.BiglersBigler
+                                },
+                                {
+                                    label: "Gert",
+                                    value: "Gert",
+                                    selected: this.state.companies.Gert
+                                },
+                                {
+                                    label: "Elias",
+                                    value: "Elias",
+                                    selected: this.state.companies.Elias
+                                },
+                                {
+                                    label: "Devran",
+                                    value: "Devran",
+                                    selected: this.state.companies.Devran
+                                }
+                            ]}
+                            labelStyle={{
+                                color: '#333', 
+                                margin: 5
+                            }}
+                            rowStyle={{
+                                flexDirection: 'row'
+                            }}
+                            rowDirection={"column"}
+                        />
+                        </View>
+                    </View>
+                :
+                        <TouchableOpacity
+                            style={styles.filterOff}
+                            onPress={this.displayFilterSection}
+                        >
+                            <Text> Filter </Text>
+                        </TouchableOpacity>
+                }
             </View>
         );
     }
