@@ -90,7 +90,6 @@ export default class Filter extends React.Component {
                     <input name="Devran" type="checkbox" checked={this.state.companies.Devran} onClick={this.handleCompanyChange} />
                 </label>
             </form>
-            <p style={{fontSize: 10}}>{JSON.stringify(this.state)}</p>
             </div>
 
         );
