@@ -5,7 +5,7 @@ export default class componentName extends Component {
     render() {
         return (
             <View className="car-data">
-                <Image className="logo-mini" alt="" src={this.props.car.logo} />
+                <Image style={{height:100, width:100}} source={{ uri :this.props.car.logo}} />
                 <Text>company: {this.props.car.company}</Text>
                 <Text>make: {this.props.car.make}</Text>
                 <Text>model: {this.props.car.model}</Text>

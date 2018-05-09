@@ -37,9 +37,7 @@ export default class componentName extends Component {git
           <View className="Car">
             <Text className="Car-header">{this.props.car.category}</Text>
             <Image style={{width: 100, height:100}} source={{ uri: this.props.car.picture}}/>
-            <Text className="Car-link">
               <TouchableOpacity onPress={this._onButtonClick} href=""><Text>Details</Text></TouchableOpacity>
-            </Text>
             {this.state.showComponent ?
               <CarInfo car={this.props.car} /> : null
             }
