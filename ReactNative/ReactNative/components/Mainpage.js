@@ -4,7 +4,7 @@ import facade from '../Facade';
 //import SideSearch from './SideSearch';
 import CarList from './CarList';
 import Filter from './Filter';
-//import Sort from './Sort';
+import Sort from './Sort';
 
 export default class Main extends Component {
   constructor(props) {
@@ -18,13 +18,6 @@ export default class Main extends Component {
     }
     this.findCars = this.findCars.bind(this);
   }
-
-  // componentDidMount() {
-  //   facade.fetchData()
-  //     .then((res) => {
-  //       this.setState({})
-  //     })
-  // }
 
   componentDidMount() {
     this.findCars();
@@ -54,10 +47,6 @@ export default class Main extends Component {
     }
   }
 
-
-
-
-
   filter = (categoryFilters, companyFilters) => {
     if (categoryFilters.length >= 1 && companyFilters.length >= 1) {
       this.filterBothCategoryAndCompany(categoryFilters, companyFilters);
@@ -85,8 +74,6 @@ export default class Main extends Component {
     else
       this.setState({ filteredCars: this.state.cars });
   }
-
-
 
   filterCategory = (categoryFilters) => {
     const filteredData = this.state.cars.filter((car) => {
@@ -155,7 +142,7 @@ export default class Main extends Component {
         <View className="grid-item">
           <View>
           </View>
-            {/*<Sort sortingSwitch={this.sortingSwitch} /> */}
+            <Sort sortingSwitch={this.sortingSwitch} />
           <View className="flex-container-content">
             {this.error()}
           </View>
