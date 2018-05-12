@@ -1,8 +1,0 @@
-backend\api\ApplicationConfig.class
-cors\CorsRequestFilter.class
-cors\CorsResponseFilter.class
-backend\api\CarRemoteFetchFacade.class
-backend\exceptions\GenericExceptionMapper.class
-backend\api\CarResource.class
-backend\exceptions\NotFoundException.class
-backend\exceptions\ErrorMessage.class
