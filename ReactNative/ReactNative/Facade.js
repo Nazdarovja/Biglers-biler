@@ -1,6 +1,6 @@
 import React from 'react';
 
-const URL = "http://192.168.1.34:8084/Backend/api/car";
+const URL = "http://10.50.137.121:8084/Backend/api/car";
 
 
 function handleHttpErrors(res) {
