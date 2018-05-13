@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import Main from './Main';
 import Booking from './Booking';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Startpage from './Startpage';
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
                 
                 </div>
                 <div className="frame-grid-item">
-                <Router>
+                <Router basename={`${this.props.history.location.pathname}#`}>
                     <Switch>
                         <Route exact path="/" component={Startpage} />
                         <Route exact path="/Main" component={Main} />

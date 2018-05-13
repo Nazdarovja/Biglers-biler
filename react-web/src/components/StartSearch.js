@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/App.css';
 
+
 const categories = ['luxury', 'mini elite', 'economy', 'standard', 'Premium'];
 const locations = [
     'Cph (Copenhagen Airport)',
@@ -17,8 +18,8 @@ const locations = [
 ];
 
 export default class StartSearch extends Component {
-    constructor(props) {
-        super(props)
+    constructor(props, context) {
+        super(props, context)
 
         this.state = {
             category: '',
@@ -86,6 +87,21 @@ export default class StartSearch extends Component {
         )
     }
 
+    handleSubmit = (event) => {
+        try{
+            event.preventDefault();
+            if (
+                (this.state.fromdate.length === 0 && this.state.todate.length > 0)
+                || (this.state.todate.length === 0 && this.state.fromdate.length > 0)
+            ) {
+                throw {message: 'A date must be selected for both date fields.'}
+            }
+            this.props.history.push('/Main/', {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate})
+        } catch (ex) {
+            this.props.catchError(ex);
+        }   
+    }
+
     render() {
         return (
             <div className='search-field-container'>
@@ -94,9 +110,7 @@ export default class StartSearch extends Component {
                 <label className='label-search' htmlFor='todate'>date to rent car to</label>
                 <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange} />
                 {this.createSelect('location', locations, this.state.location)}
-                <button>
-                    <Link to={{ pathname: `/Main/`, state: {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate} }} >Find Bigler</Link>
-                </button>
+                <button onClick={this.handleSubmit} >Find Bigler</button>
             </div>
         )
     }

@@ -27,6 +27,7 @@ export default class SideSearch extends Component {
     }
 
   async componentDidMount(){
+      console.log(this.props)
         let location = ''
         let fromdate = ''
         let todate = ''

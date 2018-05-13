@@ -22,20 +22,6 @@ export default class Main extends Component {
     this.findCars = this.findCars.bind(this);
   }
 
-  // componentDidMount() {
-  //   facade.fetchData()
-  //     .then((res) => {
-  //       this.setState({})
-  //     })
-  // }
-
-  componentDidMount() {
-    //debug dev stuffs
-    // this.findCars();
-    /////
-  }
-
-
   findCars(cb) {
     this.state.facade.fetchData()
       .then((res) => {
@@ -57,10 +43,6 @@ export default class Main extends Component {
       )
     }
   }
-
-
-
-
 
   filter = (categoryFilters, companyFilters) => {
     if (categoryFilters.length >= 1 && companyFilters.length >= 1) {
@@ -144,7 +126,6 @@ export default class Main extends Component {
   }
 
   render() {
-
     let location = undefined;
     let todate = undefined;
     let fromdate = undefined; 
