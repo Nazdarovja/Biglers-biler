@@ -186,3 +186,30 @@ button:hover {
   width: 75%;
   margin-bottom: 10px;
 }
+
+.bookingpage-floater {
+  float: left;
+}
+
+.booking-container {
+  flex-direction: row;
+  display: flex;
+  margin: 30px;
+  padding: 20px;
+  background-color: #001A28;
+  color: white;
+}
+
+.booking-carinfo-container {
+  margin-right: 50px;
+  display: flex;
+}
+
+.booking-carinfo-item {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  padding: 10px;
+}
+
+
