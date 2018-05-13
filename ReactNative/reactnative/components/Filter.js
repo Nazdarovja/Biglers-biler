@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import CheckBox from 'react-native-checkbox';
 import CheckboxGroup from 'react-native-checkbox-group';
 import styles from '../Styles';
 
