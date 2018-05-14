@@ -135,3 +135,14 @@
 #### Estimering
 * Vi estimerer alle tingene lidt højere denne omgang, da vi sidst ikke helt nåede at få alle design og fejl håndtering på plads
  
+
+ ### 14/05/18 (PO møde)
+* Vores product owner på pegede at vores acceptance tests skal være lidt mere skarpe mht. GIVEN WHAT WHY.
+
+#### Råd fra lærer
+* Vi skulle beskrive hvordan vi har pair programmet, via discord og om hvordan vi har hold SCRUM møder derigennem i løbet af SPRINT 2.
+
+#### Sprint Planning 14/05/18
+* Vi har fået lov til at lave to store userstories, og så plukke fra toppen af vores Backlog hvis vi når i mål me de to lidt omstændige userstories
+smertefrit.
+*
