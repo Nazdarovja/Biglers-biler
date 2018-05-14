@@ -96,6 +96,11 @@ export default class StartSearch extends Component {
             ) {
                 throw {message: 'A date must be selected for both date fields.'}
             }
+
+            const seaFromDate = new Date(this.state.fromdate);
+            const seaToDate = new Date(this.state.todate);
+            if (seaFromDate > seaToDate) throw {message: 'The beginning date must be a date which is before the end date'}
+
             this.props.history.push('/Main/', {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate})
         } catch (ex) {
             this.props.catchError(ex);
