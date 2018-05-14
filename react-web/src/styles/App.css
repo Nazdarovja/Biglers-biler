@@ -129,7 +129,9 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   width: 100%;
-  outline: none
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 button:hover {
