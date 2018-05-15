@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="0.25" errors="0" skipped="0">
-=======
-<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="0.394" errors="0" skipped="0">
->>>>>>> f35f23b648f02499c7996f133bdf4ab6bf5782bd
+<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="0.922" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -65,11 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.125"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.078"/>
-=======
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.172"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.077"/>
->>>>>>> f35f23b648f02499c7996f133bdf4ab6bf5782bd
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.779"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.07"/>
 </testsuite>

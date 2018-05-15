@@ -149,7 +149,7 @@ public class CarService {
 	 * @return 
 	 */
 	@PUT
-	@Path("{regno}")
+	@Path("/{regno}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response createCarWithRegNo(Cars cars) {
 		return createCar(cars);

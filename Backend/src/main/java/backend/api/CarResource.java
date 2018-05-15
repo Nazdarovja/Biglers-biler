@@ -13,6 +13,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -27,6 +28,7 @@ public class CarResource {
     private UriInfo context;
 
     //TODO: TEST STUFF REMOVE LATER//
+    
     CarRemoteFetchFacade carRemote = new CarRemoteFetchFacade();
 
     /**
@@ -53,4 +55,23 @@ public class CarResource {
         return carRemote.getByRegNo(regno.toUpperCase());
     }
     
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getByDates(@QueryParam("start") String start, @QueryParam("end") String end) {
+        return carRemote.getByDate(start, end);
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getByLocationAndDates(@QueryParam("location") String location, @QueryParam("start") String start, @QueryParam("end") String end) {
+        return carRemote.getByLocationAndDate(location, start, end);
+    }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/regno/{regno}")
+    public String putJson(@PathParam("regno")String regno, String message) {
+        return carRemote.putCar(message, regno);
+    }
 }
