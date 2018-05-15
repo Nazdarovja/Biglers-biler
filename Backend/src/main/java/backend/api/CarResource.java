@@ -56,12 +56,14 @@ public class CarResource {
     }
     
     @GET
+    @Path("/date")
     @Produces(MediaType.APPLICATION_JSON)
     public String getByDates(@QueryParam("start") String start, @QueryParam("end") String end) {
         return carRemote.getByDate(start, end);
     }
     
     @GET
+    @Path("/location")
     @Produces(MediaType.APPLICATION_JSON)
     public String getByLocationAndDates(@QueryParam("location") String location, @QueryParam("start") String start, @QueryParam("end") String end) {
         return carRemote.getByLocationAndDate(location, start, end);
