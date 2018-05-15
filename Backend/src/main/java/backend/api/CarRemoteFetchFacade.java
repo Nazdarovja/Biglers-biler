@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class CarRemoteFetchFacade {
 
-    String baseUrl = "http://localhost:3000/cars";
+    String baseUrl = "https://stanitech.dk/carrentalapi/api/cars";
 
     private String fetch(String url) {
 

@@ -1,0 +1,1 @@
+https://travis-ci.org/Nazdarovja/Biglers-biler.svg?branch=developer
