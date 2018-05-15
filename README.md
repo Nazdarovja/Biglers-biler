@@ -1,1 +1,1 @@
-https://travis-ci.org/Nazdarovja/Biglers-biler.svg?branch=developer
+[![Build Status](https://travis-ci.org/Nazdarovja/Biglers-biler.svg?branch=developer)](https://travis-ci.org/Nazdarovja/Biglers-biler)
