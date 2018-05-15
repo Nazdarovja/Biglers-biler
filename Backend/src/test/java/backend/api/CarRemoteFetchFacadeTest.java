@@ -75,6 +75,10 @@ public class CarRemoteFetchFacadeTest {
 
     /**
      * Test of putCar method, of class CarRemoteFetchFacade.
+     * This test method generates a random reservation date in the format dd/mm/yyyy , where year is 4xxx, and the customerMail is JUNIT@JUNIT.DK (for easier cleanup)
+     * This date is used for both from & to dates (to lessen chance of collusion).
+     * this new reservation is added to the car with regNo "BAG1234".
+     * Before the reservation is added, the car is fetched, and again after. Then 
      */
     @Test
     public void testPutCar() {
@@ -82,8 +86,8 @@ public class CarRemoteFetchFacadeTest {
         System.out.println("putCar");
 
         //generate random new reservation time - pray for no collusion 
-        int randomDay = ThreadLocalRandom.current().nextInt(1, 28 + 1);
-        int randomMonth = ThreadLocalRandom.current().nextInt(1, 12 + 1);
+        int randomDay = ThreadLocalRandom.current().nextInt(1, 27 + 1);  
+        int randomMonth = ThreadLocalRandom.current().nextInt(1, 11 + 1);
         int randomYear = ThreadLocalRandom.current().nextInt(4000, 4998 + 1);
 
         String newDate = randomDay + "/" + randomMonth + "/" + randomYear;
@@ -92,7 +96,7 @@ public class CarRemoteFetchFacadeTest {
         CarRemoteFetchFacade instance = new CarRemoteFetchFacade();
         String original_car = instance.getByRegNo("BAG1234");
 
-        //updated car
+        //updated car, reservation
         String regno = "BAG1234";
         String message = "{  \n"
                 + "   \"cars\":[  \n"
@@ -124,14 +128,11 @@ public class CarRemoteFetchFacadeTest {
         //put new reservation
         instance.putCar(message, regno);
 
-        //get same car again
+        //get car again
         String result = instance.getByRegNo("BAG1234");
-
-        System.out.println(original_car.length());
-        System.out.println(result.length());
-
+        
+        //assert that car has new reservation data added
         assertTrue(result.length() > original_car.length());
-        assertTrue(result.length() != original_car.length());
     }
 
 }
