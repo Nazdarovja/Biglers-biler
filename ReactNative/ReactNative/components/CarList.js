@@ -10,7 +10,7 @@ export default class CarList extends React.Component {
         });
 
         return (
-            <View>
+            <View style={{width: '100%'}}>
                 {list}
             </View>
         );

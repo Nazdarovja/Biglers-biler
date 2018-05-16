@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import facade from '../Facade';
 //import SideSearch from './SideSearch';
 import CarList from './CarList';
@@ -9,6 +9,7 @@ import Sort from './Sort';
 export default class Main extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       cars: [],
       filteredCars: [],
@@ -23,11 +24,11 @@ export default class Main extends Component {
     this.findCars();
   }
 
-  findCars(cb) {
-    this.state.facade.fetchData()
+  findCars() {
+    const {location, fromdate, todate} = this.props.navigation.state.params
+    this.state.facade.fetchCars(fromdate, todate, location)
       .then((res) => {
-        let cars
-        (cb) ? cars = cb(res) : cars = res;
+        const cars = res.cars
         this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
   }
@@ -36,7 +37,7 @@ export default class Main extends Component {
   error() {
     if (this.state.error === undefined) {
       return (
-        <View>
+        <View style={{width: '100%'}}>
             <CarList cars={this.state.filteredCars} />
         </View>
       )
@@ -129,21 +130,27 @@ export default class Main extends Component {
 
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <ScrollView className="grid-container-main">
-        <View className="grid-item flex-container-sidenav">
-          <View className="flex-item-sidenav-search">
-            {/*<SideSearch fetchAll={this.findCars} />*/}
-          </View>
-          <View className="flex-item-sidenav-filter">
+      <ScrollView style={{width: '100%', marginTop: 40}}>
+          <TouchableOpacity 
+            // test style
+            style={{backgroundColor: '#DDDDDD', padding: 10, alignItems : "center"}}
+            onPress={() => navigate('Search')}
+            >
+            <Text>
+                Back 
+            </Text>
+          </TouchableOpacity>
+
+        <View >
+          <View >
             <Filter filter={this.filter} /> 
           </View>
         </View>
-        <View className="grid-item">
-          <View>
-          </View>
+        <View style={{width: '100%'}}>
             <Sort sortingSwitch={this.sortingSwitch} />
-          <View className="flex-container-content">
+          <View style={{width: '100%'}}>
             {this.error()}
           </View>
         </View>
