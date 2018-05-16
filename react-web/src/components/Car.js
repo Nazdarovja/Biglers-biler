@@ -9,11 +9,9 @@ export default class Car extends Component {
     this.state = {
       showComponent: false, car: undefined
     }
-    this._onButtonClick = this._onButtonClick.bind(this);
   }
 
-
-  _onButtonClick(event) {
+  _onButtonClick = (event) => {
     event.preventDefault();
     if (this.state.showComponent === true) {
       this.setState({
@@ -26,13 +24,10 @@ export default class Car extends Component {
     }
   }
 
-  test(data) {
-    this.setState({ car: data })
-  }
-
 
   render() {
-
+    const fromDate = this.props.fromDate;
+    const toDate = this.props.toDate;
     return (
       <div className="Car">
         <h3 className="Car-header">{this.props.car.category}</h3>
@@ -44,7 +39,16 @@ export default class Car extends Component {
           <CarInfo car={this.props.car} /> : null
         }
         <p className="Car-price">Price per day: {this.props.car.priceperday}</p>
-        <Link to={`/Booking/${this.props.car.regno}`}>Order Car</Link>
+        <Link
+          to={{
+            pathname :`/Booking/${this.props.car.regno}`,
+            state: { fromDate: fromDate, toDate: toDate }
+          }}
+        >
+          Order Car
+          </Link>
+          {/* TODO: DEBUG (remove p tag below) */}
+          <p>{fromDate} {toDate}</p>
       </div>
     )
   }

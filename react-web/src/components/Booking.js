@@ -6,17 +6,10 @@ export default class Booking extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.regno = props.match.params.car;
-
-        const now = new Date();
-        const day = ('0' + now.getDate());
-        const month = ('0' + now.getMonth());
-        const year = now.getFullYear();
-
+        this.fromDate = props.location.state.fromDate;
+        this.toDate = props.location.state.toDate;
         this.state = {
             car: {},
-            date: year + '-' + month + '-' + day,
             succes: false
         }
     }
@@ -31,14 +24,14 @@ export default class Booking extends React.Component {
 
     book() {
         if (this.state.email === undefined || this.state.datestart === undefined || this.state.dateend === undefined) {
-            alert("Please specify an email, startdate and enddate")
+            // ("Please specify an email, startdate and enddate")
         } else
             this.setState({ succes: true });
     }
 
     async componentDidMount() {
-        const car = await facade.fetchSpecCar(this.regno);
-        this.setState({ car: car[0] });
+        const obj = await facade.fetchSpecCar(this.props.match.params.regno);
+        this.setState({ car: obj.cars[0] });
     }
 
 
@@ -49,23 +42,24 @@ export default class Booking extends React.Component {
                     <div className='booking-carinfo-container'>
                         <div className='booking-carinfo-item'>
                             <p><img className="logo-mini" alt="" src={this.state.car.picture}></img></p>
-                            
+
                         </div>
                         <div className='booking-carinfo-item'>
-                            <p>Company: {this.state.car.company}</p>
-                            <p>category: {this.state.car.category}</p>
-                            <p>make: {this.state.car.make}</p>
-                            <p>model: {this.state.car.model}</p>
-                            <p>year: {this.state.car.year}</p>
-                            <p>regno: {this.state.car.regno}</p>
+                            <p>Company:<br/>
+                            {this.state.car.company}</p>
+                            <p>Category: {this.state.car.category}</p>
+                            <p>Make: {this.state.car.make}</p>
+                            <p>Model: {this.state.car.model}</p>
+                            <p>Year: {this.state.car.year}</p>
+                            <p>Reg. No.: {this.state.car.regno}</p>
                         </div>
                         <div className='booking-carinfo-item'>
-                            <p>seats: {this.state.car.seats}</p>
-                            <p>doors: {this.state.car.doors}</p>
-                            <p>gear: {this.state.car.gear}</p>
-                            <p>aircondition: {this.state.car.aircondition}</p>
-                            <p>location: {this.state.car.location}</p>
-                            <p>priceperday: {this.state.car.priceperday}</p>
+                            <p>Seats: {this.state.car.seats}</p>
+                            <p>Doors: {this.state.car.doors}</p>
+                            <p>Gear: {this.state.car.gear}</p>
+                            <p>Aircondition: {this.state.car.aircondition ? "Yes" : "No"}</p>
+                            <p>Location: {this.state.car.location}</p>
+                            <p>Price per day: {this.state.car.priceperday}</p>
                         </div>
                     </div>
 
@@ -80,8 +74,8 @@ export default class Booking extends React.Component {
                         <div>
                             <h2>Book car</h2>
                             <p>Your email: <input type="text" name="email" id="email" onChange={this.handleChange} /></p>
-                            <p>Start date: <input type="date" name="datestart" id="datestart" value={this.state.date1} onChange={this.handleChange} /></p>
-                            <p>End date: <input type="date" name="dateend" id="dateend" value={this.state.date2} onChange={this.handleChange} /></p>
+                            <p>Start date: <input type="date" name="datestart" id="datestart" min={new Date().toISOString().substr(0, 10)} value={this.fromDate} onChange={this.handleChange} /></p>
+                            <p>End date: <input type="date" name="dateend" id="dateend" min={this.fromDate} value={this.toDate} onChange={this.handleChange} /></p>
                             <button onClick={this.book}>Accept Booking [not yet implemented]</button>
                         </div>
                     }

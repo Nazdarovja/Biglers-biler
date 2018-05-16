@@ -33,7 +33,11 @@ export default class Main extends Component {
   error() {
     if (this.state.error === undefined) {
       return (
-        <CarList cars={this.state.filteredCars} />
+        <CarList
+          toDate={this.props.location.state.todate}
+          fromDate={this.props.location.state.fromdate}
+          cars={this.state.filteredCars}
+        />
       )
     } else {
       return (
@@ -125,7 +129,6 @@ export default class Main extends Component {
   }
 
   render() {
-    console.log(this.state.cars)
     let location = undefined;
     let todate = undefined;
     let fromdate = undefined;
@@ -141,7 +144,7 @@ export default class Main extends Component {
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchCars={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
+            <SideSearch fetchCars={this.findCars} location={location} todate={todate} fromdate={fromdate} />
           </div>
 
           <div className="border" />

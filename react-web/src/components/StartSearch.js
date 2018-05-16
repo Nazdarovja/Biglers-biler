@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import '../styles/App.css';
 
 const locations = [
     'Cph (Copenhagen Airport)',
     'Billund Lufthavn',
-    'Aalborg Lufthavn', ,
+    'Aalborg Lufthavn',
     'Copenhagen City',
     'Aarhus City',
     'Odense',
@@ -21,8 +20,8 @@ export default class StartSearch extends Component {
 
         this.state = {
             location: '',
-            fromdate: '',
-            todate: '',
+            fromdate: new Date().toISOString().substr(0, 10),
+            todate: new Date().toISOString().substr(0, 10),
         }
     }
 
@@ -53,7 +52,7 @@ export default class StartSearch extends Component {
             const seaToDate = new Date(this.state.todate);
             if (seaFromDate > seaToDate) throw {message: 'The beginning date must be a date which is before the end date'}
 
-            this.props.history.push('/Main/', {location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate})
+            this.props.history.push('/Main/', { location: this.state.location, todate: this.state.todate, fromdate: this.state.fromdate})
         } catch (ex) {
             this.props.catchError(ex);
         }   
@@ -63,9 +62,9 @@ export default class StartSearch extends Component {
         return (
             <div className='search-field-container'>
                 <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
-                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange} />
+                <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromdate} onChange={this.handleChange} />
                 <label className='label-search' htmlFor='todate'>date to rent car to</label>
-                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange} />
+                <input type="date" name="todate" id="todate" min={this.state.fromdate} value={this.state.todate} onChange={this.handleChange} />
                 {this.createSelect('location', locations, this.state.location)}
                 <button onClick={this.handleSubmit} >Find Bigler</button>
             </div>

@@ -4,7 +4,7 @@ import '../styles/App.css';
 const locations = [
     'Cph (Copenhagen Airport)', 
     'Billund Lufthavn', 
-    'Aalborg Lufthavn',,
+    'Aalborg Lufthavn',
     'Copenhagen City',
     'Aarhus City',
     'Odense',
