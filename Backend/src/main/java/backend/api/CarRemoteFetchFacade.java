@@ -43,24 +43,25 @@ public class CarRemoteFetchFacade {
     }
 
     private String fetch(String url) {
-
-        try {
-            URL address = new URL(url);
-            HttpURLConnection conn = (HttpURLConnection) address.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
-            conn.setRequestProperty("User-Agent", "server");
-            Scanner scan = new Scanner(conn.getInputStream());
-            String jsonStr = "";
-            while (scan.hasNext()) {
-                jsonStr += scan.nextLine();
+        
+        //TODO tråde til at hente fra alle URL'er
+            try {
+                URL address = new URL(url);
+                HttpURLConnection conn = (HttpURLConnection) address.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setRequestProperty("User-Agent", "server");
+                Scanner scan = new Scanner(conn.getInputStream());
+                String jsonStr = "";
+                while (scan.hasNext()) {
+                    jsonStr += scan.nextLine();
+                }
+                scan.close();
+                return jsonStr;
             }
-            scan.close();
-            return jsonStr;
-        }
-        catch (Exception ex) {
-            throw new NotFoundException("Unable to connect");
-        }
+            catch (Exception ex) {
+                throw new NotFoundException("Unable to connect");
+            }
     }
     
     private String put(String url, String message) {
