@@ -47,8 +47,6 @@ export default class Car extends Component {
         >
           Order Car
           </Link>
-          {/* TODO: DEBUG (remove p tag below) */}
-          <p>{fromDate} {toDate}</p>
       </div>
     )
   }

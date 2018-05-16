@@ -62,7 +62,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Economy",
             "picture": "https://images.toyota-europe.com/gb/ya/width/1200/exterior-3.jpg",
             "make": "Toyota",
@@ -83,7 +83,7 @@
                     "toDate": "18/07/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "wh654at@e2345ver.dk",
                     "fromDate": "01/05/2018",
                     "toDate": "04/05/2018"
@@ -92,7 +92,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Economy",
             "picture": "https://res.cloudinary.com/carsguide/image/private/t_cg_car_l/v1/car/0583/5357/2018_mazda_3_new_5835357_1.jpg?version=1522174796",
             "make": "Mazda",
@@ -111,18 +111,12 @@
                     "customerMail": "nasd2me@ad14ress.dk",
                     "fromDate": "15/04/2018",
                     "toDate": "18/05/2018"
-                },
-                {
-                    "companyTag": "Bigler biler",
-                    "customerMail": "wh62at@e285ver.dk",
-                    "fromDate": "03/05/2018",
-                    "toDate": "12/05/2018"
                 }
             ]
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "https://assets.volvocars.com/us/~/media/us/images/s60/my18/volvo-s60-inscription-exterior-right-side-front-view-v1.jpg?h=583&la=en-US&w=732",
             "make": "Volvo",
@@ -143,7 +137,7 @@
                     "toDate": "20/03/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "fast@hjk.dk",
                     "fromDate": "20/02/2018",
                     "toDate": "04/03/2018"
@@ -152,7 +146,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a4-rt-2015-0039.jpg?itok=8xYZkL6d",
             "make": "Audi",
@@ -173,16 +167,16 @@
                     "toDate": "20/08/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "getting@boring.dk",
-                    "fromDate": "20/05/2018",
+                    "fromDate": "21/05/2018",
                     "toDate": "28/05/2018"
                 }
             ]
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "https://pictures.topspeed.com/IMG/jpg/200602/2007-chrysler-300c-srt8-8.jpg",
             "make": "Chrysler",
@@ -203,7 +197,7 @@
                     "toDate": "06/05/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "lux@bil.dk",
                     "fromDate": "12/04/2018",
                     "toDate": "16/04/2018"
@@ -212,7 +206,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "https://imgsvrcars-a.akamaihd.net/images/2017/8/BMW-420-GC/x.jpg/BMW-420-GC-11.jpg",
             "make": "BMW",
@@ -233,7 +227,7 @@
                     "toDate": "17/09/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "sindsygt@griner.dk",
                     "fromDate": "20/04/2018",
                     "toDate": "14/05/2018"
@@ -242,7 +236,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury Elite",
             "picture": "https://i.pinimg.com/564x/35/8a/41/358a416dadd3b358004bedf1d3651a69.jpg",
             "make": "Troll",
@@ -263,7 +257,7 @@
                     "toDate": "21/04/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "haha@funny.dk",
                     "fromDate": "01/05/2018",
                     "toDate": "05/05/2018"
@@ -272,7 +266,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC60FRC221A01300.jpg",
             "make": "Ferrari",
@@ -293,7 +287,7 @@
                     "toDate": "21/04/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "haha@funny.dk",
                     "fromDate": "01/05/2018",
                     "toDate": "05/05/2018"
@@ -302,7 +296,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://assets.bugatti.com/fileadmin/_processed_/sei/p54/se-image-5de90b6eb67ae1125554f4870d0498e1.jpg",
             "make": "Bugatti",
@@ -323,7 +317,7 @@
                     "toDate": "03/05/2018"
                 },
                 {
-                    "companyTag": "Bigler biler",
+                    "companyTag": "Biglers biler",
                     "customerMail": "im@rich.com",
                     "fromDate": "14/08/2018",
                     "toDate": "22/08/2018"
@@ -332,7 +326,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Mini",
             "picture": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/fusion/2018/collections/ad_planner1/2018_fsn_tnm_32.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
             "make": "Ford",
@@ -347,7 +341,7 @@
             "priceperday": 350,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "kght3@mail.com",
                     "fromDate": "30/04/2018",
                     "toDate": "13/05/2018"
@@ -356,7 +350,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Mini",
             "picture": "https://autocentralen.dk/wp-content/uploads/2018/03/nyjazz-fri.jpg",
             "make": "Honda",
@@ -371,7 +365,7 @@
             "priceperday": 380,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "knoldesparker@gmail.com",
                     "fromDate": "03/06/2018",
                     "toDate": "08/06/2018"
@@ -380,7 +374,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Economy",
             "picture": "http://www.autohuset-vestergaard.dk/media/3558/seat_ibiza2_690x350.jpg",
             "make": "Seat",
@@ -395,7 +389,7 @@
             "priceperday": 220,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "mrsgreg@email.com",
                     "fromDate": "22/04/2018",
                     "toDate": "24/04/2018"
@@ -404,7 +398,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Economy",
             "picture": "http://media.citroen.dk/image/91/3/new-c3-citroen-white-red.png.231913.png",
             "make": "Citroen",
@@ -419,7 +413,7 @@
             "priceperday": 180,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "mrfister@hotmail.com",
                     "fromDate": "30/04/2018",
                     "toDate": "13/05/2018"
@@ -428,7 +422,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/vhs/Ford-Mondeo.png",
             "make": "Ford",
@@ -443,7 +437,7 @@
             "priceperday": 310,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "mrfister@hotmail.com",
                     "fromDate": "30/05/2018",
                     "toDate": "13/06/2018"
@@ -452,7 +446,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "https://www.volkswagen.dk/content/dam/vw-ngw/vw_pkw/importers/dk/modeller/frilagte/714x400/passat/PassatTrendline_%20712x400.jpg/jcr:content/renditions/original.transform/min/img.jpg",
             "make": "Volkswagen",
@@ -467,7 +461,7 @@
             "priceperday": 180,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "grag45@yahoo.com",
                     "fromDate": "20/07/2018",
                     "toDate": "25/07/2018"
@@ -476,7 +470,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "http://st.motortrend.com/uploads/sites/10/2016/08/2017-nissan-maxima-sv-sedan-angular-front.png",
             "make": "Nissan",
@@ -491,7 +485,7 @@
             "priceperday": 200,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "jna@russmail.com",
                     "fromDate": "01/01/2019",
                     "toDate": "02/01/2019"
@@ -500,7 +494,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "https://www.classictoyotatyler.com/assets/stock/expanded/white/640/2017toc010001_640/2017toc010001_640_07.jpg",
             "make": "Toyota",
@@ -515,7 +509,7 @@
             "priceperday": 340,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "mrb@hotmail.com",
                     "fromDate": "30/07/2018",
                     "toDate": "13/08/2018"
@@ -524,7 +518,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "http://cdn.pinthiscars.com/images/2014-infiniti-q50-premium--8.jpg",
             "make": "Cadillac",
@@ -539,7 +533,7 @@
             "priceperday": 600,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "start@tony.com",
                     "fromDate": "22/09/2018",
                     "toDate": "13/10/2018"
@@ -548,7 +542,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://crdms.images.consumerreports.org/c_lfill,w_480/prod/cars/cr/car-versions/7987-2017-lincoln-mkz-reserve",
             "make": "Lincoln",
@@ -563,7 +557,7 @@
             "priceperday": 700,
             "reservations": [
                 {
-                    "companyTag": "Biglers Bigler",
+                    "companyTag": "Biglers Biler",
                     "customerMail": "flash@thunder.com",
                     "fromDate": "30/10/2018",
                     "toDate": "31/10/2018"
@@ -644,13 +638,13 @@
                     "companyTag": "Biglers biler",
                     "customerMail": "a@baseLike.dk",
                     "fromDate": "12/05/2018",
-                    "toDate": "19/05/2018"
+                    "toDate": "20/05/2018"
                 }
             ]
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Economy",
             "picture": "http://www.car-booker.com/usr/car-classes/economy-large.jpg",
             "make": "Audi",
@@ -674,7 +668,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
             "make": "Obel",
@@ -698,7 +692,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Standard",
             "picture": "http://www.hvilkenbil.dk/wp-content/uploads/2015/06/Opel-Astra-2015.jpg",
             "make": "Obel",
@@ -722,7 +716,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
             "make": "Audi",
@@ -746,7 +740,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Premium",
             "picture": "https://www.audi.co.uk/content/dam/audi/production/Models/NewModelsgallery/A4range/All-new_A4_Saloon/a4-saloon-social-share-facebook.png",
             "make": "BMW",
@@ -770,7 +764,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
             "make": "Tesla",
@@ -794,7 +788,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC20LGC041A01300.jpg",
             "make": "Lamborghini",
@@ -818,7 +812,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://auto.ndtvimg.com/car-images/big/rolls-royce/phantom/rolls-royce-phantom.jpg?v=6",
             "make": "Rolls-Royce",
@@ -842,7 +836,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Mini",
             "picture": "https://icdn5.digitaltrends.com/image/2015-mini-cooper-s-hardtop-0018-800x533-c.jpg?ver=1",
             "make": "Mini Cooper",
@@ -872,7 +866,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Luxury",
             "picture": "https://postmediadriving.files.wordpress.com/2018/02/tumbler-batmobile-replica.jpg?quality=99&strip=all&w=960&h=480&crop=1",
             "make": "Batmobile",
@@ -896,7 +890,7 @@
         },
         {
             "logo": "https://i.imgur.com/t0qqq7l.png",
-            "company": "Biglers Bigler",
+            "company": "Biglers Biler",
             "category": "Mini",
             "picture": "https://www.cstatic-images.com/car-pictures/xl/usc80jac144d021001_2.png",
             "make": "Jaguar",

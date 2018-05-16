@@ -29,9 +29,8 @@ export default class Main extends Component {
 
   }
 
-
-  error() {
-    if (this.state.error === undefined) {
+  carList = () => {
+    if (this.state.filteredCars) {
       return (
         <CarList
           toDate={this.props.location.state.todate}
@@ -39,6 +38,12 @@ export default class Main extends Component {
           cars={this.state.filteredCars}
         />
       )
+    } else return null;
+  }
+
+  error() {
+    if (this.state.error === undefined) {
+      null;
     } else {
       return (
         <p className="alert alert-warning">{this.state.error}</p>
@@ -158,6 +163,7 @@ export default class Main extends Component {
         <div className="grid-item">
           <div className="flex-container-content">
             <Sort sortingSwitch={this.sortingSwitch} />
+            {this.carList()}
             {this.error()}
           </div>
         </div>

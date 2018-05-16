@@ -90,10 +90,10 @@ export default class SideSearch extends Component {
         return (
             <div>
                 <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
-                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange}/>
+                <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromdate} onChange={this.handleChange}/>
                 <br/>
                 <label className='label-search' htmlFor='todate'>date to rent car to</label>
-                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange}/>
+                <input type="date" name="todate" id="todate" min={this.state.fromdate} value={this.state.todate} onChange={this.handleChange}/>
                 <br/>
                 {this.createSelect('location', locations, this.state.location)}
                 <br/>

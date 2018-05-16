@@ -35,9 +35,13 @@ public class Car {
     private String location;
     private int priceperday;
 
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "car", cascade=CascadeType.ALL,  fetch = FetchType.EAGER)
     private List<Reservation> reservations = new ArrayList<Reservation>();
 
+    public void addReservation(Reservation res){
+        res.setCar(this);
+        this.reservations.add(res);
+    }
     public Long getId() {
         return id;
     }
