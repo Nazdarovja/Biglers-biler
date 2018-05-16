@@ -42,7 +42,6 @@ class Facade {
     cars.push(car);
     const obj = {cars};
     const options = this.makeFetchOptions("PUT", obj);
-    alert(JSON.stringify(options))
     fetch(URL + "/" + car.regno, options);
   }
 

@@ -11,7 +11,8 @@ export default class Booking extends React.Component {
             succes: false,
             error: undefined,
             fromDate: props.location.state.fromDate,
-            toDate: props.location.state.toDate
+            toDate: props.location.state.toDate,
+            email: "test@test.dk"
         }
     }
 
@@ -31,12 +32,11 @@ export default class Booking extends React.Component {
         this.setState({ [event.target.id]: event.target.value });
     }
 
-    ///////////////// TODO : MOVE TO SEPERATE ROUTE
     successfullBooking = () => {
 
         return (
             <div>
-                <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>
+                <h2>Car is Booked!</h2>
                 <p>email: {this.state.email}</p>
                 <p>From date: {this.state.toDate}</p>
                 <p>End date: {this.state.fromDate}</p>
@@ -56,13 +56,9 @@ export default class Booking extends React.Component {
             const car = this.addReservation();
             //PUT the obj to DB
             await facade.putCarReservation(car);
-            let dbCar;
-            // await facade.fetchSpecCar(car.regno)
-            //     .then((res) => {
-            //         dbCar = res.cars[0];
-            //         console.log(JSON.stringify(dbCar));
-            //     }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
-            this.setState({ succes: true });
+            const isSuccess = await this.bookingSuccessCheck();
+            alert(isSuccess);
+            this.setState({ succes: isSuccess });
         }
 
 
@@ -84,6 +80,35 @@ export default class Booking extends React.Component {
         return car;
     }
 
+    bookingSuccessCheck = async () => {
+        let dbCar;
+        await facade.fetchSpecCar(this.state.car.regno)
+            .then((res) => {
+                dbCar = res.cars[0];
+            }).catch((ex) => this.setState({ error: "Something went wrong, sorry" }))
+        
+            //get list of reservations from fetched car
+        let resList = dbCar.reservations;
+        
+        //Converts to same date format
+        let fromDate = this.convDate(this.state.fromDate)
+        let toDate = this.convDate(this.state.toDate)
+
+        //check if it contains the reservation 
+        const list = resList.filter((res) => {
+            if (res.fromDate === fromDate && res.toDate === toDate) {
+                return res;
+            }
+        })
+        //returns true if res is contained, else false
+        if (list.length < 1)
+            return false
+        else
+            return true
+    }
+
+
+
     convDate = (date) => {
         let res;
         res = date.substring(8) + '/' + date.substring(5, 7) + '/' + date.substring(0, 4)
@@ -93,7 +118,7 @@ export default class Booking extends React.Component {
     bookingForm = () => {
         return (<div >
             <h2>Book car</h2>
-            <p>Your email: <input type="email" name="email" id="email" placeholder="your@email.pls" onChange={this.handleChange} /></p>
+            <p>Your email: <input type="email" name="email" id="email" placeholder="your@email.pls" onChange={this.handleChange} value={this.state.email} /></p>
             <p>From date: <input type="date" name="datestart" id="fromDate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromDate} onChange={this.handleChange} /></p>
             <p>End date: <input type="date" name="dateend" id="toDate" min={this.state.fromDate} value={this.state.toDate} onChange={this.handleChange} /></p>
             {this.error()}
