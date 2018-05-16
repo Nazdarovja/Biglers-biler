@@ -110,14 +110,15 @@ export default class Main extends Component {
   }
 
   sortingSwitch = () => {
+    var list = [];
     if (this.state.sortAsc) {
-      var list = this.state.filteredCars;
+      list = this.state.filteredCars;
       list.sort((a, b) => {
         return a.priceperday - b.priceperday;
       });
       this.setState({ sortAsc: false, filteredCars: list });
     } else {
-      var list = this.state.filteredCars;
+      list = this.state.filteredCars;
       list.sort((a, b) => {
         return b.priceperday - a.priceperday;
       });
@@ -128,8 +129,8 @@ export default class Main extends Component {
   render() {
     let location = undefined;
     let todate = undefined;
-    let fromdate = undefined; 
-    if(this.props.location.state) {
+    let fromdate = undefined;
+    if (this.props.location.state) {
       location = this.props.location.state.location;
       todate = this.props.location.state.todate;
       fromdate = this.props.location.state.fromdate;
@@ -141,11 +142,11 @@ export default class Main extends Component {
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
+            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate={fromdate} />
           </div>
-          
-          <div className="border"/>
-          
+
+          <div className="border" />
+
           <div className="flex-item-sidenav">
             <Filter filter={this.filter} />
           </div>

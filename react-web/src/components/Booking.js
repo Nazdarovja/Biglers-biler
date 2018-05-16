@@ -5,11 +5,9 @@ import facade from '../Facade';
 export default class Booking extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
 
         this.regno = props.match.params.car;
-
-        this.book = this.book.bind(this);
 
         const now = new Date();
         const day = ('0' + now.getDate());
@@ -28,14 +26,12 @@ export default class Booking extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('submitted: ' + this.state.value);
         event.preventDefault();
     }
 
     book() {
-        console.log(this.state)
         if (this.state.email === undefined || this.state.datestart === undefined || this.state.dateend === undefined) {
-            alert("please specify an email, startdate and enddate")
+            alert("Please specify an email, startdate and enddate")
         } else
             this.setState({ succes: true });
     }
@@ -53,7 +49,6 @@ export default class Booking extends React.Component {
                     <div className='booking-carinfo-container'>
                         <div className='booking-carinfo-item'>
                             <p><img className="logo-mini" alt="" src={this.state.car.picture}></img></p>
-                            {/* <p><img className="logo-mini" alt="" src={this.props.car.logo}></img></p> */}
                             
                         </div>
                         <div className='booking-carinfo-item'>

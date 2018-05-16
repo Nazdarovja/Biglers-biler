@@ -197,7 +197,8 @@ public class CarService {
 				
 				if (!isReservationAlreadyExisting(em, car, reservation))  {
 					reservation.setCar(car);
-					em.persist(reservation);
+                                        car.getReservations().add(reservation);
+					em.merge(car);
 				} else {
 					ErrorObject result = ErrorMessageUtility.getErrorJson(451, "Reservation Already Exists", reservation.toString());
 					return Response.status(Response.Status.BAD_REQUEST).entity(result).type("application/json").build();

@@ -11,167 +11,167 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.FetchType;
 
 @Entity
 public class Car {
-	
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
+    @JsonIgnore
     private Long id;
-	private String logo;
-	private String company;
-	private String category;
-	private String picture;
-	private String make;
-	private String model;
-	private int year;
-	private String regno;
-	private int seats;
-	private int doors;
-	private String gear;
-	private boolean aircondition;
-	private String location;
-	private int priceperday;
+    private String logo;
+    private String company;
+    private String category;
+    private String picture;
+    private String make;
+    private String model;
+    private int year;
+    private String regno;
+    private int seats;
+    private int doors;
+    private String gear;
+    private boolean aircondition;
+    private String location;
+    private int priceperday;
 
-	@OneToMany(mappedBy = "car", cascade=CascadeType.ALL)
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Reservation> reservations = new ArrayList<Reservation>();
-	
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getLogo() {
-		return logo;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setLogo(String logo) {
-		this.logo = logo;
-	}
+    public String getLogo() {
+        return logo;
+    }
 
-	public String getCompany() {
-		return company;
-	}
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public String getPicture() {
-		return picture;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
+    public String getPicture() {
+        return picture;
+    }
 
-	public String getMake() {
-		return make;
-	}
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
-	public void setMake(String make) {
-		this.make = make;
-	}
+    public String getMake() {
+        return make;
+    }
 
-	public String getModel() {
-		return model;
-	}
+    public void setMake(String make) {
+        this.make = make;
+    }
 
-	public void setModel(String model) {
-		this.model = model;
-	}
+    public String getModel() {
+        return model;
+    }
 
-	public int getYear() {
-		return year;
-	}
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-	public void setYear(int year) {
-		this.year = year;
-	}
+    public int getYear() {
+        return year;
+    }
 
-	public String getRegno() {
-		return regno;
-	}
+    public void setYear(int year) {
+        this.year = year;
+    }
 
-	public void setRegno(String regno) {
-		this.regno = regno;
-	}
+    public String getRegno() {
+        return regno;
+    }
 
-	public int getSeats() {
-		return seats;
-	}
+    public void setRegno(String regno) {
+        this.regno = regno;
+    }
 
-	public void setSeats(int seats) {
-		this.seats = seats;
-	}
+    public int getSeats() {
+        return seats;
+    }
 
-	public int getDoors() {
-		return doors;
-	}
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
 
-	public void setDoors(int doors) {
-		this.doors = doors;
-	}
+    public int getDoors() {
+        return doors;
+    }
 
-	public String getGear() {
-		return gear;
-	}
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
 
-	public void setGear(String gear) {
-		this.gear = gear;
-	}
+    public String getGear() {
+        return gear;
+    }
 
-	public boolean isAircondition() {
-		return aircondition;
-	}
+    public void setGear(String gear) {
+        this.gear = gear;
+    }
 
-	public void setAircondition(boolean aircondition) {
-		this.aircondition = aircondition;
-	}
+    public boolean isAircondition() {
+        return aircondition;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public void setAircondition(boolean aircondition) {
+        this.aircondition = aircondition;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public int getPriceperday() {
-		return priceperday;
-	}
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-	public void setPriceperday(int priceperday) {
-		this.priceperday = priceperday;
-	}
+    public int getPriceperday() {
+        return priceperday;
+    }
 
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
+    public void setPriceperday(int priceperday) {
+        this.priceperday = priceperday;
+    }
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
 
-	@Override
-	public String toString() {
-		return "Car [id=" + id + ", logo=" + logo + ", company=" + company + ", category=" + category + ", picture="
-				+ picture + ", make=" + make + ", model=" + model + ", year=" + year + ", regno=" + regno + ", seats="
-				+ seats + ", doors=" + doors + ", gear=" + gear + ", aircondition=" + aircondition + ", location="
-				+ location + ", priceperday=" + priceperday + ", reservations=" + reservations + "]";
-	}
-	
-	
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    @Override
+    public String toString() {
+        return "Car [id=" + id + ", logo=" + logo + ", company=" + company + ", category=" + category + ", picture="
+                + picture + ", make=" + make + ", model=" + model + ", year=" + year + ", regno=" + regno + ", seats="
+                + seats + ", doors=" + doors + ", gear=" + gear + ", aircondition=" + aircondition + ", location="
+                + location + ", priceperday=" + priceperday + ", reservations=" + reservations + "]";
+    }
+
 }
