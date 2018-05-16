@@ -66,7 +66,7 @@ export default class SideSearch extends Component {
         const options = list.map((item, index) => <option key={index} value={item}>{item}</option>);
         return (
             <div>
-            <label className='label-search' htmlFor={title}>company to rent the car from</label>
+            <label className='label-search' htmlFor={title}>location to rent the car from</label>
                 <select value={selected} name={title} id={title} onChange={this.handleChange}>
                     <option value=''>Not chosen</option>
                     {options}

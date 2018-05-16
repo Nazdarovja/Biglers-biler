@@ -38,8 +38,8 @@ export default class Booking extends React.Component {
             <div>
                 <h2>Car Booked! [NOT FUNCTIONAL YET]</h2>
                 <p>email: {this.state.email}</p>
-                <p>From date: {this.state.datestart}</p>
-                <p>End date: {this.state.dateend}</p>
+                <p>From date: {this.state.toDate}</p>
+                <p>End date: {this.state.fromDate}</p>
             </div>)
     }
 
@@ -97,7 +97,7 @@ export default class Booking extends React.Component {
             <p>From date: <input type="date" name="datestart" id="fromDate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromDate} onChange={this.handleChange} /></p>
             <p>End date: <input type="date" name="dateend" id="toDate" min={this.state.fromDate} value={this.state.toDate} onChange={this.handleChange} /></p>
             {this.error()}
-            <button onClick={this.handleSubmit}>Accept Booking [not yet implemented]</button>
+            <button onClick={this.handleSubmit}>Accept Booking</button>
         </div >
         )
     }
