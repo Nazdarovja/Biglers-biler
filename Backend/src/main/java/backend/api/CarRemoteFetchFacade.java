@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -35,33 +37,51 @@ public class CarRemoteFetchFacade {
         "https://stanitech.dk/carrentalapi/api/cars",
         "http://www.ramsbone.dk:8085/api/cars"
     };
+    
     String baseURL = "https://stanitech.dk/carrentalapi/api/cars";
-    ExecutorService es = Executors.newFixedThreadPool(10);
-    List<Future<String>> list = new ArrayList<Future<String>>();
+    
+    
 
     public CarRemoteFetchFacade() {
     }
 
     private String fetch(String url) {
-        
-        //TODO tråde til at hente fra alle URL'er
-            try {
-                URL address = new URL(url);
-                HttpURLConnection conn = (HttpURLConnection) address.openConnection();
-                conn.setRequestMethod("GET");
-                conn.setRequestProperty("Accept", "application/json");
-                conn.setRequestProperty("User-Agent", "server");
-                Scanner scan = new Scanner(conn.getInputStream());
-                String jsonStr = "";
-                while (scan.hasNext()) {
-                    jsonStr += scan.nextLine();
+        ExecutorService es = Executors.newFixedThreadPool(10);
+        List<Future<String>> futures = new ArrayList<Future<String>>();
+        List<String> cars = new ArrayList<>();
+        for (int i = 0; i < urls.length; i++) {
+            final int n = i;
+            Callable<String> c1 = (() -> {
+            //TODO tråde til at hente fra alle URL'er
+                try {
+                    URL address = new URL(url);
+                    HttpURLConnection conn = (HttpURLConnection) address.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    conn.setRequestProperty("User-Agent", "server");
+                    Scanner scan = new Scanner(conn.getInputStream());
+                    String jsonStr = "";
+                    while (scan.hasNext()) {
+                        jsonStr += scan.nextLine();
+                    }
+                    scan.close();
+                    return jsonStr;
                 }
-                scan.close();
-                return jsonStr;
+                catch (Exception ex) {
+                    throw new NotFoundException("Unable to connect");
+                }
+            });
+            Future<String> future = es.submit(c1);
+            futures.add(future);
+        }
+        for(Future<String> fut : futures){
+            try {
+                cars.add(fut.get());
+            } catch (Exception ex) {
+                Logger.getLogger(CarRemoteFetchFacade.class.getName()).log(Level.SEVERE, null, ex);
             }
-            catch (Exception ex) {
-                throw new NotFoundException("Unable to connect");
-            }
+        }
+        return gson.toJson(cars);
     }
     
     private String put(String url, String message) {
