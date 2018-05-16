@@ -37,36 +37,30 @@ public class CarResource {
     public CarResource() {
     }
 
-    /**
-     * Retrieves representation of an instance of backend.api.CarResource
-     *
-     * @return an instance of java.lang.String
-     */
+    public static boolean isNullOrBlank(String s) {
+        if (s == null || "".equals(s)) {
+                return true;
+        }
+        return false;
+    }
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-         return carRemote.getAll();
+    public String getByLocationAndDates(@QueryParam("location") String location, @QueryParam("start") String start, @QueryParam("end") String end) {
+        if(!isNullOrBlank(location) && !isNullOrBlank(start) && !isNullOrBlank(end))
+            return carRemote.getByLocationAndDate(location, start, end);
+        
+        if(!isNullOrBlank(start) && !isNullOrBlank(end))
+            return carRemote.getByDate(start, end);
+        
+        return carRemote.getAll();
     }
-
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/regno/{regno}")
     public String getThroughRegNo(@PathParam("regno")String regno) {
         return carRemote.getByRegNo(regno.toUpperCase());
-    }
-    
-    @GET
-    @Path("/date")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getByDates(@QueryParam("start") String start, @QueryParam("end") String end) {
-        return carRemote.getByDate(start, end);
-    }
-    
-    @GET
-    @Path("/location")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getByLocationAndDates(@QueryParam("location") String location, @QueryParam("start") String start, @QueryParam("end") String end) {
-        return carRemote.getByLocationAndDate(location, start, end);
     }
     
     @PUT
