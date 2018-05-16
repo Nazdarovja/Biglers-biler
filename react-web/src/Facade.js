@@ -1,7 +1,12 @@
 import React from 'react';
 
-const URL = "http://localhost:8084/Backend/api/car";
+const URL = "https://stanitech.dk/carrentalapi/api/cars";
 
+function convDate(date) {
+  let res
+  res = date.substring(9) + '/' + date.substring(5,7) + '/' + date.substring(0,4)
+  return res;
+}
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -15,6 +20,17 @@ class Facade {
   fetchData = () => {
     const options = this.makeFetchOptions("GET");
     return fetch(URL, options).then(handleHttpErrors);
+  }
+
+  fetchCars = (start, end, location) => {
+    const options = this.makeFetchOptions("GET");
+    const startDate = convDate(start);
+    const endDate =  convDate(end);
+
+    if(location.length < 1)
+      return fetch(URL + '?start=' + startDate + '&end=' + endDate, options).then(handleHttpErrors);
+    else 
+      return fetch(URL + '?location=' + location + '&start=' + startDate + '&end=' + endDate, options).then(handleHttpErrors);
   }
 
   fetchSpecCar = (regno) => {

@@ -16,19 +16,17 @@ export default class Main extends Component {
       facade: facade,
       sortAsc: true,
       error: undefined,
-
-
     }
     this.findCars = this.findCars.bind(this);
   }
 
-  findCars(cb) {
-    this.state.facade.fetchData()
+  findCars(start, end, location) {
+    this.state.facade.fetchCars(start, end, location)
       .then((res) => {
-        let cars
-        (cb) ? cars = cb(res) : cars = res;
+        const cars = res.cars;
         this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+
   }
 
 
@@ -127,6 +125,7 @@ export default class Main extends Component {
   }
 
   render() {
+    console.log(this.state.cars)
     let location = undefined;
     let todate = undefined;
     let fromdate = undefined;
@@ -142,7 +141,7 @@ export default class Main extends Component {
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate={fromdate} />
+            <SideSearch fetchCars={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
           </div>
 
           <div className="border" />
