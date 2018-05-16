@@ -40,9 +40,10 @@ class Facade {
     //The API only accepts a list with cars/car, thats why it is packed into an arraylist
     const cars = [];
     cars.push(car);
-    
-    const options = this.makeFetchOptions("PUT", cars);
-    return fetch(URL + "/" + car.regno, options).then(handleHttpErrors);
+    const obj = {cars};
+    const options = this.makeFetchOptions("PUT", obj);
+    alert(JSON.stringify(options))
+    fetch(URL + "/" + car.regno, options);
   }
 
   makeFetchOptions = (type, b) => {
