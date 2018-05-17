@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="2.221" errors="0" skipped="0">
-=======
-<testsuite tests="5" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="1.468" errors="0" skipped="0">
->>>>>>> 7c4dab71197b8a988eaf743283e6a8ae235370f6
+<testsuite tests="5" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="2.484" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
     <property name="java.vm.version" value="25.121-b13"/>
-    <property name="user.country.format" value="DK"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -16,44 +11,43 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.script" value=""/>
-    <property name="user.country" value="US"/>
+    <property name="user.country" value="DK"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="test" value="backend.api.CarRemoteFetchFacadeTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\awha\Desktop\Biglers-biler\Backend"/>
+    <property name="user.dir" value="C:\Users\Orchi\Desktop\Biglers biler\Backend"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\awha\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\Orchi\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar;C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\awha\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\awha\AppData\Local\Programs\Python\Python36-32\;C:\Program Files\Java\jdk1.7.0_60\bin;C:\Users\awha\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\awha\AppData\Roaming\npm;C:\Users\awha\AppData\Local\Yarn\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Brackets\command;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\Orchi\AppData\Local\Microsoft\WindowsApps;C:\Users\Orchi\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\Orchi\AppData\Local\Yarn\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\awha"/>
-    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="user.home" value="C:\Users\Orchi"/>
+    <property name="user.timezone" value="Europe/London"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="awha"/>
+    <property name="user.name" value="Orchi"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=backend.api.CarRemoteFetchFacadeTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar;C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=backend.api.CarRemoteFetchFacadeTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="user.language.format" value="da"/>
+    <property name="user.language" value="da"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.8.0_121"/>
@@ -68,14 +62,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="2.013"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.087"/>
-=======
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByLocationAndDate" time="0.681"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.158"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByDate" time="0.096"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.085"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testPutCar" time="0.383"/>
->>>>>>> 7c4dab71197b8a988eaf743283e6a8ae235370f6
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByLocationAndDate" time="1.348"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.267"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByDate" time="0.168"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.152"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testPutCar" time="0.433"/>
 </testsuite>
