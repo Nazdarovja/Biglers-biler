@@ -19,43 +19,42 @@ export default class SideSearch extends Component {
         super(props)
 
         this.state = {
-            location: '',
-            fromdate: '',
-            todate: '',
+            // location: '',
+            // fromdate: new Date().toISOString().substr(0, 10),
+            // todate: new Date().toISOString().substr(0, 10),
             error: undefined
         }
     }
 
-  async componentDidMount(){
-        let location = ''
-        let fromdate = ''
-        let todate = ''
+//   async componentDidMount(){
+//         let location = ''
+//         let fromdate = ''
+//         let todate = ''
 
-        if(this.props.location) location = this.props.location
-        if(this.props.fromdate) fromdate = this.props.fromdate
-        if(this.props.todate) todate = this.props.todate
+//         if(this.props.location) location = this.props.location
+//         if(this.props.fromdate) fromdate = this.props.fromdate
+//         if(this.props.todate) todate = this.props.todate
 
-        await this.setState({location: location, fromdate: fromdate, todate: todate});
-        if(this.state.fromdate.length > 0 && this.state.todate.length > 0)
-            await this.props.fetchCars(this.state.fromdate, this.state.todate, this.state.location);
-    }
-
+//         await this.setState({location: location, fromdate: fromdate, todate: todate});
+//         if(this.state.fromdate.length > 0 && this.state.todate.length > 0)
+//             await this.props.fetchCars(this.state.fromdate, this.state.todate, this.state.location);
+//     }
 
     handleChange = (event) => {
-        this.setState({[event.target.id]: event.target.value});
+        this.props.liftState({[event.target.id]: event.target.value});
     }
 
     handleSubmit = (event) => {
         try{
             event.preventDefault();
-            if (this.state.fromdate.length === 0 || this.state.todate.length === 0) {
+            if (this.props.fromdate.length === 0 || this.props.todate.length === 0) {
                 throw {message: 'A date must be selected for both date fields.'}
             }
-            const seaFromDate = new Date(this.state.fromdate);
-            const seaToDate = new Date(this.state.todate);
+            const seaFromDate = new Date(this.props.fromdate);
+            const seaToDate = new Date(this.props.todate);
             if (seaFromDate > seaToDate) throw {message: 'The beginning date must be a date which is before the end date'}
 
-            this.props.fetchCars(this.state.fromdate, this.state.todate, this.state.location);
+            this.props.fetchCars();
             this.setState({error: undefined})
         } catch (ex) {
             this.setState({error: ex})
@@ -90,12 +89,12 @@ export default class SideSearch extends Component {
         return (
             <div>
                 <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
-                <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromdate} onChange={this.handleChange}/>
+                <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.props.fromdate} onChange={this.handleChange}/>
                 <br/>
                 <label className='label-search' htmlFor='todate'>date to rent car to</label>
-                <input type="date" name="todate" id="todate" min={this.state.fromdate} value={this.state.todate} onChange={this.handleChange}/>
+                <input type="date" name="todate" id="todate" min={this.props.fromdate} value={this.props.todate} onChange={this.handleChange}/>
                 <br/>
-                {this.createSelect('location', locations, this.state.location)}
+                {this.createSelect('location', locations, this.props.location)}
                 <br/>
                 {this.error()}
                 <button type="submit" onClick={this.handleSubmit}>Find Bigler</button>

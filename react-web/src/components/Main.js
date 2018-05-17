@@ -9,32 +9,53 @@ import Sort from './Sort';
 export default class Main extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      category: this.props.category,
       cars: [],
       filteredCars: [],
       facade: facade,
       sortAsc: true,
       error: undefined,
+      location: '',
+      fromdate: new Date().toISOString().substr(0, 10),
+      todate: new Date().toISOString().substr(0, 10)
     }
-    this.findCars = this.findCars.bind(this);
+    this.fetchCars = this.fetchCars.bind(this);
+    this.liftState = this.liftState.bind(this);
   }
 
-  findCars(start, end, location) {
-    this.state.facade.fetchCars(start, end, location)
-      .then((res) => {
-        const cars = res.cars;
-        this.setState({ cars: cars, error: undefined, filteredCars: cars })
-      }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+  async componentDidMount(){
+    if (this.props.location.state) {
+      await this.setState({
+        location: this.props.location.state.location,
+        todate: this.props.location.state.todate,
+        fromdate: this.props.location.state.fromdate
+      });
+      this.fetchCars();
+    }
+  }
 
+  async fetchCars() {
+    this.state.facade.fetchCars(this.state.fromdate, this.state.todate, this.state.location)
+      .then(async (res) => {
+        const cars = res.cars;
+        await this.setState({ cars: cars, error: undefined, filteredCars: cars })
+      }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+  }
+
+  async liftState(state) {
+    if (typeof state == 'object')
+      await this.setState(state)
+    else 
+      throw {message: 'The inputted value is not an object'}
   }
 
   carList = () => {
     if (this.state.filteredCars) {
       return (
         <CarList
-          toDate={this.props.location.state.todate}
-          fromDate={this.props.location.state.fromdate}
+          toDate={this.state.todate}
+          fromDate={this.state.fromdate}
           cars={this.state.filteredCars}
         />
       )
@@ -134,22 +155,13 @@ export default class Main extends Component {
   }
 
   render() {
-    let location = undefined;
-    let todate = undefined;
-    let fromdate = undefined;
-    if (this.props.location.state) {
-      location = this.props.location.state.location;
-      todate = this.props.location.state.todate;
-      fromdate = this.props.location.state.fromdate;
-    }
-
     return (
       <div className="grid-container-main">
 
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchCars={this.findCars} location={location} todate={todate} fromdate={fromdate} />
+            <SideSearch fetchCars={this.fetchCars} liftState={this.liftState} location={this.state.location} todate={this.state.todate} fromdate={this.state.fromdate} />
           </div>
 
           <div className="border" />
