@@ -1,4 +1,4 @@
-const URL = "https://stanitech.dk/carrentalapi/api/cars";
+const URL = "http://localhost:8084/Backend/api/car";
 
 function convDate(date) {
   let res
@@ -7,6 +7,7 @@ function convDate(date) {
 }
 
 function handleHttpErrors(res) {
+  console.log("RESPONSE: " + JSON.stringify(res))
   if (!res.ok) {
     throw { message: res.statusText, status: res.status };
   }
@@ -25,6 +26,10 @@ class Facade {
     const startDate = convDate(start);
     const endDate = convDate(end);
 
+    console.log(startDate)
+    console.log(endDate)
+    console.log(URL + '?start=' + startDate + '&end=' + endDate)
+
     if (location.length < 1)
       return fetch(URL + '?start=' + startDate + '&end=' + endDate, options).then(handleHttpErrors);
     else
@@ -33,14 +38,14 @@ class Facade {
 
   fetchSpecCar = (regno) => {
     const options = this.makeFetchOptions("GET");
-    return fetch(URL + "/" + regno, options).then(handleHttpErrors);
+    return fetch(URL + "/regno/" + regno, options).then(handleHttpErrors);
   }
 
   putCarReservation = (car) => {
     //The API only accepts a list with cars/car, thats why it is packed into an arraylist
     const cars = [];
     cars.push(car);
-    const obj = {cars};
+    const obj = { cars };
     const options = this.makeFetchOptions("PUT", obj);
     fetch(URL + "/" + car.regno, options);
   }

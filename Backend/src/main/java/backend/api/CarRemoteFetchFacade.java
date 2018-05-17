@@ -31,6 +31,7 @@ public class CarRemoteFetchFacade {
     String[] urls = {
         "https://stanitech.dk/carrentalapi/api/cars",
         "http://www.ramsbone.dk:8085/api/cars"
+//        "https://www.devrancoskun.dk/CarRental-backend/api/cars"
     };
     
     
@@ -61,6 +62,7 @@ public class CarRemoteFetchFacade {
                     scan.close();
                     if(jsonStr.length() < 30)
                         return null;
+                    jsonStr = jsonStr.replaceAll("\\s","");
                     String js = jsonStr.substring(9, jsonStr.length()-2);
                     return js;
                 }
@@ -171,9 +173,11 @@ public class CarRemoteFetchFacade {
     public String getByRegNo(String regNo) {
         String URL = "";
         if(regNo.startsWith("B"))
-            URL = urls[0] + "?regno=" + regNo;
+            URL = urls[0] + "/" + regNo;
         if(regNo.startsWith("L"))
-            URL = urls[1] + "?regno=" + regNo;
+            URL = urls[1] + "/" + regNo;
+//        if(regNo.startsWith("D"))
+//            URL = urls[2] + "/" + regNo;
         return fetchSpecificCar(URL);
     }
     
@@ -183,6 +187,8 @@ public class CarRemoteFetchFacade {
             URL = urls[0] + "/" + regNo;
         if(regNo.startsWith("L"))
             URL = urls[1] + "/" + regNo;
+//        if(regNo.startsWith("D"))
+//            URL = urls[2] + "/" + regNo;
         
         System.out.println("URL IS: "+URL);
         
@@ -190,9 +196,5 @@ public class CarRemoteFetchFacade {
         //return put(baseURL + "/" + regno, message);
     }
     
-    public static void main(String[] args) {
-        CarRemoteFetchFacade cm = new CarRemoteFetchFacade();
-        System.out.println(cm.getByDate("08/08/2018", "08/08/2018"));
-    }
 }
 

@@ -66,7 +66,7 @@ public class CarResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/regno/{regno}")
+    @Path("/{regno}")
     public String putJson(@PathParam("regno")String regno, String message) {
         return carRemote.putCar(message, regno);
     }

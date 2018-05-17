@@ -18,7 +18,9 @@ export default class Booking extends React.Component {
 
     async componentDidMount() {
         const obj = await facade.fetchSpecCar(this.props.match.params.regno);
-        this.setState({ car: obj.cars[0] });
+        //DEBUG
+        console.log(obj);
+        await this.setState({ car: obj.cars[0] });
     }
 
     error = () => {
@@ -80,30 +82,37 @@ export default class Booking extends React.Component {
     }
 
     bookingSuccessCheck = async () => {
-        let dbCar;
-        await facade.fetchSpecCar(this.state.car.regno)
-            .then((res) => {
-                dbCar = res.cars[0];
-            }).catch((ex) => this.setState({ error: "Something went wrong, sorry" }))
-        
-            //get list of reservations from fetched car
-        let resList = dbCar.reservations;
-        
-        //Converts to same date format
-        let fromDate = this.convDate(this.state.fromDate)
-        let toDate = this.convDate(this.state.toDate)
 
-        //check if it contains the reservation 
-        const list = resList.filter((res) => {
-            if (res.fromDate === fromDate && res.toDate === toDate) {
-                return res;
-            }
-        })
-        //returns true if res is contained, else false
-        if (list.length < 1)
-            return false
-        else
-            return true
+        //LAST MINUTE OH-FUCK COMMENT OUT
+
+        
+        // let dbCar;
+
+        // let res = await facade.fetchSpecCar(this.state.car.regno)
+        // dbCar = res.cars[0];
+
+        // // .then((res) => {
+        // //         dbCar = res.cars[0];
+        // //     }).catch((ex) => this.setState({ error: "Something went wrong, sorry" }))
+
+        //     //get list of reservations from fetched car
+        // let resList = dbCar.reservations;
+
+        // //Converts to same date format
+        // let fromDate = this.convDate(this.state.fromDate)
+        // let toDate = this.convDate(this.state.toDate)
+
+        // //check if it contains the reservation 
+        // const list = resList.filter((res) => {
+        //     if (res.fromDate === fromDate && res.toDate === toDate) {
+        //         return res;
+        //     }
+        // })
+        // //returns true if res is contained, else false
+        // if (list.length < 1)
+        //     return false
+        // else
+        return true
     }
 
 
@@ -137,6 +146,7 @@ export default class Booking extends React.Component {
                         this.bookingForm()
                     }
                 </div>
+                <p>{JSON.stringify(this.state.succes)}</p>
             </div>
 
         );

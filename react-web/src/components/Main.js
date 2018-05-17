@@ -38,7 +38,7 @@ export default class Main extends Component {
   async fetchCars() {
     this.state.facade.fetchCars(this.state.fromdate, this.state.todate, this.state.location)
       .then(async (res) => {
-        const cars = res.cars;
+        const cars = res.Cars;
         await this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
   }
