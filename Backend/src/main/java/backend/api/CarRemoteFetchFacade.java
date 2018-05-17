@@ -29,8 +29,8 @@ public class CarRemoteFetchFacade {
     
     Gson gson = new Gson();
     String[] urls = {
-        "http://www.ramsbone.dk:8085/api/cars",
-        "https://stanitech.dk/carrentalapi/api/cars"
+        "https://stanitech.dk/carrentalapi/api/cars",
+        "http://www.ramsbone.dk:8085/api/cars"
     };
     
     
@@ -170,7 +170,7 @@ public class CarRemoteFetchFacade {
         String URL = "";
         if(regNo.startsWith("B"))
             URL = urls[0] + "?regno=" + regNo;
-        if(regNo.startsWith("C"))
+        if(regNo.startsWith("L"))
             URL = urls[1] + "?regno=" + regNo;
         return fetchSpecificCar(URL);
     }
@@ -179,7 +179,7 @@ public class CarRemoteFetchFacade {
         String URL = "";
         if(regNo.startsWith("B"))
             URL = urls[0] + "/" + regNo;
-        if(regNo.startsWith("C"))
+        if(regNo.startsWith("L"))
             URL = urls[1] + "/" + regNo;
         return put(URL + "/" + regNo, message);
         //return put(baseURL + "/" + regno, message);
