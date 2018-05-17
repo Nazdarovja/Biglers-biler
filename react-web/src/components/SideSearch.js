@@ -4,7 +4,7 @@ import '../styles/App.css';
 const locations = [
     'Cph (Copenhagen Airport)', 
     'Billund Lufthavn', 
-    'Aalborg Lufthavn',,
+    'Aalborg Lufthavn',
     'Copenhagen City',
     'Aarhus City',
     'Odense',
@@ -66,7 +66,7 @@ export default class SideSearch extends Component {
         const options = list.map((item, index) => <option key={index} value={item}>{item}</option>);
         return (
             <div>
-            <label className='label-search' htmlFor={title}>company to rent the car from</label>
+            <label className='label-search' htmlFor={title}>location to rent the car from</label>
                 <select value={selected} name={title} id={title} onChange={this.handleChange}>
                     <option value=''>Not chosen</option>
                     {options}
@@ -90,10 +90,10 @@ export default class SideSearch extends Component {
         return (
             <div>
                 <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
-                <input type="date" name="fromdate" id="fromdate" value={this.state.fromdate} onChange={this.handleChange}/>
+                <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromdate} onChange={this.handleChange}/>
                 <br/>
                 <label className='label-search' htmlFor='todate'>date to rent car to</label>
-                <input type="date" name="todate" id="todate" value={this.state.todate} onChange={this.handleChange}/>
+                <input type="date" name="todate" id="todate" min={this.state.fromdate} value={this.state.todate} onChange={this.handleChange}/>
                 <br/>
                 {this.createSelect('location', locations, this.state.location)}
                 <br/>

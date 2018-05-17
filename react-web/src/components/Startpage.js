@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import StartSearch from './StartSearch';
 
 export default class Startpage extends Component {
