@@ -1,6 +1,6 @@
 import React from 'react';
 
-const URL = "https://stanitech.dk/carrentalapi/api/cars";
+const URL = "https://awha.dk/Backend/api/car";
 
 
 function handleHttpErrors(res) {
@@ -28,7 +28,7 @@ class Facade {
 
   fetchSpecCar = (regno) => {
     const options = this.makeFetchOptions("GET");
-    return fetch(URL+"/regno/"+regno, options).then(handleHttpErrors);
+    return fetch(URL+"/"+regno, options).then(handleHttpErrors);
   }
 
   makeFetchOptions = (type, b) => {
