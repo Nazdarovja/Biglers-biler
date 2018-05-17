@@ -126,7 +126,7 @@ public class CarRemoteFetchFacade {
             conn.setRequestProperty("Content-type", "application/json; charset=UTF-8");
         
             OutputStream os = conn.getOutputStream();
-            os.write(message.toString().getBytes("UTF-8"));
+            os.write(message.getBytes("UTF-8"));
             os.close();
         
             Scanner scan = new Scanner(conn.getInputStream());
@@ -134,9 +134,11 @@ public class CarRemoteFetchFacade {
             while (scan.hasNext()) {
                 jsonStr += scan.nextLine();
             }
+            
             scan.close();
             return jsonStr;
         } catch (IOException ex) {
+            System.out.println("EXCEPTION: "+ex.getMessage());
             throw new NotFoundException("Unable to connect");
         }
         
@@ -157,7 +159,7 @@ public class CarRemoteFetchFacade {
     }
     
     public String getByLocationAndDate(String location, String start, String end) {
-        String[] formattedURLS = {};
+        String[] formattedURLS = new String[urls.length];
         
         for(int i = 0; i < urls.length; i++) {
             formattedURLS[i] = urls[i] +  "?location=" + location + "&start=" + start + "&end=" + end;
@@ -181,7 +183,10 @@ public class CarRemoteFetchFacade {
             URL = urls[0] + "/" + regNo;
         if(regNo.startsWith("L"))
             URL = urls[1] + "/" + regNo;
-        return put(URL + "/" + regNo, message);
+        
+        System.out.println("URL IS: "+URL);
+        
+        return put(URL, message);
         //return put(baseURL + "/" + regno, message);
     }
     

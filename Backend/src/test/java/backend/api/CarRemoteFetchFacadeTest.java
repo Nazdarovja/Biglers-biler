@@ -60,7 +60,7 @@ public class CarRemoteFetchFacadeTest {
      * IMPLEMENTED; REWRITE THIS TEST !!!!!!!!!!
      *
      */
-    @Test(expected = backend.exceptions.NotFoundException.class)
+    @Test
     public void testGetByLocationAndDate() {
 
         System.out.println("getByLocationAndDate");
@@ -91,7 +91,7 @@ public class CarRemoteFetchFacadeTest {
         int randomYear = ThreadLocalRandom.current().nextInt(4000, 4998 + 1);
 
         String newDate = randomDay + "/" + randomMonth + "/" + randomYear;
-
+        System.out.println("newdate"+newDate);
         //original car
         CarRemoteFetchFacade instance = new CarRemoteFetchFacade();
         String original_car = instance.getByRegNo("BAG1234");
