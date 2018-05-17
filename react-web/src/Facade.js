@@ -60,7 +60,6 @@ class Facade {
   }
 
 
-
 }
 
 const facade = new Facade();

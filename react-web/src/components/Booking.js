@@ -12,7 +12,7 @@ export default class Booking extends React.Component {
             error: undefined,
             fromDate: props.location.state.fromDate,
             toDate: props.location.state.toDate,
-            email: "test@test.dk"
+            email: ""
         }
     }
 
@@ -57,7 +57,6 @@ export default class Booking extends React.Component {
             //PUT the obj to DB
             await facade.putCarReservation(car);
             const isSuccess = await this.bookingSuccessCheck();
-            alert(isSuccess);
             this.setState({ succes: isSuccess });
         }
 
