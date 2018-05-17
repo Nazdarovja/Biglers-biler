@@ -9,17 +9,12 @@ import backend.exceptions.NotFoundException;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -34,8 +29,8 @@ public class CarRemoteFetchFacade {
     
     Gson gson = new Gson();
     String[] urls = {
-        "https://stanitech.dk/carrentalapi/api/cars",
-        "http://www.ramsbone.dk:8085/api/cars"
+        "http://www.ramsbone.dk:8085/api/cars",
+        "https://stanitech.dk/carrentalapi/api/cars"
     };
     
     
@@ -87,8 +82,14 @@ public class CarRemoteFetchFacade {
                 Logger.getLogger(CarRemoteFetchFacade.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        return gson.toJson(cars);
+        StringBuilder carsJSON = new StringBuilder();
+        System.out.println(cars.size());
+        cars.forEach((car) -> {
+            carsJSON.append(car + ",");
+        });
+        String temp = carsJSON.substring(0, carsJSON.length()-1);
+        temp = "{ \"Cars\": [" + temp + "]}";
+        return temp;
     }
     
     public String fetchSpecificCar(String url) {
@@ -146,7 +147,7 @@ public class CarRemoteFetchFacade {
     }
 
     public String getByDate(String start, String end) {
-        String[] formattedURLS = {};
+        String[] formattedURLS = new String[urls.length];
         
         for(int i = 0; i < urls.length; i++) {
             formattedURLS[i] = urls[i] +  "?start=" + start + "&end=" + end;
@@ -183,4 +184,10 @@ public class CarRemoteFetchFacade {
         return put(URL + "/" + regNo, message);
         //return put(baseURL + "/" + regno, message);
     }
+    
+    public static void main(String[] args) {
+        CarRemoteFetchFacade cm = new CarRemoteFetchFacade();
+        System.out.println(cm.getByDate("08/08/2018", "08/08/2018"));
+    }
 }
+
