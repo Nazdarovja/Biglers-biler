@@ -1,6 +1,6 @@
 import React from 'react';
 
-const URL = "http://10.50.137.199:8084/Backend/api/car";
+const URL = "https://stanitech.dk/carrentalapi/api/cars";
 
 
 function handleHttpErrors(res) {
@@ -15,6 +15,15 @@ class Facade {
   fetchData = () => {
     const options = this.makeFetchOptions("GET");
     return fetch(URL, options).then(handleHttpErrors);
+  }
+
+  fetchCars = (start, end, location) => {
+    const options = this.makeFetchOptions("GET");
+
+    if(location.length < 1)
+      return fetch(URL + '?start=' + start + '&end=' + end, options).then(handleHttpErrors);
+    else 
+      return fetch(URL + '?location=' + location + '&start=' + start + '&end=' + end, options).then(handleHttpErrors);
   }
 
   fetchSpecCar = (regno) => {

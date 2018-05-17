@@ -6,7 +6,7 @@ export default class Sort extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity style={{}}onPress={this.props.sortingSwitch}>
+        <TouchableOpacity style={{backgroundColor: '#ADD8E6', padding: 10, alignItems : "center"}} onPress={this.props.sortingSwitch}>
           <Text>
             Sort by Price
         </Text>
