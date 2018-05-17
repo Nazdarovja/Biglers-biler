@@ -64,7 +64,10 @@ public class CarRemoteFetchFacade {
                         jsonStr += scan.nextLine();
                     }
                     scan.close();
-                    return jsonStr;
+                    if(jsonStr.length() < 30)
+                        return null;
+                    String js = jsonStr.substring(9, jsonStr.length()-2);
+                    return js;
                 }
                 catch (Exception ex) {
                     Logger.getLogger(CarRemoteFetchFacade.class.getName()).log(Level.SEVERE, null, ex + "::: Something went wrong"
@@ -84,6 +87,7 @@ public class CarRemoteFetchFacade {
                 Logger.getLogger(CarRemoteFetchFacade.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
         return gson.toJson(cars);
     }
     
