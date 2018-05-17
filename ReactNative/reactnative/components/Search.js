@@ -21,7 +21,7 @@ export default class Search extends Component {
         super(props)
         
         this.state = {
-            location: "Choose location",
+            location: '',
             fromdate: '',
             todate: '',
         }
@@ -66,19 +66,19 @@ export default class Search extends Component {
                 <Text>Rental from date</Text>
                 <DatePicker 
                 mode="date" 
-                format="YYYY-MM-DD" 
+                format="DD/MM/YYYY" 
                 confirmBtnText="Confirm"
                 cancelBtnText="Cancel"
-                placeholder="rent from"
+                placeholder={(this.state.fromdate.length > 0) ? this.state.fromdate : 'pick a date'}
                 onDateChange={(date) => {this.setState({fromdate: date})}}
                 /> 
                 <Text>Rental to date</Text>
                 <DatePicker 
                 mode="date" 
-                format="YYYY-MM-DD" 
+                format="DD/MM/YYYY" 
                 confirmBtnText="Confirm"
                 cancelBtnText="Cancel"
-                placeholder="rent to"
+                placeholder={(this.state.todate.length > 0) ? this.state.todate : 'pick a date'}
                 onDateChange={(date) => {this.setState({todate: date})}}
                 /> 
                 
@@ -90,7 +90,11 @@ export default class Search extends Component {
                 <TouchableOpacity 
                 // test style
                 style={{backgroundColor: '#DDDDDD', padding: 10, alignItems : "center"}}
-                onPress={() => navigate('Mainpage')}
+                onPress={() => navigate('Mainpage', {
+                    location: this.state.location,
+                    fromdate: this.state.fromdate,
+                    todate: this.state.todate,
+                })}
                 >
                     <Text>
                        Search 
