@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="0.25" errors="0" skipped="0">
-=======
-<testsuite tests="2" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="0.394" errors="0" skipped="0">
->>>>>>> f35f23b648f02499c7996f133bdf4ab6bf5782bd
+<testsuite tests="5" failures="0" name="backend.api.CarRemoteFetchFacadeTest" time="2.484" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -18,6 +14,7 @@
     <property name="user.country" value="DK"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
+    <property name="test" value="backend.api.CarRemoteFetchFacadeTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\Orchi\Desktop\Biglers biler\Backend"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
@@ -48,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=backend.api.CarRemoteFetchFacadeTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="da"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -65,11 +62,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.125"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.078"/>
-=======
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.172"/>
-  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.077"/>
->>>>>>> f35f23b648f02499c7996f133bdf4ab6bf5782bd
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByLocationAndDate" time="1.348"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByRegNo" time="0.267"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetByDate" time="0.168"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testGetAll" time="0.152"/>
+  <testcase classname="backend.api.CarRemoteFetchFacadeTest" name="testPutCar" time="0.433"/>
 </testsuite>

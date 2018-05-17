@@ -16,27 +16,34 @@ export default class Main extends Component {
       facade: facade,
       sortAsc: true,
       error: undefined,
-
-
     }
     this.findCars = this.findCars.bind(this);
   }
 
-  findCars(cb) {
-    this.state.facade.fetchData()
+  findCars(start, end, location) {
+    this.state.facade.fetchCars(start, end, location)
       .then((res) => {
-        let cars
-        (cb) ? cars = cb(res) : cars = res;
+        const cars = res.cars;
         this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+
   }
 
+  carList = () => {
+    if (this.state.filteredCars) {
+      return (
+        <CarList
+          toDate={this.props.location.state.todate}
+          fromDate={this.props.location.state.fromdate}
+          cars={this.state.filteredCars}
+        />
+      )
+    } else return null;
+  }
 
   error() {
     if (this.state.error === undefined) {
-      return (
-        <CarList cars={this.state.filteredCars} />
-      )
+      null;
     } else {
       return (
         <p className="alert alert-warning">{this.state.error}</p>
@@ -110,14 +117,15 @@ export default class Main extends Component {
   }
 
   sortingSwitch = () => {
+    var list = [];
     if (this.state.sortAsc) {
-      var list = this.state.filteredCars;
+      list = this.state.filteredCars;
       list.sort((a, b) => {
         return a.priceperday - b.priceperday;
       });
       this.setState({ sortAsc: false, filteredCars: list });
     } else {
-      var list = this.state.filteredCars;
+      list = this.state.filteredCars;
       list.sort((a, b) => {
         return b.priceperday - a.priceperday;
       });
@@ -128,8 +136,8 @@ export default class Main extends Component {
   render() {
     let location = undefined;
     let todate = undefined;
-    let fromdate = undefined; 
-    if(this.props.location.state) {
+    let fromdate = undefined;
+    if (this.props.location.state) {
       location = this.props.location.state.location;
       todate = this.props.location.state.todate;
       fromdate = this.props.location.state.fromdate;
@@ -141,11 +149,11 @@ export default class Main extends Component {
         <div className="grid-item flex-container-sidenav">
 
           <div className="flex-item-sidenav">
-            <SideSearch fetchAll={this.findCars} location={location} todate={todate} fromdate = {fromdate} />
+            <SideSearch fetchCars={this.findCars} location={location} todate={todate} fromdate={fromdate} />
           </div>
-          
-          <div className="border"/>
-          
+
+          <div className="border" />
+
           <div className="flex-item-sidenav">
             <Filter filter={this.filter} />
           </div>
@@ -155,6 +163,7 @@ export default class Main extends Component {
         <div className="grid-item">
           <div className="flex-container-content">
             <Sort sortingSwitch={this.sortingSwitch} />
+            {this.carList()}
             {this.error()}
           </div>
         </div>
