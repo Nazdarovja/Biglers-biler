@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: backend.api.CarRemoteFetchFacadeTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.229 sec
+=======
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.464 sec
+>>>>>>> 7c4dab71197b8a988eaf743283e6a8ae235370f6
