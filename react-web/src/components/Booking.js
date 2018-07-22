@@ -39,7 +39,7 @@ export default class Booking extends React.Component {
         return (
             <div>
                 <h2>Car is Booked!</h2>
-                <p>email: {this.state.email}</p>
+                <p>Email: {this.state.email}</p>
                 <p>From date: {this.state.toDate}</p>
                 <p>End date: {this.state.fromDate}</p>
             </div>)
@@ -83,7 +83,7 @@ export default class Booking extends React.Component {
 
     bookingSuccessCheck = async () => {
 
-        //LAST MINUTE OH-FUCK COMMENT OUT
+        //TODO : fix success criteria stuff (temp)
 
         
         // let dbCar;
@@ -130,7 +130,7 @@ export default class Booking extends React.Component {
             <p>From date: <input type="date" name="datestart" id="fromDate" min={new Date().toISOString().substr(0, 10)} value={this.state.fromDate} onChange={this.handleChange} /></p>
             <p>End date: <input type="date" name="dateend" id="toDate" min={this.state.fromDate} value={this.state.toDate} onChange={this.handleChange} /></p>
             {this.error()}
-            <button onClick={this.handleSubmit}>Accept Booking</button>
+            <button onClick={this.handleSubmit}>Submit Booking</button>
         </div >
         )
     }
@@ -146,7 +146,6 @@ export default class Booking extends React.Component {
                         this.bookingForm()
                     }
                 </div>
-                <p>{JSON.stringify(this.state.succes)}</p>
             </div>
 
         );

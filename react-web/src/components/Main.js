@@ -24,14 +24,16 @@ export default class Main extends Component {
     this.liftState = this.liftState.bind(this);
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     if (this.props.location.state) {
       await this.setState({
         location: this.props.location.state.location,
         todate: this.props.location.state.todate,
         fromdate: this.props.location.state.fromdate
       });
-      this.fetchCars();
+      // this.fetchCars();
+      //TODO : TEST METHOD REMOVE FOR PRODUCTION!!!
+      this.fetchAll();
     }
   }
 
@@ -42,12 +44,23 @@ export default class Main extends Component {
         await this.setState({ cars: cars, error: undefined, filteredCars: cars })
       }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
   }
+  //TODO: REMOVE TEST METHOD
+  async fetchAll() {
+    await this.state.facade.fetchData()
+      .then(async (res) => {
+        const cars = res;
+        await this.setState({ cars: cars, error: undefined, filteredCars: cars })
+      }).catch((ex) => this.setState({ error: ex.message + ', ' + ex.status }))
+
+    this.sortingSwitch();
+
+  }
 
   async liftState(state) {
     if (typeof state == 'object')
       await this.setState(state)
-    else 
-      throw {message: 'The inputted value is not an object'}
+    else
+      throw { message: 'The inputted value is not an object' }
   }
 
   carList = () => {
@@ -131,6 +144,8 @@ export default class Main extends Component {
       }
       return cat && com ? true : false;
     });
+
+    // TODO: Why this check ?
     if (filteredData.length >= 1)
       this.setState({ filteredCars: filteredData });
     else
@@ -138,6 +153,8 @@ export default class Main extends Component {
   }
 
   sortingSwitch = () => {
+    console.log("TEST !");
+
     var list = [];
     if (this.state.sortAsc) {
       list = this.state.filteredCars;

@@ -1,0 +1,9 @@
+(USE "TODO:"  to find missing stuff)
+
+- Change backend fetch method to not concat all Strings.
+- Change Car Details display to "prettier display" 
+- Add logo and stuffs to top bar
+
+- Add email when order is booked with info and stuffs
+- Get Devran's API to work with our stuff
+- Fix bug when adding category when not chosen in StartSearch / Alternative create single search component instead of "StartSearch" & "SideSearch"

@@ -1,4 +1,5 @@
-const URL = "https://awha.dk/Backend/api/car";
+// const URL = "https://awha.dk/Backend/api/car";
+const URL = "http://localhost:3000/cars";
 
 function convDate(date) {
   let res

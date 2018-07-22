@@ -65,7 +65,7 @@ export default class SideSearch extends Component {
         const options = list.map((item, index) => <option key={index} value={item}>{item}</option>);
         return (
             <div>
-            <label className='label-search' htmlFor={title}>location to rent the car from</label>
+            <label className='label-search' htmlFor={title}>Rental location</label>
                 <select value={selected} name={title} id={title} onChange={this.handleChange}>
                     <option value=''>Not chosen</option>
                     {options}
@@ -88,10 +88,10 @@ export default class SideSearch extends Component {
     render() {
         return (
             <div>
-                <label className='label-search' htmlFor='fromdate'>date to rent car from</label>
+                <label className='label-search' htmlFor='fromdate'>Rent car from</label>
                 <input type="date" name="fromdate" id="fromdate" min={new Date().toISOString().substr(0, 10)} value={this.props.fromdate} onChange={this.handleChange}/>
                 <br/>
-                <label className='label-search' htmlFor='todate'>date to rent car to</label>
+                <label className='label-search' htmlFor='todate'>Rent car to</label>
                 <input type="date" name="todate" id="todate" min={this.props.fromdate} value={this.props.todate} onChange={this.handleChange}/>
                 <br/>
                 {this.createSelect('location', locations, this.props.location)}

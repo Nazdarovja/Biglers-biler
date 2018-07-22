@@ -13,7 +13,7 @@ export default class Filter extends React.Component {
             },
             companies: {
                 BiglersBigler: false,
-                Gert: false,
+                Schwertz: false,
                 Elias: false,
                 Devran: false
             }
@@ -80,15 +80,15 @@ export default class Filter extends React.Component {
                <label style={{fontSize: 15, display: "flex", padding: 5}}>Biglers Biler
                     <input name="BiglersBigler" type="checkbox" checked={this.state.companies.BiglersBigler} onClick={this.handleCompanyChange} />
                 </label>
-                <label style={{fontSize: 15, display: "flex", padding: 5}}>Gert 
-                    <input name="Gert" type="checkbox" checked={this.state.companies.Gert} onClick={this.handleCompanyChange} />
+                <label style={{fontSize: 15, display: "flex", padding: 5}}>Schwertz 
+                    <input name="Schwertz" type="checkbox" checked={this.state.companies.Schwertz} onClick={this.handleCompanyChange} />
                 </label>
-                <label style={{fontSize: 15, display: "flex", padding: 5}}>Elias
+                {/* <label style={{fontSize: 15, display: "flex", padding: 5}}>Elias
                     <input name="Elias" type="checkbox" checked={this.state.companies.Elias} onClick={this.handleCompanyChange} />
                 </label>
                 <label style={{fontSize: 15, display: "flex", padding: 5}}>Devran
                     <input name="Devran" type="checkbox" checked={this.state.companies.Devran} onClick={this.handleCompanyChange} />
-                </label>
+                </label> */}
             </form>
             </div>
 
